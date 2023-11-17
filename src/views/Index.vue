@@ -103,16 +103,18 @@
 <script>
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
+import bannerImage from '../assets/images/bannerq.jpg';
 
 export default {
   components: {
     Header, 
-    Footer  
+    Footer,
+    
   },
 
   data() {
     return {
-      bgImage: '../src/assets/images/bannerq.jpg',
+      bgImage: bannerImage,
     };
   },
 
