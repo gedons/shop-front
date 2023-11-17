@@ -4,7 +4,7 @@
     <!-- end header -->
 
      <!-- banner -->
-     <div class="bg-cover bg-no-repeat bg-center py-36" style="background-image: url('../src/assets/images/bannerq.jpg');">
+     <div class="bg-cover bg-no-repeat bg-center py-36" v-bind:style="{ 'background-image': 'url(' + bgImage + ')' }">
         <div class="container">
             <h1 class="text-6xl text-gray-200 font-medium mb-4 capitalize">
                 best clothing wears <br> available for you
@@ -108,6 +108,12 @@ export default {
   components: {
     Header, 
     Footer  
+  },
+
+  data() {
+    return {
+      bgImage: '../assets/images/bannerq.jpg',
+    };
   },
 
 };
