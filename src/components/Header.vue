@@ -96,7 +96,7 @@
                     <a href="#" class="text-gray-200 hover:text-white transition">About</a>
                     <a href="#" class="text-gray-200 hover:text-white transition">Contact</a>
                 </div>
-                <a href="pages/login.html" class="text-white bg-primary px-3 py-2 rounded-md hover:text-white transition">Create Account</a>
+                <router-link :to="{name: 'Register'}" class="text-white bg-primary px-3 py-2 rounded-md hover:text-white transition">Create Account</router-link>
             </div>
         </div>
     </nav>
