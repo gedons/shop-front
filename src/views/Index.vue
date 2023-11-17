@@ -112,7 +112,7 @@ export default {
 
   data() {
     return {
-      bgImage: '../assets/images/bannerq.jpg',
+      bgImage: '../src/assets/images/bannerq.jpg',
     };
   },
 
