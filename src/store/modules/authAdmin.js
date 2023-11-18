@@ -1,7 +1,8 @@
 import api from '../../services/api';
 
 const state = {
-  adminToken: null,
+  adminToken: sessionStorage.getItem('adminToken') || null,
+  //adminToken: null,
 };
 
 const getters = {
@@ -26,7 +27,7 @@ const mutations = {
   setAdminToken(state, authToken) {
     state.adminToken = authToken;
     // Optionally, you can also store the token in local storage for persistence
-    localStorage.setItem('adminToken', authToken);
+    sessionStorage.setItem('adminToken', authToken);
   },
 };
 

@@ -24,16 +24,18 @@ const routes = [
       name: 'Register',
       component: Register,
     },
+    //admin routes
     {
       path: '/admin/dashboard',
       name: 'Dashboard',
-      component: Dashboard,
-      // Add meta fields for admin routes if needed (e.g., requiresAuth: true for authentication)
+      component: Dashboard,      
       meta: {
         requiresAuth: true,
         isAdmin: true,
       },
     },
+
+    //end admin routes
 ];
 
 const router = createRouter({

@@ -6,7 +6,7 @@
 
 @layer base {
     body {
-      @apply font-poppins;
+      @apply font-sans;
     }
     h1,
     h2,
@@ -14,7 +14,7 @@
     h4,
     h5,
     h6 {
-      @apply font-roboto;
+      @apply font-sans;
     }
   }
   
@@ -30,3 +30,4 @@
       @apply block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded placeholder-gray-400 focus:border-primary focus:ring-0;
     }
   }
+  
