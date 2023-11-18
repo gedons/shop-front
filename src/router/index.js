@@ -1,10 +1,19 @@
 import { createRouter, createWebHistory } from "vue-router";
+import store from '../store';
 
 import Index from '../views/Index.vue';
 import Login from '../views/Login.vue';
 import Register from '../views/Register.vue';
+
 import Dashboard from '../views/Admin/Dashboard.vue';
-import store from '../store';
+
+import Categories from '../views/Admin/Categories.vue';
+import AddCategory from '../views/Admin/AddCategory.vue';
+
+import Products from '../views/Admin/Products.vue';
+import AddProduct from '../views/Admin/AddProduct.vue';
+
+
 
  
 
@@ -34,6 +43,14 @@ const routes = [
         isAdmin: true,
       },
     },
+
+    //category
+    { path: "/admin/category", name: "Categories", component: Categories, meta: { requiresAuth: true, isAdmin: true, }, },  
+    { path: "/admin/product/newcategory", name: "AddCategory", component: AddCategory, meta: { requiresAuth: true, isAdmin: true, }, },    
+
+    //products
+    { path: "/admin/products", name: "Products", component: Products, meta: { requiresAuth: true, isAdmin: true, }, },  
+    { path: "/admin/product/newproduct", name: "AddProduct", component: AddProduct, meta: { requiresAuth: true, isAdmin: true, }, },    
 
     //end admin routes
 ];
