@@ -17,8 +17,21 @@ const actions = {
 
       // Store the admin token in state
       commit('setAdminToken', authToken);
+      return true; 
     } catch (error) {
-      throw new Error(error.response.data.message);
+      console.error('Login Error:', error);
+      return false;
+    }
+  },
+
+  async adminLogout({ commit }) {
+    try {
+      // Clear admin token from state and local storage
+      commit('clearAdminToken');
+      return true; 
+    } catch (error) {
+      console.error('Logout Error:', error);
+      return false;
     }
   },
 };
@@ -28,6 +41,10 @@ const mutations = {
     state.adminToken = authToken;
     // Optionally, you can also store the token in local storage for persistence
     sessionStorage.setItem('adminToken', authToken);
+  },
+  clearAdminToken(state) {
+    state.adminToken = null;
+    sessionStorage.removeItem('adminToken');  
   },
 };
 

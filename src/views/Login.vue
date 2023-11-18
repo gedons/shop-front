@@ -89,12 +89,22 @@ export default {
         await this.$store.dispatch('adminLogin', {
           email: this.email,
           password: this.password,
-        });
-        console.log('Successfully logged in!'); 
-        this.$router.push({name: 'Dashboard'});
+        })
+        .then((success) => {
+          if (success) {
+	          	this.$toast.success('Admin Login successful.', {
+		            timeout: 3000, 
+		          });		       
+	            console.log('Successfully logged in!'); 
+              this.$router.push({name: 'Dashboard'});
+	          } else {
+	             this.$toast.error('Admin details does not exist. Confirm and try again!', {
+		            timeout: 9000, 
+		          });	          
+	          }
+        });       
       } catch (error) {
         console.error('Admin Login Failed', error.message);
-        // Handle login error, show error message to the user, etc.
       }
     },
   },
