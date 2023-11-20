@@ -109,6 +109,7 @@ export default {
   components: {
     Header, 
     Footer,
+
     
   },
 
