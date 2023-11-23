@@ -370,6 +370,13 @@
                                                     <div v-else class="flex-shrink-0 w-10 h-10">                                                        
                                                         <svg class="w-9 h-9 rounded-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.048"></g><g id="SVGRepo_iconCarrier"> <path d="M4.46814 17.5319C5.62291 19.7154 7.92876 20.5 12 20.5C17.6255 20.5 19.8804 19.002 20.3853 14.3853M4.46814 17.5319C3.77924 16.2292 3.5 14.4288 3.5 12C3.5 5.5 5.5 3.5 12 3.5C18.5 3.5 20.5 5.5 20.5 12C20.5 12.8745 20.4638 13.6676 20.3853 14.3853M4.46814 17.5319L7.58579 14.4142C8.36684 13.6332 9.63317 13.6332 10.4142 14.4142L10.5858 14.5858C11.3668 15.3668 12.6332 15.3668 13.4142 14.5858L15.5858 12.4142C16.3668 11.6332 17.6332 11.6332 18.4142 12.4142L20.3853 14.3853M10.691 8.846C10.691 9.865 9.864 10.692 8.845 10.692C7.827 10.692 7 9.865 7 8.846C7 7.827 7.827 7 8.845 7C9.864 7 10.691 7.827 10.691 8.846Z" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                                                     </div>
+                                                    <label class="ml-2 flex flex-col items-center px-2 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer">
+                                                        <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                            <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+                                                        </svg>                                                        
+                                                        <input type='file' ref="inputf" class="hidden" @change="onFileSelected"  accept="image/*" />
+                                                    </label>                                                    
+                                                    <button  class="text-sm px-2 py-2 font-semibold text-gray-900  hover:text-gray-800" @click="handleImageUpload(product._id)">save image</button>
                                                       
                                                   </div>
                                               </td>
@@ -504,6 +511,7 @@
         editedProduct: {},
         deleteProduct: {},
         image: null,
+        selectedFile: null,
         back_url: 'http://localhost:5000' 
         
       };
@@ -558,7 +566,7 @@
             return moment(date).fromNow();
           },
   
-         async editProduct() {
+          async editProduct() {
           try {
               const token = sessionStorage.getItem('adminToken');  
               const config = {
@@ -581,34 +589,53 @@
                 }
               });            
           } catch (error) {
-              console.error('Error editing product', error);
-              // Handle error
+            if (error) {
+                    this.$toast.error('Category not added. try again!', {
+                      timeout: 3000, 
+                });		                          
+            }
           }
           },
+
+          onFileSelected(event){
+            this.selectedFile = event.target.files[0]
+          },
+               
       
   
-        //   async handleImageUpload(categoryId) {
-        //   try {
-        //       const token = sessionStorage.getItem('adminToken');  
-        //       const formData = new FormData();
-        //       const fileInput = this.$refs.uploadInput.files[0];  
-        //       formData.append('image', fileInput);
-  
-        //       const config = {
-        //       headers: {
-        //           Authorization: `Bearer ${token}`,
-        //           'Content-Type': 'multipart/form-data',
-        //       },
-        //       };
-  
-        //       // Perform the API request to upload the image for a specific category
-        //       await axios.post(`${api}/categories/${categoryId}/image`, formData, config);
-        //       this.fetchCategories(); // Refresh category list after image upload
-        //   } catch (error) {
-        //       console.error('Error uploading image:', error);
-        //       // Handle error
-        //   }
-        //   },
+          async handleImageUpload( productId ) {    
+            try {
+            const formData = new FormData();
+            formData.append('image', this.selectedFile, this.selectedFile.name);
+
+            const token = sessionStorage.getItem('adminToken'); 
+                const config = {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    Authorization: `Bearer ${token}`,
+                },
+            };
+             
+            await axios.post(`${api}/products/${productId}/image`, formData, config)
+                .then(success => {
+                    if (success) {
+                    this.$toast.success('Image Added Successfully.', {
+                        timeout: 3000, 
+                    });		                         
+                    //this.imagePreview = { imageUrl: success.data.imageUrl };                    
+                    this.fetchAllProducts();
+                    } else {
+                        this.$toast.error('An Error Occured. try again!', {
+                            timeout: 9000, 
+                        });	          
+                    }
+                })
+          
+            } catch (error) {
+                console.error('Error uploading product image:', error);
+                // Handle error
+            }
+        },
   
           async confirmDelete() {
           try {
