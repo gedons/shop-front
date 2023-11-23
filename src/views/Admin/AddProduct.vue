@@ -78,12 +78,6 @@
                               class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out text-gray-500 hover:text-white"
                               >Categories</router-link
                           >
-                          </li>
-                          <li>
-                          <a @click="openAddModal"
-                              class="cursor-pointer group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out text-gray-500 hover:text-white"
-                              >Add Category</a
-                          >                           
                           </li>                        
                       </ul>
                       </div>
@@ -333,7 +327,79 @@
                                          
                       <div class="flex flex-col mt-8">
                           <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+                            <form @submit.prevent="createProduct">
+                                <div class="p-6.5">
+                                  <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
+                                    <div class="w-full xl:w-1/2">
+                                      <label class="mb-2.5 block text-black">
+                                         Title
+                                      </label>
+                                      <input type="text" id="title" v-model="title" placeholder="Product Title"
+                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
+                                    </div>
+              
+                                    <div class="w-full xl:w-1/2">
+                                      <label class="mb-2.5 block text-black">
+                                         Size
+                                      </label>
+                                      <input type="text" id="size" v-model="size" placeholder="Product Size"
+                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
+                                    </div>
+                                  </div>                                              
+              
+                                  <div class="mb-4.5">
+                                    <label class="mb-2.5 mt-3 block text-black">
+                                      Select Category
+                                    </label>
+                                    <div class="relative z-20 bg-transparent dark:bg-form-input">
+                                      <select id="category" v-model="categoryId" 
+                                        class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-3 px-5 outline-none transition focus:border-gray-900 active:border-gray-900 dark:border-form-strokedark dark:bg-form-input" required>                                        
+                                        <option v-for="category in categories" :key="category._id" :value="category._id">{{ category.name }}</option>
+                                      </select>                                                                      
+                                    </div>
+                                  </div>
 
+                                  <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
+                                    <div class="w-full xl:w-1/2">
+                                      <label class="mb-2.5 mt-3 block text-black">
+                                         Color
+                                      </label>
+                                      <input type="text" id="color" v-model="color" placeholder="Product Color"
+                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
+                                    </div>
+              
+                                    <div class="w-full xl:w-1/2">
+                                      <label class="mb-2.5 mt-3 block text-black">
+                                         Price
+                                      </label>
+                                      <input type="number" id="price" v-model="price" placeholder="Product Price"
+                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
+                                    </div>
+                                  </div>  
+                                  
+                                  <div class="mb-4.5">
+                                    <label class="mb-2.5 mt-3 block text-black">
+                                      Product Image
+                                    </label>
+                                    <div class="relative z-20 bg-transparent dark:bg-form-input">
+                                        <input type="file" id="image" ref="imageFiles" multiple @change="handleFileChange" accept="image/*" placeholder="Product Title"
+                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />                                                                 
+                                    </div>
+                                  </div>
+              
+                                  <div class="mb-6">
+                                    <label class="mb-2.5 mt-3 block text-black">
+                                      Description
+                                    </label>
+                                    <textarea rows="6" id="description" v-model="description"  placeholder="Type your message"
+                                      class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input"></textarea>
+                                  </div>
+              
+                                  <button type="submit" class="flex  justify-center rounded bg-gray-900 hover:bg-gray-700 text-white p-3 font-medium text-gray">
+                                    Save
+                                  </button>
+                                </div>
+                            </form>
                           </div>
                       </div>                                       
                       
@@ -341,46 +407,7 @@
               </main>
           </div>
       </div>
-  
-  <!-- modal -->
-      <div>
-          <div id="modal-bg" class="w-full h-full bg-[#848A97] top-0 absolute hidden opacity-80"></div>
-          <div id="modal-box" class="sm:w-[385px] sm:min-w-[40vw] min-w-[80vw] min-h-[25vh] flex-col justify-between items-center gap-2 -translate-y-1/2 p-6 bg-[#FFFFFF] rounded-lg top-1/2 left-1/2 -translate-x-1/2 absolute hidden">
-            <!-- Modal content -->
-            <!-- Edit category form -->
-            <form v-if="isEditMode" @submit.prevent="editCategory">
-              <input type="text" placeholder="Edit Name" v-model="editedCategory.name"
-                        class="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter" />
-              <button class="bg-gray-900 px-3 py-2 rounded-md mt-3 text-white text-sm font-semibold" type="submit">Update</button>
-            </form>
-            <!-- Delete confirmation -->
-            <div v-else>
-              <p class="font-semibold">Are you sure you want to delete this category?</p>
-              <div class="flex gap-3">
-                  <button class="bg-red-600 hover:bg-red-500 px-4 py-2 rounded-md mt-3 text-white" @click="confirmDelete">Yes</button>
-                  <button class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-md mt-3 text-white" @click="cancelDelete">No</button>
-              </div>
-            </div>
-            <button id="modal-close" class="p-3 w-full text-gray-900  hover:bg-gray-200 rounded-md mt-3"  @click="closeModal">Close</button>
-          </div>
-      </div>
-  <!-- modal end -->
-  
-  <!-- add modal -->
-     <div>
-      <div id="modal-bg1" class="w-full h-full bg-[#848A97] top-0 absolute hidden opacity-80"></div>
-      <div id="modal-box1" class="sm:w-[385px] sm:min-w-[40vw] min-w-[80vw] min-h-[25vh] flex-col justify-between items-center gap-2 -translate-y-1/2 p-6 bg-[#FFFFFF] rounded-lg top-1/2 left-1/2 -translate-x-1/2 absolute hidden">
-      <!-- Modal content -->
-      <!-- New category form -->
-      <form v-if="isNewCategoryMode" @submit.prevent="addNewCategory">
-          <input type="text" placeholder="New Category" v-model="newCategoryName"
-          class="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter" />       
-          <button class="bg-gray-900 px-3 py-2 rounded-md mt-3 text-white text-sm font-semibold" type="submit">Add</button>
-      </form>
-      <button id="modal-close" class="p-3 w-full text-gray-900 hover:bg-gray-200 rounded-md mt-3" @click="closeModal1">Close</button>
-      </div>
-     </div>
-  <!-- modal end -->
+
      
   </div>
   </template>
@@ -393,34 +420,82 @@
   export default {
     data() {
       return {
-        products: [],
-  
         sidebarOpen: false,
         notificationOpen: false,
         dropdownOpen: false,
         selected: '',  
         page: '' ,
-        isEditMode: false,      
-        editedCategory: {},
-        isNewCategoryMode: false,
-        newCategoryName: '',
-        image: null
+        title: '',
+        size: '',
+        color:'',
+        price:'',
+        description: '',
+        imageFiles: [],
+        categoryId: '',  
+        categories: [], 
+        
         
       };
     },
     created() {
-      // Fetch products on component mount
-      //this.fetchCategories();
+     this.fetchCategories();
     },
     methods: {
-        //   fetchCategories() {
-        //       axios.get(`${api}/categories/all`).then((response) => {
-        //       this.categories = response.data.categories;           
-        //       })
-        //       .catch((error) => {
-        //       console.error('Error getting user images:', error);          
-        //       });      
-        //   },
+          fetchCategories() {
+              axios.get(`${api}/categories/all`).then((response) => {
+              this.categories = response.data.categories;           
+              })
+              .catch((error) => {
+              console.error('Error getting categories:', error);          
+              });      
+          },
+
+          handleFileChange(event) {
+            this.imageFiles = event.target.files;
+            console.log(this.imageFiles);
+          },
+
+        async createProduct() {
+            try {
+                const formData = new FormData();
+                formData.append('title', this.title);
+                formData.append('size', this.size);
+                formData.append('color', this.color);
+                formData.append('price', this.price);
+                formData.append('description', this.description);
+                formData.append('categoryId', this.categoryId);
+
+                //auth token
+                const token = sessionStorage.getItem('adminToken'); 
+
+                // Append each selected image file to the form data
+                for (let i = 0; i < this.imageFiles.length; i++) {
+                formData.append('images', this.imageFiles[i]);
+                }
+
+                await axios.post(`${api}/products/create`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                     Authorization: `Bearer ${token}`,
+                },
+                })
+                .then(success => {
+                    if (success) {
+                    this.$toast.success('Product Created Successfully.', {
+                        timeout: 3000, 
+                    });		                         
+                    this.$router.push({name: 'Products'});                                    
+                    } else {
+                        this.$toast.error('An Error Occured. try again!', {
+                            timeout: 9000, 
+                        });	          
+                    }
+                })
+            } catch (error) {
+                console.error('Error creating product:', error);
+                // Handle error, show error message, etc.
+            }
+        },
   
           logoutAdmin() {
               this.$store.dispatch('adminLogout')
@@ -583,35 +658,7 @@
            this.selected = (this.selected === 'Page') ? '' : 'Page';
           },
   
-          openEditModal(category) {
-          this.isEditMode = true;
-          this.editedCategory = { ...category };
-          document.getElementById('modal-bg').classList.remove('hidden');
-          document.getElementById('modal-box').classList.remove('hidden');
-          },
-  
-          openAddModal() {
-          this.isNewCategoryMode = true;
-          document.getElementById('modal-bg1').classList.remove('hidden');
-          document.getElementById('modal-box1').classList.remove('hidden');
-          },
-  
-          openDeleteModal(category) {
-          this.isEditMode = false;
-          this.editedCategory = { ...category };
-          document.getElementById('modal-bg').classList.remove('hidden');
-          document.getElementById('modal-box').classList.remove('hidden');
-          },
-  
-          closeModal() {       
-          document.getElementById('modal-bg').classList.add('hidden');
-          document.getElementById('modal-box').classList.add('hidden');
-          },                                                                  
-  
-          closeModal1() {       
-          document.getElementById('modal-bg1').classList.add('hidden');
-          document.getElementById('modal-box1').classList.add('hidden');
-          },
+        
     },
   };
   </script>

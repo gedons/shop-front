@@ -587,7 +587,7 @@ export default {
                 },
             };
              
-            await axios.post(`${api}/categories/${categoryId}/image`, formData, config,)
+            await axios.post(`${api}/categories/${categoryId}/image`, formData, config)
                 .then(success => {
                     if (success) {
                     this.$toast.success('Image Added Successfully.', {
