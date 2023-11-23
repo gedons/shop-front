@@ -85,12 +85,7 @@
                                 >Add Category</router-link
                             >                           
                             </li>
-                            <li>
-                            <a
-                                class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out text-gray-500 hover:text-white"
-                                href="form-layout.html">Edit Category</a
-                            >
-                            </li>
+                             
                         </ul>
                         </div>
                         <!-- Dropdown Menu End -->
@@ -141,12 +136,7 @@
                                     >Add Product</router-link
                                 >                           
                                 </li>
-                                <li>
-                                <a
-                                    class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out text-gray-500 hover:text-white"
-                                    >Edit Product</a
-                                >
-                                </li>
+                                 
                             </ul>
                             </div>
                             <!-- Dropdown Menu End -->
@@ -335,7 +325,7 @@
                     </div>
                 </header>
 
-                <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
+                <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
                     <div class="container px-6 py-8 mx-auto">
                         <h3 class="text-3xl font-medium text-gray-700">Dashboard</h3>
         

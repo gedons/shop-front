@@ -45,11 +45,13 @@ const routes = [
     },
 
     //category
-    { path: "/admin/category", name: "Categories", component: Categories, meta: { requiresAuth: true, isAdmin: true, }, },  
-    { path: "/admin/product/newcategory", name: "AddCategory", component: AddCategory, meta: { requiresAuth: true, isAdmin: true, }, },    
+    { path: "/admin/categories", name: "Categories", component: Categories, meta: { requiresAuth: true, isAdmin: true, }, },  
+    { path: "/admin/category/:id", name: "CategoryEdit",  meta: { requiresAuth: true, isAdmin: true, }, },  
+    { path: "/admin/category/newcategory", name: "AddCategory", component: AddCategory, meta: { requiresAuth: true, isAdmin: true, }, },    
 
     //products
     { path: "/admin/products", name: "Products", component: Products, meta: { requiresAuth: true, isAdmin: true, }, },  
+    { path: "/admin/products/:id", name: "ProductEdit",  meta: { requiresAuth: true, isAdmin: true, }, },  
     { path: "/admin/product/newproduct", name: "AddProduct", component: AddProduct, meta: { requiresAuth: true, isAdmin: true, }, },    
 
     //end admin routes
