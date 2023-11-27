@@ -424,7 +424,7 @@
                         </div>
         
                         <div class="mt-8">
-        
+                            <h3 class="text-3xl font-medium text-gray-700">Products</h3>
                         </div>
         
                         <div class="flex flex-col mt-8">
