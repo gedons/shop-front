@@ -28,14 +28,15 @@
                       <span class="mx-3">Dashboard</span>
                   </a>
                   
-                     <!-- customer link start -->
-                     <router-link :to="{name: 'Customers'}" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                     >
-                         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="9.00098" cy="6" r="4" fill="#6B7280"></circle> <ellipse cx="9.00098" cy="17.001" rx="7" ry="4" fill="#6B7280"></ellipse> <path d="M20.9996 17.0005C20.9996 18.6573 18.9641 20.0004 16.4788 20.0004C17.211 19.2001 17.7145 18.1955 17.7145 17.0018C17.7145 15.8068 17.2098 14.8013 16.4762 14.0005C18.9615 14.0005 20.9996 15.3436 20.9996 17.0005Z" fill="#6B7280"></path> <path d="M17.9996 6.00073C17.9996 7.65759 16.6565 9.00073 14.9996 9.00073C14.6383 9.00073 14.292 8.93687 13.9712 8.81981C14.4443 7.98772 14.7145 7.02522 14.7145 5.99962C14.7145 4.97477 14.4447 4.01294 13.9722 3.18127C14.2927 3.06446 14.6387 3.00073 14.9996 3.00073C16.6565 3.00073 17.9996 4.34388 17.9996 6.00073Z" fill="#6B7280"></path> </g></svg>
-         
-                         <span class="mx-3">Customers</span>
-                     </router-link>
-                     <!-- customer link end -->
+                  <!-- customer link start -->
+                  <router-link :to="{name: 'Customers'}" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                      >
+                      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="9.00098" cy="6" r="4" fill="#6B7280"></circle> <ellipse cx="9.00098" cy="17.001" rx="7" ry="4" fill="#6B7280"></ellipse> <path d="M20.9996 17.0005C20.9996 18.6573 18.9641 20.0004 16.4788 20.0004C17.211 19.2001 17.7145 18.1955 17.7145 17.0018C17.7145 15.8068 17.2098 14.8013 16.4762 14.0005C18.9615 14.0005 20.9996 15.3436 20.9996 17.0005Z" fill="#6B7280"></path> <path d="M17.9996 6.00073C17.9996 7.65759 16.6565 9.00073 14.9996 9.00073C14.6383 9.00073 14.292 8.93687 13.9712 8.81981C14.4443 7.98772 14.7145 7.02522 14.7145 5.99962C14.7145 4.97477 14.4447 4.01294 13.9722 3.18127C14.2927 3.06446 14.6387 3.00073 14.9996 3.00073C16.6565 3.00073 17.9996 4.34388 17.9996 6.00073Z" fill="#6B7280"></path> </g></svg>
+      
+                      <span class="mx-3">Customers</span>
+                  </router-link>
+                  <!-- customer link end -->
+  
                   <!-- category link start -->
                     <li class="list-none mt-4">
                       <a
@@ -79,8 +80,7 @@
                               <svg class="w-6 h-6"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12" stroke="#6B7280" stroke-width="1.5"></path> <path d="M2 14C2 11.1997 2 9.79961 2.54497 8.73005C3.02433 7.78924 3.78924 7.02433 4.73005 6.54497C5.79961 6 7.19974 6 10 6H14C16.8003 6 18.2004 6 19.27 6.54497C20.2108 7.02433 20.9757 7.78924 21.455 8.73005C22 9.79961 22 11.1997 22 14C22 16.8003 22 18.2004 21.455 19.27C20.9757 20.2108 20.2108 20.9757 19.27 21.455C18.2004 22 16.8003 22 14 22H10C7.19974 22 5.79961 22 4.73005 21.455C3.78924 20.9757 3.02433 20.2108 2.54497 19.27C2 18.2004 2 16.8003 2 14Z" stroke="#6B7280" stroke-width="1.5"></path> <path d="M9.5 14.4L10.9286 16L14.5 12" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                               Categories</router-link
                           >
-                          </li>
-                                                 
+                          </li>                        
                       </ul>
                       </div>
                       <!-- Dropdown Menu End -->
@@ -144,7 +144,7 @@
   
                   <!-- order link start -->
                   <router-link :to="{name: 'Orders'}" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                      >
+                       >
                       <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                           stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -219,19 +219,19 @@
                    </li>
                    <!-- pages link end -->
                    
-                   <!-- settings link start -->
-                   <router-link :to="{name: 'Settings'}" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                        >
-                          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                              stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
-                              </path>
-                          </svg>
-      
-                          <span class="mx-3">Settings</span>
-                   </router-link>
-                  <!-- settings link end -->
+                    <!-- settings link start -->
+                    <router-link :to="{name: 'Settings'}" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                    >
+                      <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                          </path>
+                      </svg>
+  
+                      <span class="mx-3">Settings</span>
+               </router-link>
+              <!-- settings link end -->
   
                    <!-- logout link start -->
                    <a @click="logoutAdmin" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 cursor-pointer">                           
@@ -327,91 +327,46 @@
               <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
                   <div class="container px-6 py-8 mx-auto">
                       <div class="flex">
-                          <h3 class="text-3xl font-medium text-gray-700">All Customers</h3>                          
+                          <h3 class="text-3xl font-medium text-gray-700">User Orders</h3>
+                          <router-link :to="{name: 'Customers'}"   class="ml-3 font-medium text-white px-4 py-2 bg-gray-900 rounded-md hover:bg-gray-700">Back</router-link>
                       </div>
                                          
                       <div class="flex flex-col mt-8">
                           <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-                              <div
-                                  class="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
-                                  <table class="min-w-full">
-                                      <thead>
-                                          <tr>
-                                              <th
-                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                  Name</th>
-                                              <th
-                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                  Address</th>
-                                              <th
-                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                  Email</th>
-                                              <th
-                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                  Postcode</th>
-                                            <th
-                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                  Location</th>
-                                             <th
-                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                  Phone</th>
-                                            <th
-                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                  Created</th>
-                                              <th
-                                              
-                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                  Action</th>
-                                              
-                                          </tr>
-                                      </thead>
-                                     <div v-if="users.length === 0" class="p-2.5 xl:p-5">
-                                          <p class="font-semibold text-sm leading-5 text-gray-700">No User Available!!!</p>
-                                      </div>
-                                      <tbody v-else v-for="user in users" :key="user._id" class="bg-white">
-                                          <tr>
-                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                <div class="text-sm leading-5 font-semibold text-gray-900">{{ user.firstname }} {{ user.lastname }}</div>                                                                                            
-                                            </td>
-      
-                                              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                  <div class="text-sm leading-5 font-semibold text-gray-900">{{ user.address }}</div>                                                                                                  
-                                              </td>
+                            <div
+                            class="overflow-hidden rounded-sm border border-stroke bg-white shadow-default dark:bg-boxdark">
+                            
+                            <div class="px-4 pb-6 text-center lg:pb-8 xl:pb-11.5">
 
-                                              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                <div class="text-sm leading-5 font-semibold text-gray-900">{{user.email}}</div>                                                
-                                            </td>
-
-                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                <div class="text-sm leading-5 font-semibold">{{user.postcode}}</div>                                                
-                                            </td>
-
-                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                <div class="text-sm leading-5 font-semibold">{{user.country}} {{ user.state }}</div>                                                
-                                            </td>
-
-                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                <div class="text-sm leading-5 font-semibold text-gray-900">{{user.phone}}</div>                                                
-                                            </td>
-      
-                                              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                  <span
-                                                      class="inline-flex px-2 text-sm font-semibold leading-5 "> {{ formatDate(user.createdAt) }}</span>
-                                              </td>
-      
-                                              <td
-                                                  class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">                                                 
-                                                  <router-link :to="{name: 'CustomerOrder', params: {userId: user._id} }" class=" text-sm font-semibold px-2 py-2 text-green-800 hover:text-green-700">View Orders</router-link>    
-                                                  <!-- <button @click="openDeleteModal(user._id)" class=" text-sm font-semibold px-2 py-2 text-blue-800 hover:text-blue-700">Edit</button>     -->
-                                                  <button @click="openDeleteModal(user)" class=" text-sm font-semibold px-2 py-2 text-red-500 hover:text-red-400">Delete</button>    
-                                              </td>                                    
-                                          </tr>   
-                                          
-                                          
-                                    
-                                      </tbody> 
-                                  </table>
-                              </div>
+                                <div v-if="userOrders.length === 0" class="p-2.5 xl:p-5">
+                                    <h3 class="mt-4 text-2xl font-medium text-blac">
+                                        This user does not have any Order!!!
+                                    </h3> 
+                                </div>
+                               
+                                <div v-else v-for="userOrder in userOrders" :key="userOrder._id">                                                            
+                                    <div
+                                    class="bg-gray-800 mx-auto mt-6 mb-5.5 grid max-w-94 grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1">
+                                    <div
+                                        class="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 xsm:flex-row" v-for="product in userOrder.products" :key="product._id">
+                                        <span class="font-semibold text-white">Product Name</span>
+                                        <span class="text-sm text-white font-semibold  leading-5">{{product.product.title}}</span>
+                                    </div>
+                                    <div
+                                        class="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 xsm:flex-row">
+                                        <span class="font-semibold text-white">Price</span>
+                                        <span class="text-sm text-white font-semibold  leading-5">$ {{userOrder.totalPrice}}</span>
+                                    </div>
+                                    <div class="flex flex-col items-center justify-center gap-1 px-4 xsm:flex-row">
+                                        <span class="font-semibold text-white">Status</span>
+                                        <span  v-if="userOrder.status == 'Paid'" class="text-sm text-white font-semibold  leading-5"> {{userOrder.status}}</span>
+                                        <span  v-else class="text-sm text-white font-semibold  leading-5"> {{userOrder.status}}</span>
+                                    </div>
+                                     
+                                    </div>                                                                                        
+                                </div>
+                            </div>
+                          </div>
                           </div>
                       </div>                                       
                       
@@ -419,28 +374,7 @@
               </main>
           </div>
       </div>
-  
 
-   
-
-    <!-- delete modal -->
-    <div>
-        <div id="modal-bg4" class="w-full h-full  bg-[#848A97] top-0 absolute hidden opacity-80"></div>
-        <div id="modal-box4" class="sm:w-[385px] sm:min-w-[40vw] min-w-[80vw] min-h-[25vh] flex-col justify-between items-center gap-2 -translate-y-1/2 p-6 bg-[#FFFFFF] rounded-lg top-1/2 left-1/2 -translate-x-1/2 absolute hidden">              
-        <!-- Delete confirmation -->
-        <div v-if="isDeleteMode">
-            <p class="font-semibold">Are you sure you want to delete this product?</p>
-            <div class="flex gap-3">
-                <button class="bg-red-600 hover:bg-red-500 px-4 py-2 rounded-md mt-3 text-white" @click="confirmDelete(user)">Yes</button>
-                <button class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-md mt-3 text-white" @click="cancelDelete">No</button>
-            </div>
-        </div>
-        <button id="modal-close" class="p-3 w-full text-gray-900  hover:bg-gray-200 rounded-md mt-3"  @click="closeModal1">Close</button>
-        </div>
-    </div>
-   <!-- modal end -->
-
-  
      
   </div>
   </template>
@@ -452,42 +386,40 @@
   
   export default {
     data() {
-      return {            
+      return {
         sidebarOpen: false,
         notificationOpen: false,
         dropdownOpen: false,
         selected: '',  
-        page: '' ,       
-        isDeleteMode: false,              
-        deleteUser: {}, 
-        users: [],  
-        selectedUser: null,  
-        userOrders: []   
+        page: '' ,
+        userId: null,
+        userOrders: [] 
+        
         
       };
     },
     created() {
-      // Fetch products on component mount
-      this.fetchUsers();
+     this.userId = this.$route.params.userId;
+     this.fetchUserOrders();
     },
     methods: {
-       
-        fetchUsers() {
+          fetchUserOrders() {
 
             const token = sessionStorage.getItem('adminToken');  
-              const config = {
-              headers: {
-                  Authorization: `Bearer ${token}`,
-              },
-              };
-
-            axios.get(`${api}/users/profiles`, config).then((response) => {
-            this.users = response.data.users;           
-            })
-            .catch((error) => {
-            console.error('Error getting Users:', error);          
-            });      
+            const config = {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            };
+              axios.get(`${api}/orders/users/${this.userId}`, config).then((response) => {
+                this.userOrders = response.data.orders;          
+              })
+              .catch((error) => {
+              console.error('Error getting user orders:', error);          
+              });      
           },
+
+       
   
           logoutAdmin() {
               this.$store.dispatch('adminLogout')
@@ -510,52 +442,6 @@
               });
               });
           },  
-
-          formatDate(date) {
-            return moment(date).fromNow();
-          },                    
-      
-  
-          async confirmDelete() {
-          try {
-              const token = sessionStorage.getItem('adminToken');  
-              const config = {
-              headers: {
-                  Authorization: `Bearer ${token}`,
-              },
-              };
-              await axios.delete(`${api}/users/profile/${this.deleteUser._id}`, config)            
-                .then((success) => {
-                  if (success) {
-                      this.$toast.success('User Deleted Successfully.', {
-                          timeout: 3000, 
-                      });		 
-                        this.closeModal1();  
-                        const userId = this.deleteUser._id;  
-                        this.users = this.users.filter(user => user._id !== userId);
-                        this.users.sort((a, b) => {
-                        const dateA = new Date(a.createdAt).getTime();
-                        const dateB = new Date(b.createdAt).getTime();
-                        return dateB - dateA;  
-                        });
-                  } else {
-                      this.$toast.error('An Error Occured. try again!', {
-                          timeout: 9000, 
-                      });	          
-                  }
-                  });  
-                 
-            
-          } catch (error) {
-              console.error('Error deleting category', error);
-              // Handle error
-          }
-          },
-  
-          cancelDelete() {
-          this.closeModal1();
-          },
-           
   
   
           toggleSidebar() {
@@ -585,20 +471,8 @@
           pageDropdown() {
            this.selected = (this.selected === 'Page') ? '' : 'Page';
           },
-          
   
-          openDeleteModal(user) {
-          this.isDeleteMode = true;
-          this.deleteUser = { ...user };
-          document.getElementById('modal-bg4').classList.remove('hidden');
-          document.getElementById('modal-box4').classList.remove('hidden');
-          },
-                                                                          
-  
-          closeModal1() {       
-          document.getElementById('modal-bg4').classList.add('hidden');
-          document.getElementById('modal-box4').classList.add('hidden');
-          },
+        
     },
   };
   </script>

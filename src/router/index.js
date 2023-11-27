@@ -16,8 +16,9 @@ import AddProduct from '../views/Admin/AddProduct.vue';
 import Orders from '../views/Admin/Orders.vue';
 
 import Customers from '../views/Admin/Customers.vue';
+import CustomerOrder from '../views/Admin/CustomerOrder.vue';
 
-
+import Settings from '../views/Admin/Settings.vue';
 
  
 
@@ -62,7 +63,11 @@ const routes = [
     { path: "/admin/orders", name: "Orders", component: Orders, meta: { requiresAuth: true, isAdmin: true, }, },  
 
     //admin customers
-    { path: "/admin/customers", name: "Customers", component: Customers, meta: { requiresAuth: true, isAdmin: true, }, },  
+    { path: "/admin/customers", name: "Customers", component: Customers, meta: { requiresAuth: true, isAdmin: true, }, }, 
+    { path: "/admin/:userId/orders", name: "CustomerOrder", component: CustomerOrder, meta: { requiresAuth: true, isAdmin: true, }, },  
+
+    //admin settings
+    { path: "/admin/settings", name: "Settings", component: Settings, meta: { requiresAuth: true, isAdmin: true, }, },
     //end admin routes
 ];
 
