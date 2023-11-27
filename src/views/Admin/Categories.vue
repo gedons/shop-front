@@ -475,7 +475,7 @@ export default {
       isNewCategoryMode: false,
       newCategoryName: '',
       selectedFile: null,
-      back_url: 'http://localhost:5000'
+      back_url: 'https://shopo-api.onrender.com'
       
     };
   },

@@ -518,7 +518,7 @@
         deleteProduct: {},
         image: null,
         selectedFile: null,
-        back_url: 'http://localhost:5000' 
+        back_url: 'https://shopo-api.onrender.com' 
         
       };
     },

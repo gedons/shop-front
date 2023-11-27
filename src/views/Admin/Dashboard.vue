@@ -358,7 +358,7 @@
                                         </div>
         
                                         <div class="mx-5">
-                                            <h4 class="text-2xl font-semibold text-gray-700">8,282</h4>
+                                            <h4 class="text-2xl font-semibold text-gray-700">{{ totalUsers }}</h4>
                                             <div class="text-gray-500">New Users</div>
                                         </div>
                                     </div>
@@ -382,13 +382,13 @@
                                         </div>
         
                                         <div class="mx-5">
-                                            <h4 class="text-2xl font-semibold text-gray-700">200,521</h4>
+                                            <h4 class="text-2xl font-semibold text-gray-700">{{totalOrders}}</h4>
                                             <div class="text-gray-500">Total Orders</div>
                                         </div>
                                     </div>
                                 </div>
         
-                                <div class="w-full px-6 mt-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
+                                <!-- <div class="w-full px-6 mt-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
                                     <div class="flex items-center px-5 py-6 bg-white rounded-md shadow-sm">
                                         <div class="p-3 bg-pink-600 bg-opacity-75 rounded-full">
                                             <svg class="w-8 h-8 text-white" viewBox="0 0 28 28" fill="none"
@@ -402,8 +402,21 @@
                                         </div>
         
                                         <div class="mx-5">
-                                            <h4 class="text-2xl font-semibold text-gray-700">215,542</h4>
+                                            <h4 class="text-2xl font-semibold text-gray-700">{{ totalProducts }}</h4>
                                             <div class="text-gray-500">Available Products</div>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <div class="w-full px-6 mt-6 sm:w-1/2 xl:w-1/3 xl:mt-6">
+                                    <div class="flex items-center px-5 py-6 bg-white rounded-md shadow-sm">
+                                        <div class="p-3 bg-green-600 bg-opacity-75 rounded-full">
+                                           <svg fill="#ffffff" class="w-8 h-8" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M277.675 981.521c5.657 0 10.24-4.583 10.24-10.24V499.514c0-5.651-4.588-10.24-10.24-10.24h-81.92c-5.652 0-10.24 4.589-10.24 10.24v471.767c0 5.657 4.583 10.24 10.24 10.24h81.92zm0 40.96h-81.92c-28.278 0-51.2-22.922-51.2-51.2V499.514c0-28.271 22.924-51.2 51.2-51.2h81.92c28.276 0 51.2 22.929 51.2 51.2v471.767c0 28.278-22.922 51.2-51.2 51.2zm275.456-40.96c5.657 0 10.24-4.583 10.24-10.24V408.777c0-5.657-4.583-10.24-10.24-10.24h-81.92a10.238 10.238 0 00-10.24 10.24v562.504c0 5.657 4.583 10.24 10.24 10.24h81.92zm0 40.96h-81.92c-28.278 0-51.2-22.922-51.2-51.2V408.777c0-28.278 22.922-51.2 51.2-51.2h81.92c28.278 0 51.2 22.922 51.2 51.2v562.504c0 28.278-22.922 51.2-51.2 51.2zm275.456-40.016c5.657 0 10.24-4.583 10.24-10.24V318.974c0-5.651-4.588-10.24-10.24-10.24h-81.92c-5.652 0-10.24 4.589-10.24 10.24v653.251c0 5.657 4.583 10.24 10.24 10.24h81.92zm0 40.96h-81.92c-28.278 0-51.2-22.922-51.2-51.2V318.974c0-28.271 22.924-51.2 51.2-51.2h81.92c28.276 0 51.2 22.929 51.2 51.2v653.251c0 28.278-22.922 51.2-51.2 51.2zM696.848 40.96l102.39.154c11.311.017 20.494-9.138 20.511-20.449S810.611.171 799.3.154L696.91 0c-11.311-.017-20.494 9.138-20.511 20.449s9.138 20.494 20.449 20.511z"></path><path d="M778.789 20.571l-.307 101.827c-.034 11.311 9.107 20.508 20.418 20.542s20.508-9.107 20.542-20.418l.307-101.827C819.783 9.384 810.642.187 799.331.153s-20.508 9.107-20.542 20.418z"></path><path d="M163.84 317.682h154.184a51.207 51.207 0 0036.211-14.999L457.208 199.71a10.263 10.263 0 017.237-3.003h159.754a51.235 51.235 0 0036.198-14.976l141.13-141.13c7.998-7.998 7.998-20.965 0-28.963s-20.965-7.998-28.963 0L631.447 152.755a10.265 10.265 0 01-7.248 2.992H464.445a51.226 51.226 0 00-36.201 14.999L325.271 273.719a10.244 10.244 0 01-7.248 3.003H163.839c-11.311 0-20.48 9.169-20.48 20.48s9.169 20.48 20.48 20.48z"></path></g></svg>
+                                        </div>
+        
+                                        <div class="mx-5">
+                                            <h4 class="text-2xl font-semibold text-gray-700">${{monthlyIncome}}</h4>
+                                            <div class="text-gray-500">Total Income</div>
                                         </div>
                                     </div>
                                 </div>
@@ -419,64 +432,84 @@
                                 <div
                                     class="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
                                     <table class="min-w-full">
-                                        <thead>
-                                            <tr>
-                                                <th
-                                                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                    Name</th>
-                                                <th
-                                                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                    Title</th>
-                                                <th
-                                                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                    Status</th>
-                                                <th
-                                                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                    Role</th>
-                                                <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
-                                            </tr>
-                                        </thead>
-        
-                                        <tbody class="bg-white">
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="flex items-center">
-                                                        <div class="flex-shrink-0 w-10 h-10">
-                                                            <img class="w-10 h-10 rounded-full"
-                                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                alt="">
-                                                        </div>
-        
-                                                        <div class="ml-4">
-                                                            <div class="text-sm font-medium leading-5 text-gray-900">John Doe
-                                                            </div>
-                                                            <div class="text-sm leading-5 text-gray-500">john@example.com</div>
-                                                        </div>
+                                      <thead>
+                                          <tr>
+                                              <th
+                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                  Image</th>
+                                              <th
+                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                  Title</th>
+                                              <th
+                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                  Category</th>
+                                              <th
+                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                  Price</th>
+                                             <th
+                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                  Created</th>
+                                              <th
+                                              
+                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                  Actions</th>
+                                              
+                                          </tr>
+                                      </thead>
+                                     <div v-if="products.length === 0" class="p-2.5 xl:p-5">
+                                          <p class="font-semibold text-sm leading-5 text-gray-700">No Product Available!!!</p>
+                                      </div>
+                                      <tbody v-else v-for="product in products" :key="product._id" class="bg-white">
+                                          <tr>
+                                              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                  <div class="flex items-center">
+                                                    <div v-if="product.images"  class="flex gap-2">
+                                                        <div v-for="imageUrl in product.images.slice(0, 3)" :key="imageUrl">
+                                                            <img class="w-10 h-9 rounded-full" :src="back_url + imageUrl" loading="lazy" alt="">       
+                                                        </div>                                                    
                                                     </div>
-                                                </td>
-        
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                                    <div class="text-sm leading-5 text-gray-500">Web dev</div>
-                                                </td>
-        
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <span
-                                                        class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">Active</span>
-                                                </td>
-        
-                                                <td
-                                                    class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                                                    Owner</td>
-        
-                                                <td
-                                                    class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap border-b border-gray-200">
-                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                </td>
-                                            </tr>                                            
-                                      
-                                        </tbody>
-                                    </table>
+                                                    <div v-else class="flex-shrink-0 w-10 h-10">                                                        
+                                                        <svg class="w-9 h-9 rounded-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.048"></g><g id="SVGRepo_iconCarrier"> <path d="M4.46814 17.5319C5.62291 19.7154 7.92876 20.5 12 20.5C17.6255 20.5 19.8804 19.002 20.3853 14.3853M4.46814 17.5319C3.77924 16.2292 3.5 14.4288 3.5 12C3.5 5.5 5.5 3.5 12 3.5C18.5 3.5 20.5 5.5 20.5 12C20.5 12.8745 20.4638 13.6676 20.3853 14.3853M4.46814 17.5319L7.58579 14.4142C8.36684 13.6332 9.63317 13.6332 10.4142 14.4142L10.5858 14.5858C11.3668 15.3668 12.6332 15.3668 13.4142 14.5858L15.5858 12.4142C16.3668 11.6332 17.6332 11.6332 18.4142 12.4142L20.3853 14.3853M10.691 8.846C10.691 9.865 9.864 10.692 8.845 10.692C7.827 10.692 7 9.865 7 8.846C7 7.827 7.827 7 8.845 7C9.864 7 10.691 7.827 10.691 8.846Z" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                                    </div>
+                                                    <label class="ml-2 flex flex-col items-center px-2 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer">
+                                                        <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                            <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+                                                        </svg>                                                        
+                                                        <input type='file' ref="inputf" class="hidden" @change="onFileSelected"  accept="image/*" />
+                                                    </label>                                                    
+                                                    <button  class="text-sm px-2 py-2 font-semibold text-gray-900  hover:text-gray-800" @click="handleImageUpload(product._id)">save image</button>
+                                                      
+                                                  </div>
+                                              </td>
+      
+                                              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                  <div class="text-sm leading-5 font-semibold text-gray-900">{{product.title}}</div>                                                
+                                              </td>
+
+                                              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                <div class="text-sm leading-5 font-semibold text-gray-900">{{product.category.name}}</div>                                                
+                                            </td>
+
+                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                <div class="text-sm leading-5 font-semibold text-gray-900">$ {{product.price}}</div>                                                
+                                            </td>
+      
+                                              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                  <span
+                                                      class="inline-flex px-2 text-sm font-semibold leading-5 text-green-800"> {{ formatDate(product.createdAt) }}</span>
+                                              </td>
+      
+                                              <td
+                                                  class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                                                  <button  @click="openEditModal(product)" class=" text-sm px-2 py-2 font-semibold text-gray-900  hover:text-gray-800">Edit</button>
+                                                  <button @click="openDeleteModal(product)" class=" text-sm font-semibold px-2 py-2 text-red-500 hover:text-red-400">Delete</button>    
+                                              </td>                                    
+                                          </tr>   
+                                          
+                                          
+                                    
+                                      </tbody> 
+                                  </table>
                                 </div>
                             </div>
                         </div>
@@ -489,6 +522,9 @@
 </template>
 
 <script>
+  import axios from 'axios';
+  import api from '../../api';
+  import moment from 'moment';
 export default {
     data() {
         return {
@@ -496,10 +532,89 @@ export default {
             notificationOpen: false,
             dropdownOpen: false,
             selected: '',  
-            page: '' 
+            page: '' ,
+            totalUsers: 0,
+            totalOrders: 0,
+            totalProducts: 0,
+            monthlyIncome: 0,
+            products: [],
+            categories: [],
+            back_url: 'https://shopo-api.onrender.com'
+  
         };
     },
+
+    created() {
+     this.fetchDashboardData();
+     this.fetchAllProducts();
+     this.fetchCategories();
+    },
+  
     methods: {
+        async fetchDashboardData() {
+            try {
+                const token = sessionStorage.getItem('adminToken');  
+                const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                };
+
+                const [ userData, orderData, productData, incomeData] = await Promise.all([
+                 axios.get(`${api}/users/getTotalUsers`,config),
+                 axios.get(`${api}/orders/getTotalOrders`,config),
+                //  axios.get(`${api}/products/getTotalProducts`,config),
+                 axios.get(`${api}/orders/monthly-income`,config),
+                ]);
+
+                // Fetch total users
+                const totalUsersResponse = await axios.get(`${api}/users/getTotalUsers`, config);
+                const totalUsers = totalUsersResponse.data.totalUsers;
+
+                // Fetch total orders
+                const totalOrdersResponse = await axios.get(`${api}/orders/getTotalOrders`, config);
+                const totalOrders = totalOrdersResponse.data.totalOrders;
+
+                // Fetch total products
+                // const totalProductsResponse = await axios.get(`${api}/products/getTotalProducts`, config);
+                // const totalProducts = totalProductsResponse.data.totalProducts;
+
+                // Fetch monthly income
+                const monthlyIncomeResponse = await axios.get(`${api}/orders/monthly-income`, config);
+                const monthlyIncome = monthlyIncomeResponse.data.totalIncome;
+
+                this.totalUsers = totalUsers;
+                this.totalOrders = totalOrders;
+                // this.totalProducts = totalProducts;
+                this.monthlyIncome = monthlyIncome;
+            } catch (error) {
+                console.error(error.response.data); // Handle error response
+            }
+        },
+
+        fetchAllProducts() {
+              axios.get(`${api}/products/all`).then((response) => {
+              this.products = response.data.products;           
+              })
+              .catch((error) => {
+              console.error('Error getting products:', error);          
+              });      
+          },
+
+          fetchCategories() {
+            axios.get(`${api}/categories/all`).then((response) => {
+            this.categories = response.data.categories;           
+            })
+            .catch((error) => {
+            console.error('Error getting user images:', error);          
+            });      
+          },
+
+          formatDate(date) {
+            return moment(date).fromNow();
+          },
+
+
         toggleSidebar() {
             this.sidebarOpen = !this.sidebarOpen;
         },
