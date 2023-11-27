@@ -16,7 +16,7 @@
               </div>
       
               <nav class="mt-10">
-                  <a class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-gray-700 bg-opacity-25" href="#">
+                <router-link :to="{name: 'Dashboard'}"  class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-gray-700 bg-opacity-25">
                       <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                           stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -26,7 +26,7 @@
                       </svg>
       
                       <span class="mx-3">Dashboard</span>
-                  </a>
+                </router-link>
                   
                   <!-- customer link start -->
                   <router-link :to="{name: 'Customers'}" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
@@ -335,7 +335,7 @@
                           <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                              
                                 <div class="p-6.5">
-                                <form @submit.prevent="createProduct">
+                                <form @submit.prevent="updateAdminPassword">
                                   <div class="mb-4.5 flex flex-col gap-6 xl:flex-row bg-white px-4 py-4 rounded-md">
                                     <div class="w-full xl:w-1/2">
                                       <label class="mb-2.5 block text-black">
@@ -359,13 +359,13 @@
                                   </button>
                                 </form>         
  
-                                <form @submit.prevent="createProduct">
+                                <form @submit.prevent="updateAdminDetails">
                                   <div class="mt-11 mb-4.5 flex flex-col gap-6 xl:flex-row bg-white px-4 py-4 rounded-md">
                                     <div class="w-full xl:w-1/2">
                                       <label class="mb-2.5 mt-3 block text-black">
                                          Username
                                       </label>
-                                      <input type="text" id="color" v-model="color" placeholder="Username"
+                                      <input type="text" id="color" v-model="admin.firstname" placeholder="Username"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
                                     </div>
               
@@ -373,7 +373,7 @@
                                       <label class="mb-2.5 mt-3 block text-black">
                                          Email
                                       </label>
-                                      <input type="email" id="price" v-model="price" placeholder="Email"
+                                      <input type="email" id="price" v-model="admin.email" placeholder="Email"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
                                     </div>
                                   </div>                                    
@@ -408,7 +408,11 @@
         dropdownOpen: false,
         selected: '',  
         currentPassword: '',
-        newPassword: ''
+        newPassword: '',
+        admin: {
+        firstname: '', 
+        email: '',  
+      },
         
         
       };
@@ -435,7 +439,36 @@
           },
          
 
-        async createProduct() {
+        async updateAdminPassword() {
+            try {
+                const token = sessionStorage.getItem('adminToken');  
+                const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                };
+                await this.$axios.put(`${api}/users/admin/update-details`, {
+                firstname: this.admin.firstname,
+                email: this.admin.email,
+                }, config)
+
+                .then((success) => {
+                if (success) {
+                    this.$toast.success('Details Updated Successfully.', {
+                        timeout: 3000, 
+                    });		                          
+                } else {
+                    this.$toast.error('An Error Occured. try again!', {
+                        timeout: 9000, 
+                    });	          
+                }
+                });
+            } catch (error) {
+                console.error(error.response.data); 
+        }
+        },
+
+        async updateAdminDetails() {
             try {
                 const formData = new FormData();
                 formData.append('title', this.title);

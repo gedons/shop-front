@@ -16,7 +16,7 @@
                 </div>
         
                 <nav class="mt-10">
-                    <a class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-gray-700 bg-opacity-25" href="#">
+                    <router-link :to="{name: 'Dashboard'}" class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-gray-700 bg-opacity-25">
                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -26,7 +26,7 @@
                         </svg>
         
                         <span class="mx-3">Dashboard</span>
-                    </a>
+                    </router-link>
                     
                     <!-- customer link start -->
                     <router-link :to="{name: 'Customers'}" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
@@ -221,8 +221,8 @@
                      <!-- pages link end -->
                      
                      <!-- settings link start -->
-                     <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                            href="#">
+                     <router-link :to="{name: 'Settings'}" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                            >
                             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -231,7 +231,7 @@
                             </svg>
         
                             <span class="mx-3">Settings</span>
-                     </a>
+                     </router-link>
                     <!-- settings link end -->
 
                      <!-- logout link start -->
