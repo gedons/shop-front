@@ -13,6 +13,10 @@ import AddCategory from '../views/Admin/AddCategory.vue';
 import Products from '../views/Admin/Products.vue';
 import AddProduct from '../views/Admin/AddProduct.vue';
 
+import Orders from '../views/Admin/Orders.vue';
+
+import Customers from '../views/Admin/Customers.vue';
+
 
 
  
@@ -54,6 +58,11 @@ const routes = [
     { path: "/admin/products/:id", name: "ProductEdit",  meta: { requiresAuth: true, isAdmin: true, }, },  
     { path: "/admin/product/newproduct", name: "AddProduct", component: AddProduct, meta: { requiresAuth: true, isAdmin: true, }, },    
 
+    //admin order
+    { path: "/admin/orders", name: "Orders", component: Orders, meta: { requiresAuth: true, isAdmin: true, }, },  
+
+    //admin customers
+    { path: "/admin/customers", name: "Customers", component: Customers, meta: { requiresAuth: true, isAdmin: true, }, },  
     //end admin routes
 ];
 

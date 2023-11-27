@@ -28,15 +28,14 @@
                       <span class="mx-3">Dashboard</span>
                   </a>
                   
-                  <!-- customer link start -->
-                  <router-link :to="{name: 'Customers'}" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                  >
-                      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="9.00098" cy="6" r="4" fill="#6B7280"></circle> <ellipse cx="9.00098" cy="17.001" rx="7" ry="4" fill="#6B7280"></ellipse> <path d="M20.9996 17.0005C20.9996 18.6573 18.9641 20.0004 16.4788 20.0004C17.211 19.2001 17.7145 18.1955 17.7145 17.0018C17.7145 15.8068 17.2098 14.8013 16.4762 14.0005C18.9615 14.0005 20.9996 15.3436 20.9996 17.0005Z" fill="#6B7280"></path> <path d="M17.9996 6.00073C17.9996 7.65759 16.6565 9.00073 14.9996 9.00073C14.6383 9.00073 14.292 8.93687 13.9712 8.81981C14.4443 7.98772 14.7145 7.02522 14.7145 5.99962C14.7145 4.97477 14.4447 4.01294 13.9722 3.18127C14.2927 3.06446 14.6387 3.00073 14.9996 3.00073C16.6565 3.00073 17.9996 4.34388 17.9996 6.00073Z" fill="#6B7280"></path> </g></svg>
-      
-                      <span class="mx-3">Customers</span>
-                  </router-link>
-                  <!-- customer link end -->
-  
+                     <!-- customer link start -->
+                     <router-link :to="{name: 'Customers'}" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                     >
+                         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="9.00098" cy="6" r="4" fill="#6B7280"></circle> <ellipse cx="9.00098" cy="17.001" rx="7" ry="4" fill="#6B7280"></ellipse> <path d="M20.9996 17.0005C20.9996 18.6573 18.9641 20.0004 16.4788 20.0004C17.211 19.2001 17.7145 18.1955 17.7145 17.0018C17.7145 15.8068 17.2098 14.8013 16.4762 14.0005C18.9615 14.0005 20.9996 15.3436 20.9996 17.0005Z" fill="#6B7280"></path> <path d="M17.9996 6.00073C17.9996 7.65759 16.6565 9.00073 14.9996 9.00073C14.6383 9.00073 14.292 8.93687 13.9712 8.81981C14.4443 7.98772 14.7145 7.02522 14.7145 5.99962C14.7145 4.97477 14.4447 4.01294 13.9722 3.18127C14.2927 3.06446 14.6387 3.00073 14.9996 3.00073C16.6565 3.00073 17.9996 4.34388 17.9996 6.00073Z" fill="#6B7280"></path> </g></svg>
+         
+                         <span class="mx-3">Customers</span>
+                     </router-link>
+                     <!-- customer link end -->
                   <!-- category link start -->
                     <li class="list-none mt-4">
                       <a
@@ -328,8 +327,7 @@
               <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
                   <div class="container px-6 py-8 mx-auto">
                       <div class="flex">
-                          <h3 class="text-3xl font-medium text-gray-700">Products</h3>
-                          <router-link :to="{name: 'AddProduct'}" class="ml-3 font-medium text-white px-4 py-2 bg-gray-900 rounded-md hover:bg-gray-700">Add New</router-link>
+                          <h3 class="text-3xl font-medium text-gray-700">All Users</h3>                          
                       </div>
                                          
                       <div class="flex flex-col mt-8">
@@ -341,72 +339,70 @@
                                           <tr>
                                               <th
                                                   class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                  Image</th>
+                                                  Name</th>
                                               <th
                                                   class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                  Title</th>
+                                                  Address</th>
                                               <th
                                                   class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                  Category</th>
+                                                  Email</th>
                                               <th
                                                   class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                  Price</th>
+                                                  Postcode</th>
+                                            <th
+                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                  Location</th>
                                              <th
+                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                  Phone</th>
+                                            <th
                                                   class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                                   Created</th>
                                               <th
                                               
                                                   class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                                  Actions</th>
+                                                  Action</th>
                                               
                                           </tr>
                                       </thead>
-                                     <div v-if="products.length === 0" class="p-2.5 xl:p-5">
-                                          <p class="font-semibold text-sm leading-5 text-gray-700">No Product Available!!!</p>
+                                     <div v-if="users.length === 0" class="p-2.5 xl:p-5">
+                                          <p class="font-semibold text-sm leading-5 text-gray-700">No User Available!!!</p>
                                       </div>
-                                      <tbody v-else v-for="product in products" :key="product._id" class="bg-white">
+                                      <tbody v-else v-for="user in users" :key="user._id" class="bg-white">
                                           <tr>
-                                              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                  <div class="flex items-center">
-                                                    <div v-if="product.images"  class="flex gap-2">
-                                                        <div v-for="imageUrl in product.images.slice(0, 3)" :key="imageUrl">
-                                                            <img class="w-10 h-9 rounded-full" :src="back_url + imageUrl" loading="lazy" alt="">       
-                                                        </div>                                                    
-                                                    </div>
-                                                    <div v-else class="flex-shrink-0 w-10 h-10">                                                        
-                                                        <svg class="w-9 h-9 rounded-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.048"></g><g id="SVGRepo_iconCarrier"> <path d="M4.46814 17.5319C5.62291 19.7154 7.92876 20.5 12 20.5C17.6255 20.5 19.8804 19.002 20.3853 14.3853M4.46814 17.5319C3.77924 16.2292 3.5 14.4288 3.5 12C3.5 5.5 5.5 3.5 12 3.5C18.5 3.5 20.5 5.5 20.5 12C20.5 12.8745 20.4638 13.6676 20.3853 14.3853M4.46814 17.5319L7.58579 14.4142C8.36684 13.6332 9.63317 13.6332 10.4142 14.4142L10.5858 14.5858C11.3668 15.3668 12.6332 15.3668 13.4142 14.5858L15.5858 12.4142C16.3668 11.6332 17.6332 11.6332 18.4142 12.4142L20.3853 14.3853M10.691 8.846C10.691 9.865 9.864 10.692 8.845 10.692C7.827 10.692 7 9.865 7 8.846C7 7.827 7.827 7 8.845 7C9.864 7 10.691 7.827 10.691 8.846Z" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                                                    </div>
-                                                    <label class="ml-2 flex flex-col items-center px-2 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer">
-                                                        <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                                            <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
-                                                        </svg>                                                        
-                                                        <input type='file' ref="inputf" class="hidden" @change="onFileSelected"  accept="image/*" />
-                                                    </label>                                                    
-                                                    <button  class="text-sm px-2 py-2 font-semibold text-gray-900  hover:text-gray-800" @click="handleImageUpload(product._id)">save image</button>
-                                                      
-                                                  </div>
-                                              </td>
+                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                <div class="text-sm leading-5 font-semibold text-gray-900">{{ user.firstname }} {{ user.lastname }}</div>                                                                                            
+                                            </td>
       
                                               <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                  <div class="text-sm leading-5 font-semibold text-gray-900">{{product.title}}</div>                                                
+                                                  <div class="text-sm leading-5 font-semibold text-gray-900">{{ user.address }}</div>                                                                                                  
                                               </td>
 
                                               <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                <div class="text-sm leading-5 font-semibold text-gray-900">{{product.category.name}}</div>                                                
+                                                <div class="text-sm leading-5 font-semibold text-gray-900">{{user.email}}</div>                                                
                                             </td>
 
                                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                <div class="text-sm leading-5 font-semibold text-gray-900">$ {{product.price}}</div>                                                
+                                                <div class="text-sm leading-5 font-semibold">{{user.postcode}}</div>                                                
+                                            </td>
+
+                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                <div class="text-sm leading-5 font-semibold">{{user.country}} {{ user.state }}</div>                                                
+                                            </td>
+
+                                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                <div class="text-sm leading-5 font-semibold text-gray-900">{{user.phone}}</div>                                                
                                             </td>
       
                                               <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                                   <span
-                                                      class="inline-flex px-2 text-sm font-semibold leading-5 text-green-800"> {{ formatDate(product.createdAt) }}</span>
+                                                      class="inline-flex px-2 text-sm font-semibold leading-5 text-green-800"> {{ formatDate(user.createdAt) }}</span>
                                               </td>
       
                                               <td
-                                                  class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                                                  <button  @click="openEditModal(product)" class=" text-sm px-2 py-2 font-semibold text-gray-900  hover:text-gray-800">Edit</button>
+                                                  class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">                                                 
+                                                  <button @click="openDeleteModal(product)" class=" text-sm font-semibold px-2 py-2 text-red-500 hover:text-red-400">Edit</button>    
+                                                  <button @click="openDeleteModal(product)" class=" text-sm font-semibold px-2 py-2 text-red-500 hover:text-red-400">Delete</button>    
                                                   <button @click="openDeleteModal(product)" class=" text-sm font-semibold px-2 py-2 text-red-500 hover:text-red-400">Delete</button>    
                                               </td>                                    
                                           </tr>   
@@ -425,54 +421,7 @@
       </div>
   
 
-    <!-- edit modal modal -->
-        <div>
-            <div id="modal-bg" class="w-full h-full  bg-[#848A97] top-0 absolute hidden opacity-80"></div>
-            <div id="modal-box" class="sm:w-[385px] sm:min-w-[40vw] min-w-[80vw] min-h-[25vh] flex-col justify-between items-center gap-2 -translate-y-1/2 p-6 bg-[#FFFFFF] rounded-lg top-1/2 left-1/2 -translate-x-1/2 absolute hidden">
-            <!-- Modal content -->
-            <!-- Edit category form -->
-            <form v-if="isEditMode" @submit.prevent="editProduct">
-                <label class="mb-2.5 mt-3 block text-black">
-                    Product Title
-                 </label>
-                <input type="text" placeholder="Edit Title" v-model="editedProduct.title"
-                        class="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter" />
-                <label class="mb-2.5 mt-3 block text-black">
-                    Product Color
-                    </label>                        
-                <input type="text" placeholder="Edit Color" v-model="editedProduct.color"
-                        class="mt-3 w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter" />                        
-                <label class="mb-2.5 mt-3 block text-black">
-                    Product Size
-                </label>                        
-                <input type="text" placeholder="Edit Size" v-model="editedProduct.size"
-                        class="mt-3 w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter" />                        
-               
-                <label class="mb-2.5 mt-3 block text-black">
-                    Product Price
-                </label>                        
-                <input type="text" placeholder="Edit Price" v-model="editedProduct.price"
-                        class="mt-3 w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter" />                        
-                <label class="mb-2.5 mt-3 block text-black">
-                    Select Category
-                </label>
-                <select v-model="editedProduct.categoryId" class="mt-3 w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter">                        
-                    <option v-for="category in categories" :key="category._id" :value="category._id">
-                        {{ category.name }}
-                    </option>
-                </select>
-                <label class="mb-2.5 mt-3 block text-black">
-                    Product Description
-                </label>                        
-                <textarea rows="4" placeholder="Edit Description" v-model="editedProduct.description"
-                        class="mt-3 w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter"></textarea>                        
-                <button class="bg-gray-900 px-3 py-2 rounded-md mt-3 text-white text-sm font-semibold" type="submit">Update</button>
-            </form>
-            
-            <button id="modal-close" class="p-3 w-full text-gray-900  hover:bg-gray-200 rounded-md mt-3"  @click="closeModal">Close</button>
-            </div>
-        </div>
-    <!-- modal end -->
+   
 
     <!-- delete modal -->
     <div>
@@ -503,46 +452,40 @@
   
   export default {
     data() {
-      return {
-        products: [],
-        categories: [],
-  
+      return {            
         sidebarOpen: false,
         notificationOpen: false,
         dropdownOpen: false,
         selected: '',  
-        page: '' ,
-        isEditMode: false,
-        isDeleteMode: false,      
-        editedProduct: {},
-        deleteProduct: {},
-        image: null,
-        selectedFile: null,
-        back_url: 'http://localhost:5000' 
+        page: '' ,       
+        isDeleteMode: false,              
+        // deleteProduct: {}, 
+        users: [],  
+        selectedUser: null,  
+        userOrders: []   
         
       };
     },
     created() {
       // Fetch products on component mount
-      this.fetchAllProducts();
-      this.fetchCategories();
+      this.fetchUsers();
     },
     methods: {
-          fetchAllProducts() {
-              axios.get(`${api}/products/all`).then((response) => {
-              this.products = response.data.products;           
-              })
-              .catch((error) => {
-              console.error('Error getting products:', error);          
-              });      
-          },
+       
+        fetchUsers() {
 
-          fetchCategories() {
-            axios.get(`${api}/categories/all`).then((response) => {
-            this.categories = response.data.categories;           
+            const token = sessionStorage.getItem('adminToken');  
+              const config = {
+              headers: {
+                  Authorization: `Bearer ${token}`,
+              },
+              };
+
+            axios.get(`${api}/users/profiles`, config).then((response) => {
+            this.users = response.data.users;           
             })
             .catch((error) => {
-            console.error('Error getting user images:', error);          
+            console.error('Error getting Users:', error);          
             });      
           },
   
@@ -570,78 +513,8 @@
 
           formatDate(date) {
             return moment(date).fromNow();
-          },
-  
-          async editProduct() {
-          try {
-              const token = sessionStorage.getItem('adminToken');  
-              const config = {
-              headers: {
-                  Authorization: `Bearer ${token}`,
-              },
-              };
-              await axios.put(`${api}/products/update/${this.editedProduct._id}`, this.editedProduct, config)
-              .then((success) => {
-               if (success) {
-                    this.$toast.success('Product Updated Successfully.', {
-                      timeout: 3000, 
-                    });		       
-                    this.closeModal();
-                    this.fetchAllProducts();
-                } else {
-                   this.$toast.error('An Error Occured. try again!', {
-                      timeout: 9000, 
-                    });	          
-                }
-              });            
-          } catch (error) {
-            if (error) {
-                    this.$toast.error('Category not added. try again!', {
-                      timeout: 3000, 
-                });		                          
-            }
-          }
-          },
-
-          onFileSelected(event){
-            this.selectedFile = event.target.files[0]
-          },
-               
+          },                    
       
-  
-          async handleImageUpload( productId ) {    
-            try {
-            const formData = new FormData();
-            formData.append('image', this.selectedFile, this.selectedFile.name);
-
-            const token = sessionStorage.getItem('adminToken'); 
-                const config = {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                    Authorization: `Bearer ${token}`,
-                },
-            };
-             
-            await axios.post(`${api}/products/${productId}/image`, formData, config)
-                .then(success => {
-                    if (success) {
-                    this.$toast.success('Image Added Successfully.', {
-                        timeout: 3000, 
-                    });		                         
-                    //this.imagePreview = { imageUrl: success.data.imageUrl };                    
-                    this.fetchAllProducts();
-                    } else {
-                        this.$toast.error('An Error Occured. try again!', {
-                            timeout: 9000, 
-                        });	          
-                    }
-                })
-          
-            } catch (error) {
-                console.error('Error uploading product image:', error);
-                // Handle error
-            }
-        },
   
           async confirmDelete() {
           try {
@@ -712,14 +585,7 @@
           pageDropdown() {
            this.selected = (this.selected === 'Page') ? '' : 'Page';
           },
-  
-          openEditModal(product) {
-          this.isEditMode = true;
-          this.editedProduct = { ...product };
-          document.getElementById('modal-bg').classList.remove('hidden');
-          document.getElementById('modal-box').classList.remove('hidden');
-          },
-            
+          
   
           openDeleteModal(product) {
           this.isDeleteMode = true;
@@ -727,11 +593,7 @@
           document.getElementById('modal-bg4').classList.remove('hidden');
           document.getElementById('modal-box4').classList.remove('hidden');
           },
-  
-          closeModal() {       
-          document.getElementById('modal-bg').classList.add('hidden');
-          document.getElementById('modal-box').classList.add('hidden');
-          },                                                                  
+                                                                          
   
           closeModal1() {       
           document.getElementById('modal-bg4').classList.add('hidden');
