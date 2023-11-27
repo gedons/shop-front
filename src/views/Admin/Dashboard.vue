@@ -501,8 +501,8 @@
       
                                               <td
                                                   class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                                                  <button  @click="openEditModal(product)" class=" text-sm px-2 py-2 font-semibold text-gray-900  hover:text-gray-800">Edit</button>
-                                                  <button @click="openDeleteModal(product)" class=" text-sm font-semibold px-2 py-2 text-red-500 hover:text-red-400">Delete</button>    
+                                                  <router-link :to="{name: 'Products'}" class=" text-sm px-2 py-2 font-semibold text-gray-900  hover:text-gray-800">Edit</router-link>
+                                                    <router-link :to="{name: 'Products'}" class=" text-sm font-semibold px-2 py-2 text-red-500 hover:text-red-400">Delete</router-link>    
                                               </td>                                    
                                           </tr>   
                                           
