@@ -3,21 +3,20 @@ import store from '../store';
 
 import Index from '../views/Index.vue';
 import Login from '../views/Login.vue';
+import UserLogin from '../views/UserLogin.vue';
 import Register from '../views/Register.vue';
 
-import Dashboard from '../views/Admin/Dashboard.vue';
+import UserAccount from '../views/User/UserAccount.vue';
 
+
+import Dashboard from '../views/Admin/Dashboard.vue';
 import Categories from '../views/Admin/Categories.vue';
 import AddCategory from '../views/Admin/AddCategory.vue';
-
 import Products from '../views/Admin/Products.vue';
 import AddProduct from '../views/Admin/AddProduct.vue';
-
 import Orders from '../views/Admin/Orders.vue';
-
 import Customers from '../views/Admin/Customers.vue';
 import CustomerOrder from '../views/Admin/CustomerOrder.vue';
-
 import Settings from '../views/Admin/Settings.vue';
 
  
@@ -29,15 +28,37 @@ const routes = [
       component: Index,
     },
     {
-      path: '/login',
+      path: '/admin/login',
       name: 'Login',
       component: Login,
+    },
+    {
+      path: '/login',
+      name: 'UserLogin',
+      component: UserLogin,
     },
     {
       path: '/register',
       name: 'Register',
       component: Register,
     },
+
+    //user routes
+
+    {
+      path: '/user/account',
+      name: 'UserAccount',
+      component: UserAccount,
+      meta: {
+        requiresAuth: true,  
+        isUser: true, 
+      },
+    },
+
+    //end user routes
+
+
+
     //admin routes
     {
       path: '/admin/dashboard',
@@ -77,16 +98,22 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    const isLoggedIn = store.getters['isAdminAuthenticated']; // Check if admin is logged in
-    const isAdminRoute = to.matched.some((record) => record.meta.isAdmin);
-  
-    if (isAdminRoute && !isLoggedIn) {
-      // If trying to access admin route and not authenticated as admin, redirect to login
-      next('/login');
-    } else {
-      next(); // Proceed to the route
-    }
-  });
+  const isAdminLoggedIn = store.getters['isAdminAuthenticated'];
+  const isUserLoggedIn = store.getters['isUserAuthenticated'];
+
+  const isAdminRoute = to.matched.some((record) => record.meta.isAdmin);
+  const isUserRoute = to.matched.some((record) => record.meta.isUser);
+
+  if (isAdminRoute && !isAdminLoggedIn) {
+    // Redirect if admin route and not logged in as admin
+    next('/admin/login');
+  } else if (isUserRoute && !isUserLoggedIn) {
+    // Redirect if user route and not logged in as user
+    next('/login');
+  } else {
+    next(); // Proceed to the route
+  }
+});
 
 
 export default router;

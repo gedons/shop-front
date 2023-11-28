@@ -6,9 +6,9 @@
     <!-- login -->
     <div class="contain py-16">
         <div class="max-w-lg mx-auto shadow px-6 py-7 rounded overflow-hidden">
-            <h2 class="text-2xl uppercase font-medium mb-1">Login</h2>
+            <h2 class="text-2xl uppercase font-medium mb-1">Admin Login</h2>
             <p class="text-gray-600 mb-6 text-sm">
-                welcome back customer
+                welcome back admin
             </p>
             <form @submit.prevent="loginAdmin">
                 <div class="space-y-2">
@@ -52,9 +52,9 @@
             </div> -->
             <!-- ./login with -->
 
-            <p class="mt-4 text-center text-gray-600">Don't have account? <router-link :to="{name: 'Register'}"
+            <!-- <p class="mt-4 text-center text-gray-600">Don't have account? <router-link :to="{name: 'Register'}"
                     class="text-primary">Register
-                    now</router-link></p>
+                    now</router-link></p> -->
         </div>
     </div>
     <!-- ./login -->

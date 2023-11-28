@@ -22,7 +22,7 @@ const actions = {
       console.error('Login Error:', error);
       return false;
     }
-  },
+  }, 
 
   async adminLogout({ commit }) {
     try {
