@@ -341,7 +341,65 @@
                                        
                     <div class="flex flex-col mt-8">
                         <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-                            <div
+
+                            <div v-if="loading" class="flex justify-center items-center mt-3">
+                        <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd">
+                                <g transform="translate(2 1)" stroke="#000" stroke-width="1.5">
+                                    <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#000">
+                                        <animate attributeName="fill-opacity"
+                                            begin="0s" dur="1.3s"
+                                            values="1;0;0;0;0;0;0;0" calcMode="linear"
+                                            repeatCount="indefinite" />
+                                    </circle>
+                                    <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#000">
+                                        <animate attributeName="fill-opacity"
+                                            begin="0s" dur="1.3s"
+                                            values="0;1;0;0;0;0;0;0" calcMode="linear"
+                                            repeatCount="indefinite" />
+                                    </circle>
+                                    <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#000">
+                                        <animate attributeName="fill-opacity"
+                                            begin="0s" dur="1.3s"
+                                            values="0;0;1;0;0;0;0;0" calcMode="linear"
+                                            repeatCount="indefinite" />
+                                    </circle>
+                                    <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#000">
+                                        <animate attributeName="fill-opacity"
+                                            begin="0s" dur="1.3s"
+                                            values="0;0;0;1;0;0;0;0" calcMode="linear"
+                                            repeatCount="indefinite" />
+                                    </circle>
+                                    <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#000">
+                                        <animate attributeName="fill-opacity"
+                                            begin="0s" dur="1.3s"
+                                            values="0;0;0;0;1;0;0;0" calcMode="linear"
+                                            repeatCount="indefinite" />
+                                    </circle>
+                                    <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#000">
+                                        <animate attributeName="fill-opacity"
+                                            begin="0s" dur="1.3s"
+                                            values="0;0;0;0;0;1;0;0" calcMode="linear"
+                                            repeatCount="indefinite" />
+                                    </circle>
+                                    <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#000">
+                                        <animate attributeName="fill-opacity"
+                                            begin="0s" dur="1.3s"
+                                            values="0;0;0;0;0;0;1;0" calcMode="linear"
+                                            repeatCount="indefinite" />
+                                    </circle>
+                                    <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#000">
+                                        <animate attributeName="fill-opacity"
+                                            begin="0s" dur="1.3s"
+                                            values="0;0;0;0;0;0;0;1" calcMode="linear"
+                                            repeatCount="indefinite" />
+                                    </circle>
+                                </g>
+                            </g>
+                        </svg>
+                            </div>
+
+                            <div v-else
                                 class="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
                                 <table class="min-w-full">
                                     <thead>
@@ -464,7 +522,7 @@ export default {
   data() {
     return {
       categories: [],
-
+      loading: true,
       sidebarOpen: false,
       notificationOpen: false,
       dropdownOpen: false,
@@ -486,10 +544,12 @@ export default {
   methods: {
         fetchCategories() {
             axios.get(`${api}/categories/all`).then((response) => {
-            this.categories = response.data.categories;           
+            this.categories = response.data.categories;        
+            this.loading = false;     
             })
             .catch((error) => {
-            console.error('Error getting user images:', error);          
+            console.error('Error getting user images:', error);     
+            this.loading = false;       
             });      
         },
 
