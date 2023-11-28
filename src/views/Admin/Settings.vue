@@ -494,7 +494,7 @@
                 })
                 .then(success => {
                     if (success) {
-                    this.$toast.success('Product Created Successfully.', {
+                    this.$toast.success('Product Created Successfully!.', {
                         timeout: 3000, 
                     });		                         
                     this.$router.push({name: 'Products'});                                    
