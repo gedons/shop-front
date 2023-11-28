@@ -447,7 +447,36 @@
                     Authorization: `Bearer ${token}`,
                 },
                 };
-                await this.$axios.put(`${api}/users/admin/update-details`, {
+                await axios.put(`${api}/users/admin/update-password`, {
+                currentPassword: this.currentPassword,
+                newPassword: this.newPassword,
+                }, config)
+
+                .then((success) => {
+                if (success) {
+                    this.$toast.success('Password Updated Successfully.', {
+                        timeout: 3000, 
+                    });		                          
+                } else {
+                    this.$toast.error('An Error Occured. try again!', {
+                        timeout: 9000, 
+                    });	          
+                }
+                });
+            } catch (error) {
+                console.error(error); 
+            }
+        },
+
+        async updateAdminDetails() {
+            try {
+                const token = sessionStorage.getItem('adminToken');  
+                const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                };
+                await axios.put(`${api}/users/admin/update-details`, {
                 firstname: this.admin.firstname,
                 email: this.admin.email,
                 }, config)
