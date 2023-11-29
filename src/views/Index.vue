@@ -50,7 +50,7 @@
 
     <!-- categories -->
     <div class="container py-16">
-        <h2 class="text-2xl font-semibold text-gray-700 uppercase mb-6">shop by category</h2>
+        <h2 class="text-2xl font-semibold text-gray-700  mb-6">shop by category</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
             <div class="relative rounded-sm overflow-hidden group md:h-72">
                 <img src="../assets/images/category/2.jpg" alt="category 1" class="w-full md:h-72">
@@ -158,7 +158,7 @@
                 </div>
                 <div class="pt-4 pb-3 px-4">
                     <a href="#">
-                        <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-[#9F2DBE] transition">Guyer
+                        <h4 class=" font-medium text-xl mb-2 text-gray-800 hover:text-[#9F2DBE] transition">Guyer
                             Chair</h4>
                     </a>
                     <div class="flex items-baseline mb-1 space-x-2">
@@ -194,7 +194,7 @@
                 </div>
                 <div class="pt-4 pb-3 px-4">
                     <a href="#">
-                        <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-[#9F2DBE] transition">Bed
+                        <h4 class=" font-medium text-xl mb-2 text-gray-800 hover:text-[#9F2DBE] transition">Bed
                             King Size</h4>
                     </a>
                     <div class="flex items-baseline mb-1 space-x-2">

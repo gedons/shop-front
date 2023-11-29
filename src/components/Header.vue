@@ -51,43 +51,81 @@
     <!-- ./header -->
 
     <!-- navbar -->
-    <nav class="bg-gray-900">
-        <div class="container flex">
-            <div class="px-8 md:mt-0 items-center cursor-pointer relative group sm:flex mt-7 lg:mt-0">
+    <nav class="bg-gradient-to-r from-gray-800 to-gray-900  w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-16">
+            <!-- Categories -->
+            <div class="px-7 md:mt-0 items-center cursor-pointer relative group sm:flex lg:mt-0">
+            <div class="flex-shrink-0 inline-flex items-center justify-center space-x-2">   
                 <span class="text-white">
                     <i class="fa-solid fa-bars"></i>
-                </span>
-                <span class="capitalize ml-2 text-white">Categories</span>
+                </span>                         
+              <span class="capitalize font-semibold text-white ">Categories</span>
 
-                <!-- dropdown -->
-                <div class="absolute w-full left-0 top-full bg-white shadow-md py-6 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
-                    <a href="#" class="flex items-center px-6 py-3 hover:bg-gray-100 transition">
-                        <img src="../assets/images/icons/sofa.svg" alt="sofa" class="w-5 h-5 object-contain">
-                        <span class="ml-6 text-gray-600 text-sm">Sofa</span>
-                    </a>
-                    <a href="#" class="flex items-center px-6 py-3 hover:bg-gray-100 transition">
-                        <img src="../assets/images/icons/terrace.svg" alt="terrace" class="w-5 h-5 object-contain">
-                        <span class="ml-6 text-gray-600 text-sm">Terarce</span>
-                    </a>
-                </div>
+              <div class="absolute w-full left-0 top-full bg-white shadow-md py-6 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
+                <a href="#" class="flex items-center px-6 py-3 hover:bg-gray-100 transition">
+                    <img src="../assets/images/icons/sofa.svg" alt="sofa" class="w-5 h-5 object-contain">
+                    <span class="ml-6 text-gray-600 text-sm">Sofa</span>
+                </a>
+                <a href="#" class="flex items-center px-6 py-3 hover:bg-gray-100 transition">
+                    <img src="../assets/images/icons/terrace.svg" alt="terrace" class="w-5 h-5 object-contain">
+                    <span class="ml-6 text-gray-600 text-sm">Terarce</span>
+                </a>
+             </div>
             </div>
-
-            <!-- navigation links -->
-            <div class="flex items-center justify-between flex-grow md:pl-12 py-5">
-                <div class="items-center space-x-6 capitalize hidden sm:flex">
-                    <router-link :to="{name: 'Index'}" class="text-gray-200 hover:text-primary transition">Home</router-link>
-                    <router-link :to="{name: 'UserProducts'}" class="text-gray-200 hover:text-primary transition">Products</router-link>
-                    <router-link :to="{name: 'Terms'}" class="text-gray-200 hover:text-primary transition">Terms & Condition</router-link>
-                    <router-link :to="{name: 'Contact'}" class="text-gray-200 hover:text-primary transition">Contact</router-link>
-                </div>
-                <router-link :to="{name: 'Register'}" class="text-white bg-[#9F2DBE] border border-[#9F2DBE] px-3 py-2 rounded-md hover:text-white hover:bg-transparent font-medium transition">Create Account</router-link>
             </div>
+    
+            <!-- Navigation Links -->
+            <div class="hidden md:block">
+              <div class="mx-auto flex items-baseline space-x-6 font-semibold">
+                <router-link :to="{name: 'Index'}" class="text-gray-200 hover:text-primary transition">Home</router-link>
+                <router-link :to="{name: 'UserProducts'}" class="text-gray-200 hover:text-primary transition">Products</router-link>
+                <router-link :to="{name: 'Terms'}" class="text-gray-200 hover:text-primary transition">Terms & Condition</router-link>
+                <router-link :to="{name: 'Contact'}" class="text-gray-200 hover:text-primary transition">Contact</router-link>
+                <router-link :to="{name: 'Register'}" class="text-white bg-[#9F2DBE] border border-[#9F2DBE] px-3 py-2 rounded-md hover:text-white hover:bg-transparent font-medium transition">Get Started</router-link>
+              </div>
+            </div>
+    
+    
+            <!-- Mobile Menu Button (hambuger) -->
+            <div class="-mr-2 flex md:hidden">
+              <button @click="isOpen = !isOpen" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <!-- Icon when menu is closed -->
+                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <!-- Icon when menu is open -->
+                <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div class="md:hidden" :class="{'block': isOpen, 'hidden': !isOpen}" id="mobile-menu">
+          <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <router-link :to="{name: 'Index'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium transition">Home</router-link>
+              <router-link :to="{name: 'UserProducts'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium transition">Products</router-link>
+              <router-link :to="{name: 'Terms'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium transition">Terms & Condition</router-link>
+              <router-link :to="{name: 'Contact'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium transition">Contact</router-link>
+              <router-link :to="{name: 'Register'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium transition">Get Started</router-link>
+          </div>
         </div>
     </nav>
     <!-- ./navbar -->
 </template>
 
 <script>
+export default{
+    data (){
+        return{
+            isOpen: false,
+        }
+    }
+}
 </script>
 
 <style>
