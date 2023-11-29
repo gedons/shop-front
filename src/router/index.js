@@ -7,7 +7,10 @@ import UserLogin from '../views/UserLogin.vue';
 import Register from '../views/Register.vue';
 
 import UserAccount from '../views/User/UserAccount.vue';
-
+import UserProducts from '../views/Products.vue';
+import ProductDetails from '../views/ProductDetails.vue';
+import Terms from '../views/Terms.vue';
+import Contact from '../views/Contact.vue';
 
 import Dashboard from '../views/Admin/Dashboard.vue';
 import Categories from '../views/Admin/Categories.vue';
@@ -43,8 +46,11 @@ const routes = [
       component: Register,
     },
 
-    //user routes
-
+    //user front routes
+    { path: "/products", name: "UserProducts", component: UserProducts }, 
+    { path: "/product/view", name: "ProductDetails", component: ProductDetails },  
+    { path: "/terms", name: "Terms", component: Terms },  
+    { path: "/contact", name: "Contact", component: Contact },  
     {
       path: '/user/account',
       name: 'UserAccount',

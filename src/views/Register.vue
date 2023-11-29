@@ -10,20 +10,20 @@
             <p class="text-gray-600 mb-6 text-sm">
                 Register for new cosutumer
             </p>
-            <form action="#" method="post" autocomplete="off">
+            <form @submit.prevent="registerUser">
                 <div class="space-y-2">
-                    <div class="mt-5 bg-white rounded-lg shadow">                        
+                    <div class="mt-5">                        
                         <div class="px-5 pb-5">
-                        <input  placeholder="FirstName" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400">
-                        <input  placeholder="Lastname" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"> 
-                        <input  placeholder="Email" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"> 
-                        <input  placeholder="Phone Number" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"> 
+                        <input type="text" placeholder="FirstName" v-model="firstname" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base  transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
+                        <input type="text" placeholder="Lastname" v-model="lastname" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white"> 
+                        <input type="email" placeholder="Email" v-model="email" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white"> 
+                        <input type="number" placeholder="Phone Number" v-model="phone" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white"> 
                         <div class="flex">
                             <div class="flex-grow pr-2">
-                                <input  placeholder="Password" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400">
+                                <input type="password" placeholder="Password" v-model="password" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
                             </div>
                             <div class="flex-grow">
-                                <input placeholder="Confirm Password" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400">
+                                <input type="password" placeholder="Confirm Password" v-model="confirm" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
                             </div>
                         </div>                        
                         </div>
@@ -42,31 +42,30 @@
                         <div class="flex-none pt-2.5 pr-2.5 pl-1"></div>
                         </div>
                         <div class="px-5 pb-5">
-                        <input  placeholder="Country" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400">
-                        <input  placeholder="State" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"> 
+                        <input type="text" placeholder="Country" v-model="country" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
+                        <input type="text" placeholder="State" v-model="state" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white"> 
                         <div class="flex">
                             <div class="flex-grow pr-2">
-                                <input  placeholder="Address" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400">
+                                <input type="text" placeholder="Address" v-model="address" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
                             </div>
                             <div class="flex-grow">
-                                <input placeholder="Postcode" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400">
+                                <input type="text" placeholder="Postcode" v-model="postcode" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
                             </div>
-                        </div>
-                        
+                        </div>                        
                         </div>                       
                     </div>
                 </div>
                 <div class="mt-6">
                     <div class="flex items-center">
                         <input type="checkbox" name="aggrement" id="aggrement"
-                            class="text-primary focus:ring-0 rounded-sm cursor-pointer">
+                            class="text-[#9F2DBE] focus:ring-0 rounded-sm cursor-pointer">
                         <label for="aggrement" class="text-gray-600 ml-3 cursor-pointer">I have read and agree to the <a
-                                href="#" class="text-primary">terms & conditions</a></label>
+                                href="#" class="text-[#9F2DBE]">terms & conditions</a></label>
                     </div>
                 </div>
                 <div class="mt-4">
                     <button type="submit"
-                        class="block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">create
+                        class="block w-full py-2 text-center text-white bg-[#9F2DBE] border border-[#9F2DBE] rounded hover:bg-transparent hover:text-[#9F2DBE] transition uppercase font-roboto font-medium">create
                         account</button>
                 </div>
             </form>
@@ -85,7 +84,7 @@
             <!-- ./login with -->
 
             <p class="mt-4 text-center text-gray-600">Already have account? <router-link :to="{name: 'UserLogin'}"
-                    class="text-primary">Login now</router-link></p>
+                    class="text-[#9F2DBE]">Login now</router-link></p>
         </div>
     </div>
     <!-- end register -->
@@ -107,5 +106,50 @@ export default {
     Footer,
   },
 
+  data() {
+    return {
+      firstname: '',
+      lastname: '',
+      email: '',
+      password: '',
+      state: '',
+      country: '',
+      phone: '',
+      postcode: '',
+      address: '',
+    };
+  },
+  methods: {
+    async registerUser() {
+      try {
+        await this.$store.dispatch('userRegister', {
+          firstname: this.firstname,
+          lastname: this.lastname,
+          email: this.email,
+          password: this.password,
+          state: this.state,
+          country: this.country,
+          phone: this.phone,
+          postcode: this.postcode,
+          address: this.address,
+        })
+        .then((success) => {
+          if (success) {
+	          	this.$toast.success('Registration successful.', {
+		            timeout: 3000, 
+		          });		       
+                this.$router.push({ name: 'UserLogin' }); 
+	          } else {
+	             this.$toast.error('Registration Error. Please try again!', {
+		            timeout: 9000, 
+		          });	          
+	          }
+        });          
+      } catch (error) {
+        console.error('User Registration Failed', error.message);
+        // Handle registration failure
+      }
+    },
+  },
 };
 </script>

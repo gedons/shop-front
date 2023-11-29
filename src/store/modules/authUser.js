@@ -23,6 +23,19 @@ const actions = {
     }
   },
 
+  async userRegister({ commit }, credentials) {
+    try {
+      const response = await api.post('/auth/register', credentials);
+      // const { UserauthToken } = response.data;
+
+      // commit('setUserToken', UserauthToken);
+      return true;
+    } catch (error) {
+      console.error('User Login Error:', error);
+      return false;
+    }
+  },
+
   async userLogout({ commit }) {
     try {
       commit('clearUserToken');
