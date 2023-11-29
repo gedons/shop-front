@@ -51,7 +51,7 @@
     <!-- ./header -->
 
     <!-- navbar -->
-    <nav class="bg-gray-800">
+    <nav class="bg-gray-900">
         <div class="container flex">
             <div class="px-8 md:mt-0 items-center cursor-pointer relative group sm:flex mt-7 lg:mt-0">
                 <span class="text-white">
@@ -75,10 +75,10 @@
             <!-- navigation links -->
             <div class="flex items-center justify-between flex-grow md:pl-12 py-5">
                 <div class="items-center space-x-6 capitalize hidden sm:flex">
-                    <router-link :to="{name: 'Index'}" class="text-gray-200 hover:text-white transition">Home</router-link>
-                    <router-link :to="{name: 'UserProducts'}" class="text-gray-200 hover:text-white transition">Products</router-link>
-                    <router-link :to="{name: 'Terms'}" class="text-gray-200 hover:text-white transition">Terms & Condition</router-link>
-                    <router-link :to="{name: 'Contact'}" class="text-gray-200 hover:text-white transition">Contact</router-link>
+                    <router-link :to="{name: 'Index'}" class="text-gray-200 hover:text-primary transition">Home</router-link>
+                    <router-link :to="{name: 'UserProducts'}" class="text-gray-200 hover:text-primary transition">Products</router-link>
+                    <router-link :to="{name: 'Terms'}" class="text-gray-200 hover:text-primary transition">Terms & Condition</router-link>
+                    <router-link :to="{name: 'Contact'}" class="text-gray-200 hover:text-primary transition">Contact</router-link>
                 </div>
                 <router-link :to="{name: 'Register'}" class="text-white bg-[#9F2DBE] border border-[#9F2DBE] px-3 py-2 rounded-md hover:text-white hover:bg-transparent font-medium transition">Create Account</router-link>
             </div>

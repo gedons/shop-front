@@ -11,7 +11,7 @@ export default defineConfig({
       .tap(options => {
         options.compilerOptions = {
           ...options.compilerOptions,
-          isCustomElement: tag => tag.startsWith('ion-')
+          isCustomElement: tag => tag.startsWith('ion-icon')
         }
         return options
       })

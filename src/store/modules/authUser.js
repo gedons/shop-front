@@ -23,16 +23,13 @@ const actions = {
     }
   },
 
-  async userRegister({ commit }, credentials) {
+  async userRegister({ commit }, userData) {
     try {
-      const response = await api.post('/auth/register', credentials);
-      // const { UserauthToken } = response.data;
-
-      // commit('setUserToken', UserauthToken);
-      return true;
+      const response = await api.post('/auth/register', userData);
+      return response.data; 
     } catch (error) {
-      console.error('User Login Error:', error);
-      return false;
+      console.error('User Registration Failed', error.message);
+      throw error; 
     }
   },
 

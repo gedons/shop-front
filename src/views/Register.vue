@@ -23,7 +23,7 @@
                                 <input type="password" placeholder="Password" v-model="password" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
                             </div>
                             <div class="flex-grow">
-                                <input type="password" placeholder="Confirm Password" v-model="confirm" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
+                                <input type="password" placeholder="Confirm Password" v-model="passwordConfirmation" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
                             </div>
                         </div>                        
                         </div>
@@ -117,10 +117,19 @@ export default {
       phone: '',
       postcode: '',
       address: '',
+      passwordConfirmation: ''
     };
   },
   methods: {
     async registerUser() {
+
+      // Check if passwords match before submitting the form
+      if (this.password !== this.passwordConfirmation) {
+           	this.$toast.default('Password does not match.', {
+		        timeout: 3000, 
+		    });
+            return;
+      }
       try {
         await this.$store.dispatch('userRegister', {
           firstname: this.firstname,
