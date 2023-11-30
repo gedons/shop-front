@@ -336,60 +336,60 @@
                           <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
 
                                 <div v-if="loading" class="flex justify-center items-center mt-3">
-                            <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
-                                <g fill="none" fill-rule="evenodd">
-                                    <g transform="translate(2 1)" stroke="#000" stroke-width="1.5">
-                                        <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#000">
-                                            <animate attributeName="fill-opacity"
-                                                begin="0s" dur="1.3s"
-                                                values="1;0;0;0;0;0;0;0" calcMode="linear"
-                                                repeatCount="indefinite" />
-                                        </circle>
-                                        <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#000">
-                                            <animate attributeName="fill-opacity"
-                                                begin="0s" dur="1.3s"
-                                                values="0;1;0;0;0;0;0;0" calcMode="linear"
-                                                repeatCount="indefinite" />
-                                        </circle>
-                                        <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#000">
-                                            <animate attributeName="fill-opacity"
-                                                begin="0s" dur="1.3s"
-                                                values="0;0;1;0;0;0;0;0" calcMode="linear"
-                                                repeatCount="indefinite" />
-                                        </circle>
-                                        <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#000">
-                                            <animate attributeName="fill-opacity"
-                                                begin="0s" dur="1.3s"
-                                                values="0;0;0;1;0;0;0;0" calcMode="linear"
-                                                repeatCount="indefinite" />
-                                        </circle>
-                                        <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#000">
-                                            <animate attributeName="fill-opacity"
-                                                begin="0s" dur="1.3s"
-                                                values="0;0;0;0;1;0;0;0" calcMode="linear"
-                                                repeatCount="indefinite" />
-                                        </circle>
-                                        <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#000">
-                                            <animate attributeName="fill-opacity"
-                                                begin="0s" dur="1.3s"
-                                                values="0;0;0;0;0;1;0;0" calcMode="linear"
-                                                repeatCount="indefinite" />
-                                        </circle>
-                                        <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#000">
-                                            <animate attributeName="fill-opacity"
-                                                begin="0s" dur="1.3s"
-                                                values="0;0;0;0;0;0;1;0" calcMode="linear"
-                                                repeatCount="indefinite" />
-                                        </circle>
-                                        <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#000">
-                                            <animate attributeName="fill-opacity"
-                                                begin="0s" dur="1.3s"
-                                                values="0;0;0;0;0;0;0;1" calcMode="linear"
-                                                repeatCount="indefinite" />
-                                        </circle>
+                                <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+                                    <g fill="none" fill-rule="evenodd">
+                                        <g transform="translate(2 1)" stroke="#000" stroke-width="1.5">
+                                            <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#000">
+                                                <animate attributeName="fill-opacity"
+                                                    begin="0s" dur="1.3s"
+                                                    values="1;0;0;0;0;0;0;0" calcMode="linear"
+                                                    repeatCount="indefinite" />
+                                            </circle>
+                                            <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#000">
+                                                <animate attributeName="fill-opacity"
+                                                    begin="0s" dur="1.3s"
+                                                    values="0;1;0;0;0;0;0;0" calcMode="linear"
+                                                    repeatCount="indefinite" />
+                                            </circle>
+                                            <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#000">
+                                                <animate attributeName="fill-opacity"
+                                                    begin="0s" dur="1.3s"
+                                                    values="0;0;1;0;0;0;0;0" calcMode="linear"
+                                                    repeatCount="indefinite" />
+                                            </circle>
+                                            <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#000">
+                                                <animate attributeName="fill-opacity"
+                                                    begin="0s" dur="1.3s"
+                                                    values="0;0;0;1;0;0;0;0" calcMode="linear"
+                                                    repeatCount="indefinite" />
+                                            </circle>
+                                            <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#000">
+                                                <animate attributeName="fill-opacity"
+                                                    begin="0s" dur="1.3s"
+                                                    values="0;0;0;0;1;0;0;0" calcMode="linear"
+                                                    repeatCount="indefinite" />
+                                            </circle>
+                                            <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#000">
+                                                <animate attributeName="fill-opacity"
+                                                    begin="0s" dur="1.3s"
+                                                    values="0;0;0;0;0;1;0;0" calcMode="linear"
+                                                    repeatCount="indefinite" />
+                                            </circle>
+                                            <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#000">
+                                                <animate attributeName="fill-opacity"
+                                                    begin="0s" dur="1.3s"
+                                                    values="0;0;0;0;0;0;1;0" calcMode="linear"
+                                                    repeatCount="indefinite" />
+                                            </circle>
+                                            <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#000">
+                                                <animate attributeName="fill-opacity"
+                                                    begin="0s" dur="1.3s"
+                                                    values="0;0;0;0;0;0;0;1" calcMode="linear"
+                                                    repeatCount="indefinite" />
+                                            </circle>
+                                        </g>
                                     </g>
-                                </g>
-                            </svg>
+                                </svg>
                                 </div>
 
                               <div v-else
@@ -525,6 +525,13 @@
                     </option>
                 </select>
                 <label class="mb-2.5 mt-3 block text-black">
+                    Availability
+                </label>
+                <select v-model="editedProduct.availability" class="mt-3 w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter">                        
+                    <option value="InStock">In Stock</option>
+                    <option value="OutofStock">Out of Stock</option>
+                </select>
+                <label class="mb-2.5 mt-3 block text-black">
                     Product Description
                 </label>                        
                 <textarea rows="4" placeholder="Edit Description" v-model="editedProduct.description"
@@ -581,7 +588,8 @@
         deleteProduct: {},
         image: null,
         selectedFile: null,
-        back_url: 'https://shopo-api.onrender.com' 
+        //back_url: 'https://shopo-api.onrender.com' 
+        back_url: 'http://localhost:5000'
         
       };
     },

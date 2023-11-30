@@ -18,19 +18,16 @@
      <!-- product-detail -->
      <div class="container grid grid-cols-2 gap-6">
         <div>
-            <img src="../assets/images/products/product1.jpg" alt="product" class="w-full">
-            <div class="grid grid-cols-5 gap-4 mt-4">
-                <img src="../assets/images/products/product2.jpg" alt="product2"
-                    class="w-full cursor-pointer border border-[#9F2DBE]">
-                <img src="../assets/images/products/product3.jpg" alt="product2" class="w-full cursor-pointer border">
-                <img src="../assets/images/products/product4.jpg" alt="product2" class="w-full cursor-pointer border">
-                <img src="../assets/images/products/product5.jpg" alt="product2" class="w-full cursor-pointer border">
-                <img src="../assets/images/products/product6.jpg" alt="product2" class="w-full cursor-pointer border">
-            </div>
+            <img :src="back_url + productDetails.images.slice(0, 1)" alt="product" class="w-full h-96">
+            <div class="flex flex-wrap gap-4 mt-4">
+                <div v-for="(imageUrl, index) in productDetails.images.slice(0, 4)" :key="index" class="w-1/4">
+                  <img :src="back_url + imageUrl" :alt="`Product Image ${index + 2}`" class="w-full cursor-pointer border border-[#9F2DBE]">
+                </div>
+              </div>
         </div>
 
         <div>
-            <h2 class="text-3xl font-medium uppercase mb-2">Italian L Shape Sofa</h2>
+            <h2 class="text-3xl font-medium uppercase mb-2">{{productDetails.title}}</h2>
             <div class="flex items-center mb-4">
                 <div class="flex gap-1 text-sm text-yellow-400">
                     <span><i class="fa-solid fa-star"></i></span>
@@ -44,7 +41,8 @@
             <div class="space-y-2">
                 <p class="text-gray-800 font-semibold space-x-2">
                     <span>Availability: </span>
-                    <span class="text-green-600">In Stock</span>
+                    <span v-if="productDetails.availability == 'InStock'" class="text-green-600">In Stock</span>
+                    <span v-else class="text-red-600">Out of Stock</span>
                 </p>
                 <!-- <p class="space-x-2">
                     <span class="text-gray-800 font-semibold">Brand: </span>
@@ -52,7 +50,7 @@
                 </p> -->
                 <p class="space-x-2">
                     <span class="text-gray-800 font-semibold">Category: </span>
-                    <span class="text-gray-600">Sofa</span>
+                    <span class="text-gray-600">{{productDetails.category.name}}</span>
                 </p>
                 <!-- <p class="space-x-2">
                     <span class="text-gray-800 font-semibold">SKU: </span>
@@ -60,88 +58,53 @@
                 </p> -->
             </div>
             <div class="flex items-baseline mb-1 space-x-2 font-roboto mt-4">
-                <p class="text-xl text-[#9F2DBE] font-semibold">$45.00</p>
-                <p class="text-base text-gray-400 line-through">$55.00</p>
+                <p class="text-xl text-[#9F2DBE] font-semibold">$ {{productDetails.price}}</p>
+                <!-- <p class="text-base text-gray-400 line-through">$55.00</p> -->
             </div>
 
-            <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius eum
-                reprehenderit dolore vel mollitia optio consequatur hic asperiores inventore suscipit, velit
-                consequuntur, voluptate doloremque iure necessitatibus adipisci magnam porro.</p>
+            <p class="mt-4 text-gray-600">{{productDetails.description}}</p>
 
             <div class="pt-4">
-                <h3 class="text-sm text-gray-800 uppercase mb-1">Size</h3>
+                <h3 class="text-2xl text-gray-800 uppercase mb-1 font-medium">Size</h3>
                 <div class="flex items-center gap-2">
-                    <div class="size-selector">
+                    <!-- <div class="size-selector">
                         <input type="radio" name="size" id="size-xs" class="hidden">
                         <label for="size-xs"
-                            class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">XS</label>
-                    </div>
-                    <div class="size-selector">
-                        <input type="radio" name="size" id="size-sm" class="hidden">
-                        <label for="size-sm"
-                            class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">S</label>
-                    </div>
-                    <div class="size-selector">
-                        <input type="radio" name="size" id="size-m" class="hidden">
-                        <label for="size-m"
-                            class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">M</label>
-                    </div>
-                    <div class="size-selector">
-                        <input type="radio" name="size" id="size-l" class="hidden">
-                        <label for="size-l"
-                            class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">L</label>
-                    </div>
-                    <div class="size-selector">
-                        <input type="radio" name="size" id="size-xl" class="hidden">
-                        <label for="size-xl"
-                            class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">XL</label>
-                    </div>
+                            class="text-sm border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">{{productDetails.size}}</label>
+                    </div> -->
+                    <span class="text-sm">{{productDetails.size}}</span>
+                 
                 </div>
             </div>
 
             <div class="pt-4">
-                <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Color</h3>
+                <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">{{productDetails.color}}</h3>
                 <div class="flex items-center gap-2">
                     <div class="color-selector">
-                        <input type="radio" name="color" id="red" class="hidden">
-                        <label for="red"
-                            class="border border-gray-200 rounded-sm h-6 w-6  cursor-pointer shadow-sm block"
-                            style="background-color: #fc3d57;"></label>
-                    </div>
-                    <div class="color-selector">
-                        <input type="radio" name="color" id="black" class="hidden">
-                        <label for="black"
-                            class="border border-gray-200 rounded-sm h-6 w-6  cursor-pointer shadow-sm block"
-                            style="background-color: #000;"></label>
-                    </div>
-                    <div class="color-selector">
-                        <input type="radio" name="color" id="white" class="hidden">
-                        <label for="white"
-                            class="border border-gray-200 rounded-sm h-6 w-6  cursor-pointer shadow-sm block"
-                            style="background-color: #fff;"></label>
-                    </div>
-
+                        <input type="radio" :id="productDetails.color" class="hidden" :value="productDetails.color" v-model="selectedColor">
+                        <label :for="productDetails.color" class="border border-gray-200 rounded-sm h-6 w-6 cursor-pointer shadow-sm block" :style="{ backgroundColor: productDetails.color }"></label>
+                      </div>
                 </div>
             </div>
 
-            <div class="mt-4">
+            <!-- <div class="mt-4">
                 <h3 class="text-sm text-gray-800 uppercase mb-1">Quantity</h3>
                 <div class="flex border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max">
                     <div class="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none">-</div>
                     <div class="h-8 w-8 text-base flex items-center justify-center">4</div>
                     <div class="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none">+</div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5">
                 <a href="#"
                     class="bg-[#9F2DBE] border border-[#9F2DBE] text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-[#9F2DBE] transition">
                     <i class="fa-solid fa-bag-shopping"></i> Add to cart
                 </a>
-                <a href="#"
+                <!-- <a href="#"
                     class="border border-gray-300 text-gray-600 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-[#9F2DBE] transition">
                     <i class="fa-solid fa-heart"></i> Wishlist
-                </a>
+                </a> -->
             </div>
 
             <!-- <div class="flex gap-3 mt-4">
@@ -167,21 +130,13 @@
         <h3 class="border-b border-gray-200 font-roboto text-gray-800 pb-3 font-medium">Product details</h3>
         <div class="w-3/5 pt-6">
             <div class="text-gray-600">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur necessitatibus deleniti natus
-                    dolore cum maiores suscipit optio itaque voluptatibus veritatis tempora iste facilis non aut
-                    sapiente dolor quisquam, ex ab.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quae accusantium voluptatem
-                    blanditiis sapiente voluptatum. Autem ab, dolorum assumenda earum veniam eius illo fugiat possimus
-                    illum dolor totam, ducimus excepturi.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quia modi ut expedita! Iure molestiae
-                    labore cumque nobis quasi fuga, quibusdam rem? Temporibus consectetur corrupti rerum veritatis
-                    numquam labore amet.</p>
+                <p>{{productDetails.description}}</p>
             </div>
 
             <table class="table-auto border-collapse w-full text-left text-gray-600 text-sm mt-6">
                 <tr>
                     <th class="py-2 px-4 border border-gray-300 w-40 font-medium">Color</th>
-                    <th class="py-2 px-4 border border-gray-300 ">Blank, Brown, Red</th>
+                    <th class="py-2 px-4 border border-gray-300 ">{{productDetails.color}}</th>
                 </tr>
                 <!-- <tr>
                     <th class="py-2 px-4 border border-gray-300 w-40 font-medium">Material</th>
@@ -199,63 +154,112 @@
       <!-- related product -->
     <div class="container pb-16">
         <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">Related products</h2>
-        <div class="grid grid-cols-4 gap-6">
-            <div class="bg-white shadow rounded overflow-hidden group">
-                <div class="relative">
-                    <router-link :to="{name: 'ProductDetails'}">
-                        <img :src="pro1Image" alt="product 1" class="w-full cursor-pointer">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                        justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                            <p class="text-white text-md flex items-center justify-center hover:text-[#9F2DBE] cursor-pointer font-semibold  transition">
-                            <span>View Product</span>
-                            </p>                        
-                        </div>
-                    </router-link>
-                </div>
-                <div class="pt-4 pb-3 px-4">
-                    <a href="#">
-                        <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-[#9F2DBE] transition">Guyer
-                            Chair</h4>
-                    </a>
-                    <div class="flex items-baseline mb-1 space-x-2">
-                        <p class="text-xl text-[#9F2DBE] font-semibold">$45.00</p>
-                        <p class="text-sm text-gray-400 line-through">$55.90</p>
+
+        <div v-if="loading" class="flex justify-center items-center mt-3">
+            <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                    <g transform="translate(2 1)" stroke="#9F2DBE" stroke-width="1.5">
+                        <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="1;0;0;0;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;1;0;0;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;1;0;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;1;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;1;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;0;1;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;0;0;1;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;0;0;0;1" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                    </g>
+                </g>
+            </svg>
+        </div> 
+
+        <div v-else>
+            <div v-if="relatedProducts === 0 " class="p-2.5 xl:p-5">
+                <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available!!!</p>
+            </div>   
+            <div v-else class="grid grid-cols-4 gap-6">                
+                <div v-for="relatedProduct in relatedProducts" :key="relatedProduct._id" class="bg-white shadow rounded overflow-hidden group">
+                    <div class="relative">
+                        <a :href="`/product/${relatedProduct._id}/${relatedProduct.title}`">
+                            <div v-for="imageUrl in relatedProduct.images.slice(0, 1)" :key="imageUrl">
+                                <img :src="back_url + imageUrl" alt="product img" class="w-full h-52 cursor-pointer">
+                            </div>
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
+                            justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                                <p class="text-white text-md flex items-center justify-center hover:text-[#9F2DBE] cursor-pointer font-semibold  transition">
+                                <span>View Product</span>
+                                </p>                        
+                            </div>
+                        </a>
                     </div>
-                    <div class="flex items-center">
-                        <div class="flex gap-1 text-sm text-yellow-400">
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
+                    <div class="pt-4 pb-3 px-4">
+                        <a :href="`/product/${relatedProduct._id}/${relatedProduct.title}`">
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-[#9F2DBE] transition">{{relatedProduct.title}}</h4>
+                        </a>
+                        <div class="flex items-baseline mb-1 space-x-2">
+                            <p class="text-xl text-[#9F2DBE] font-semibold">$ {{relatedProduct.price}}</p>
+                            <!-- <p class="text-sm text-gray-400 line-through">$55.90</p> -->
                         </div>
-                        <div class="text-xs text-gray-500 ml-3">(150)</div>
+                        <div class="flex items-center">
+                            <div class="flex gap-1 text-sm text-yellow-400">
+                                <span><i class="fa-solid fa-star"></i></span>
+                                <span><i class="fa-solid fa-star"></i></span>
+                                <span><i class="fa-solid fa-star"></i></span>
+                                <span><i class="fa-solid fa-star"></i></span>
+                                <span><i class="fa-solid fa-star"></i></span>
+                            </div>
+                            <div class="text-xs text-gray-500 ml-3">(150)</div>
+                        </div>
                     </div>
+                    <a href="#"
+                        class="block w-full py-1 text-center text-white bg-[#9F2DBE] border border-[#9F2DBE] rounded-b hover:bg-transparent hover:text-[#9F2DBE] transition">Add
+                        to cart</a>
                 </div>
-                <a href="#"
-                    class="block w-full py-1 text-center text-white bg-[#9F2DBE] border border-[#9F2DBE] rounded-b hover:bg-transparent hover:text-[#9F2DBE] transition">Add
-                    to cart</a>
             </div>
         </div>
     </div>
     <!-- ./related product -->
 
-     <!-- shop wrapper -->
-     <div class="container grid md:grid-cols-4 grid-cols-2 gap-6 pt-4 pb-16 items-start">
-        <!-- sidebar -->
-        <!-- drawer init and toggle -->
-        <div class="text-center md:hidden" >
-            <button
-                class="text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 block md:hidden"
-                type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
-                aria-controls="drawer-example">
-                <ion-icon name="grid-outline"></ion-icon>
-            </button>
-        </div>
-
-        
-    </div>
-   
+      
 
      <!-- footer -->
      <Footer/>
@@ -266,9 +270,10 @@
 <script>
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
-import bannerImage from '../assets/images/bannerq.jpg';
-import product1Image from '../assets/images/products/product1.jpg';
-import adImage from '../assets/images/offer.jpg';
+import axios from 'axios';
+import api from '../api';
+import moment from 'moment';
+
 
 export default {
   components: {
@@ -280,11 +285,52 @@ export default {
 
   data() {
     return {
-      bgImage: bannerImage,
-      pro1Image : product1Image,
-      ads : adImage
+        
+        productDetails: {
+             color: '#FF0000'
+        },
+        selectedColor: null,
+        relatedProducts: [],
+        loading: true,
+        back_url: 'http://localhost:5000' 
+        
     };
   },
+
+  created() {      
+      this.fetchProductDetails();  
+      this.fetchRelatedProduct();       
+  },
+
+  methods: {
+        fetchProductDetails(){
+            const id = this.$route.params.id;
+
+            axios.get(`${api}/products/${id}`).then((response) => {
+                this.productDetails = response.data.product; 
+                this.loading = false;       
+                })
+                .catch((error) => {
+                console.error('Error getting products:', error);   
+                this.loading = false;       
+            });      
+        },
+
+        fetchRelatedProduct(){
+            const id = this.$route.params.id;            
+            axios.get(`${api}/products/${id}/related`).then((response) => {
+                this.relatedProducts = response.data.relatedProducts;
+                this.loading = false;       
+                })
+                .catch((error) => {
+                console.error('Error getting products:', error);   
+                this.loading = false;       
+            });      
+        },
+        
+
+  },
+
 
 };
 </script>

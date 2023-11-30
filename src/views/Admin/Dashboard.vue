@@ -654,7 +654,8 @@ export default {
             monthlyIncome: 0,
             products: [],
             categories: [],
-            back_url: 'https://shopo-api.onrender.com',
+            //back_url: 'https://shopo-api.onrender.com' 
+            back_url: 'http://localhost:5000'
             
   
         };

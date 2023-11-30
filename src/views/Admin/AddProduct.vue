@@ -348,7 +348,7 @@
                                       <label class="mb-2.5 block text-black">
                                          Size
                                       </label>
-                                      <input type="text" id="size" v-model="size" placeholder="Product Size"
+                                      <input type="text" id="size" multiple v-model="size" placeholder="Product Size"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
                                     </div>
                                   </div>                                              
@@ -383,13 +383,23 @@
                                     </div>
                                   </div>  
                                   
-                                  <div class="mb-4.5">
+                                  <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
+                                    <div class="w-full xl:w-1/2">
                                     <label class="mb-2.5 mt-3 block text-black">
                                       Product Image
                                     </label>
                                     <div class="relative z-20 bg-transparent dark:bg-form-input">
                                         <input type="file" id="image" ref="imageFiles" multiple @change="handleFileChange" accept="image/*" placeholder="Product Title"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />                                                                 
+                                    </div>
+                                    </div>
+
+                                    <div class="w-full xl:w-1/2">
+                                        <label class="mb-2.5 mt-4 block text-black">Availability</label>
+                                        <select v-model="availability" class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-3 px-5 outline-none transition focus:border-gray-900 active:border-gray-900 dark:border-form-strokedark dark:bg-form-input" required>
+                                          <option value="InStock">In Stock</option>
+                                          <option value="OutofStock">Out of Stock</option>
+                                        </select>
                                     </div>
                                   </div>
               
@@ -435,6 +445,7 @@
         size: '',
         color:'',
         price:'',
+        availability: 'InStock',
         description: '',
         imageFiles: [],
         categoryId: '',  
@@ -468,6 +479,7 @@
                 formData.append('size', this.size);
                 formData.append('color', this.color);
                 formData.append('price', this.price);
+                formData.append('availability', this.availability);
                 formData.append('description', this.description);
                 formData.append('categoryId', this.categoryId);
 

@@ -48,7 +48,7 @@ const routes = [
 
     //user front routes
     { path: "/products", name: "UserProducts", component: UserProducts }, 
-    { path: "/product/view", name: "ProductDetails", component: ProductDetails },  
+    { path: "/product/:id/:productName", name: "ProductDetails", component: ProductDetails },  
     { path: "/terms", name: "Terms", component: Terms },  
     { path: "/contact", name: "Contact", component: Contact },  
     {

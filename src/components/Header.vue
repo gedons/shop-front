@@ -60,7 +60,7 @@
                 <span class="text-white">
                     <i class="fa-solid fa-bars"></i>
                 </span>                         
-              <span class="capitalize font-semibold text-white ">Categories</span>
+              <span class="capitalize font-poppins text-white ">Categories</span>
 
               <div class="absolute w-full left-0 top-full bg-white shadow-md py-6 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
                 <a href="#" class="flex items-center px-6 py-3 hover:bg-gray-100 transition">
@@ -73,16 +73,16 @@
                 </a>
              </div>
             </div>
-            </div>
+            </div>  
     
             <!-- Navigation Links -->
             <div class="hidden md:block">
-              <div class="mx-auto flex items-baseline space-x-6 font-semibold">
-                <router-link :to="{name: 'Index'}" class="text-gray-200 hover:text-primary transition">Home</router-link>
-                <router-link :to="{name: 'UserProducts'}" class="text-gray-200 hover:text-primary transition">Products</router-link>
-                <router-link :to="{name: 'Terms'}" class="text-gray-200 hover:text-primary transition">Terms & Condition</router-link>
-                <router-link :to="{name: 'Contact'}" class="text-gray-200 hover:text-primary transition">Contact</router-link>
-                <router-link :to="{name: 'Register'}" class="text-white bg-[#9F2DBE] border border-[#9F2DBE] px-3 py-2 rounded-md hover:text-white hover:bg-transparent font-medium transition">Get Started</router-link>
+              <div class="mx-auto flex items-baseline space-x-6 font-poppins">
+                <router-link :to="{name: 'Index'}" class="text-white hover:text-primary transition">Home</router-link>
+                <router-link :to="{name: 'UserProducts'}" class="text-white hover:text-primary transition">Products</router-link>
+                <router-link :to="{name: 'Terms'}" class="text-white hover:text-primary transition">Terms & Condition</router-link>
+                <router-link :to="{name: 'Contact'}" class="text-white hover:text-primary transition">Contact</router-link>
+                <router-link :to="{name: 'Register'}" class="text-white bg-[#9F2DBE] border border-[#9F2DBE] px-3 py-2 rounded-md hover:text-white hover:bg-transparent font-poppins transition">Get Started</router-link>
               </div>
             </div>
     
@@ -107,11 +107,11 @@
         <!-- Mobile Menu -->
         <div class="md:hidden" :class="{'block': isOpen, 'hidden': !isOpen}" id="mobile-menu">
           <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <router-link :to="{name: 'Index'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium transition">Home</router-link>
-              <router-link :to="{name: 'UserProducts'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium transition">Products</router-link>
-              <router-link :to="{name: 'Terms'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium transition">Terms & Condition</router-link>
-              <router-link :to="{name: 'Contact'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium transition">Contact</router-link>
-              <router-link :to="{name: 'Register'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium transition">Get Started</router-link>
+            <router-link :to="{name: 'Index'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-poppins transition">Home</router-link>
+              <router-link :to="{name: 'UserProducts'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-poppins transition">Products</router-link>
+              <router-link :to="{name: 'Terms'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-poppins transition">Terms & Condition</router-link>
+              <router-link :to="{name: 'Contact'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-poppins transition">Contact</router-link>
+              <router-link :to="{name: 'Register'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-poppins transition">Get Started</router-link>
           </div>
         </div>
     </nav>
