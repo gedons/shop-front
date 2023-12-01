@@ -96,7 +96,7 @@ export default {
 		            timeout: 3000, 
 		          });		       
 	            console.log('Successfully logged in!'); 
-              this.$router.push({name: 'UserAccount'});
+              this.$router.push({name: 'Index'});
 	          } else {
 	             this.$toast.error('User details does not exist. Confirm and try again!', {
 		            timeout: 9000, 

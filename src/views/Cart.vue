@@ -105,10 +105,13 @@
                     <div class="text-gray-600 cursor-pointer hover:text-primary">
                         <button @click="removeFromCart(cartItem.product._id)"><i class="fa-solid fa-trash"></i></button>
                     </div>
+
+                   
                 </div>
+                <p  v-if="cartProducts.length !== 0">Total: <span class="font-medium">${{ TotalPrice() }}</span></p>
                 <div class="flex justify-between">
                     <router-link  :to="{name: 'UserProducts'}"  v-if="cartProducts.length === 0" class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition">Continue Shopping</router-link>
-                    <button v-else class="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition">Proceed to Checkout</button>
+                    <router-link :to="{name: 'UserOrder'}" v-else class="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition">Proceed to Checkout</router-link>
                 </div>  
             </div>            
         </div>
@@ -153,7 +156,8 @@ export default {
       latestProducts: [],
       recommendProducts: [],
       loading: true,
-      back_url: 'http://localhost:5000',
+      back_url: 'https://shopo-api.onrender.com' 
+      //back_url: 'http://localhost:5000',
     };
   },
 
@@ -168,6 +172,14 @@ export default {
 
     calculateTotalPrice(cartItem) {
       return cartItem.product.price * cartItem.quantity;
+    },
+
+    TotalPrice() {
+      // Logic to calculate total price from cart items
+      // Replace this with your own calculation logic
+      return this.cartProducts.reduce((total, cartItem) => {
+        return total + cartItem.product.price * cartItem.quantity;
+      }, 0);
     },
 
     async decreaseQuantity(cartItem) {
