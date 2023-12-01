@@ -9,6 +9,7 @@ import Register from '../views/Register.vue';
 import UserAccount from '../views/User/UserAccount.vue';
 import UserProducts from '../views/Products.vue';
 import ProductDetails from '../views/ProductDetails.vue';
+import Cart from '../views/Cart.vue';
 import Terms from '../views/Terms.vue';
 import Contact from '../views/Contact.vue';
 
@@ -49,6 +50,7 @@ const routes = [
     //user front routes
     { path: "/products", name: "UserProducts", component: UserProducts }, 
     { path: "/product/:id/:productName", name: "ProductDetails", component: ProductDetails },  
+    { path: '/cart', name: 'Cart', component: Cart},
     { path: "/terms", name: "Terms", component: Terms },  
     { path: "/contact", name: "Contact", component: Contact },  
     {

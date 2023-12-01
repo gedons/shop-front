@@ -13,7 +13,7 @@
                 accusantium perspiciatis, sapiente
                 magni eos dolorum ex quos dolores odio</p>
             <div class="mt-12">
-                <a href="#" class="bg-[#9F2DBE] border border-[#9F2DBE] text-white px-8 py-3 font-medium 
+                <a href="#" class="bg-gray-900 border border-bg-gray-900 text-white px-8 py-3 font-medium 
                     rounded-md hover:bg-transparent hover:text-white">Shop Now</a>
             </div>
         </div>
@@ -23,21 +23,21 @@
     <!-- features -->
     <div class="container py-16">
         <div class="w-10/12 grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto justify-center">
-            <div class="border border-[#9F2DBE] rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+            <div class="border border-gray-900 rounded-sm px-3 py-6 flex justify-center items-center gap-5">
                 <img src="../assets/images/icons/delivery-van.svg" alt="Delivery" class="w-12 h-12 object-contain">
                 <div>
                     <h4 class="font-medium capitalize text-lg">Free Shipping</h4>
                     <p class="text-gray-500 text-sm">Order over $200</p>
                 </div>
             </div>
-            <div class="border border-[#9F2DBE] rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+            <div class="border border-gray-900 rounded-sm px-3 py-6 flex justify-center items-center gap-5">
                 <img src="../assets/images/icons/money-back.svg" alt="Delivery" class="w-12 h-12 object-contain">
                 <div>
                     <h4 class="font-medium capitalize text-lg">Money Returns</h4>
                     <p class="text-gray-500 text-sm">30 days money returs</p>
                 </div>
             </div>
-            <div class="border border-[#9F2DBE] rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+            <div class="border border-gray-900 rounded-sm px-3 py-6 flex justify-center items-center gap-5">
                 <img src="../assets/images/icons/service-hours.svg" alt="Delivery" class="w-12 h-12 object-contain">
                 <div>
                     <h4 class="font-medium capitalize text-lg">24/7 Support</h4>
@@ -162,7 +162,7 @@
                             </div>
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
                             justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <p class="text-white text-md flex items-center justify-center hover:text-[#9F2DBE] cursor-pointer font-semibold  transition">
+                                <p class="text-white text-md flex items-center justify-center hover:text-gray-900 cursor-pointer font-semibold  transition">
                                 <span>View Product</span>
                                 </p>                        
                             </div>
@@ -170,10 +170,10 @@
                     </div>
                     <div class="pt-4 pb-3 px-4">
                         <a href="#">
-                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-[#9F2DBE] transition">{{latestProduct.title}}</h4>
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-gray-900 transition">{{latestProduct.title}}</h4>
                         </a>
                         <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl text-[#9F2DBE] font-semibold">${{latestProduct.price}}</p>
+                            <p class="text-xl text-gray-900 font-semibold">${{latestProduct.price}}</p>
                             <!-- <p class="text-sm text-gray-400 line-through">$55.90</p> -->
                         </div>
                         <div class="flex items-center">
@@ -183,9 +183,9 @@
                             <div class="text-xs text-gray-500 ml-3">(150)</div>
                         </div>
                     </div>
-                    <a href="#"
-                        class="block w-full py-1 text-center text-white bg-[#9F2DBE] border border-[#9F2DBE] rounded-b hover:bg-transparent hover:text-[#9F2DBE] transition">Add
-                        to cart</a>
+                    <button @click="addToCart(latestProduct._id)"
+                        class="block w-full py-1 text-center text-white bg-gray-900 border border-gray-900 rounded-b hover:bg-transparent hover:text-gray-900 transition">Add
+                        to cart</button>
                 </div>           
             </div>         
         </div>
@@ -269,11 +269,11 @@
                     <div class="relative">
                         <router-link :to="{name: 'ProductDetails',  params: {id: recommendProduct._id, productName: recommendProduct.title} }">
                             <div v-for="imageUrl in recommendProduct.images.slice(0, 1)" :key="imageUrl">
-                                <img :src="back_url + imageUrl" alt="product img" class="w-full h-52 cursor-pointer">
+                                <img :src="back_url + imageUrl" alt="product img" class="w-full h-56 cursor-pointer">
                             </div>
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
                             justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <p class="text-white text-md flex items-center justify-center hover:text-[#9F2DBE] cursor-pointer font-semibold  transition">
+                                <p class="text-white text-md flex items-center justify-center hover:text-gray-900 cursor-pointer font-semibold  transition">
                                 <span>View Product</span>
                                 </p>                        
                             </div>
@@ -281,10 +281,10 @@
                     </div>
                     <div class="pt-4 pb-3 px-4">
                         <a href="#">
-                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-[#9F2DBE] transition">{{recommendProduct.title}}</h4>
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-gray-900 transition">{{recommendProduct.title}}</h4>
                         </a>
                         <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl text-[#9F2DBE] font-semibold">${{recommendProduct.price}}</p>
+                            <p class="text-xl text-gray-900 font-semibold">${{recommendProduct.price}}</p>
                             <!-- <p class="text-sm text-gray-400 line-through">$55.90</p> -->
                         </div>
                         <div class="flex items-center">
@@ -298,9 +298,9 @@
                             <div class="text-xs text-gray-500 ml-3">(150)</div>
                         </div>
                     </div>
-                    <a href="#"
-                        class="block w-full py-1 text-center text-white bg-[#9F2DBE] border border-[#9F2DBE] rounded-b hover:bg-transparent hover:text-[#9F2DBE] transition">Add
-                        to cart</a>
+                    <button  @click="addToCart(recommendProduct._id)"
+                        class="block w-full py-1 text-center text-white bg-gray-900 border border-gray-900 rounded-b hover:bg-transparent hover:text-gray-900 transition">Add
+                        to cart</button>
                 </div>           
             </div>         
         </div>
@@ -368,6 +368,50 @@ export default {
                 this.loading = false;       
             });      
         },
+
+        async addToCart(productId) {
+            try {
+                const token = sessionStorage.getItem('userToken');
+                if (!token) {
+                // If user is not authenticated, redirect to the login page
+                this.$router.push('/login');
+                return; 
+                }
+
+                const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                };
+
+                // Fetch the product details including its price
+                const productDetails = await axios.get(`${api}/products/${productId}`);
+                const product = productDetails.data.product;
+
+                const currentCartCount = this.$store.state.cartCount.cartCount;
+                const quantityAdded = 1;
+
+                await axios.post(`${api}/cart/add-to-cart`, {
+                productId,
+                quantity: 1,
+                price: product.price,
+                }, config);
+
+                const updatedCartCount = currentCartCount + quantityAdded;
+                this.$store.dispatch('updateCartCount', updatedCartCount);
+
+                this.$toast.success('Product Added To Cart.', {
+                timeout: 3000,
+                });
+            } catch (error) {
+                this.$toast.error('An Error Occurred. Please try again!', {
+                timeout: 9000,
+                });
+                console.error('Failed to add product to cart:', error);
+                // Handle the error (e.g., show an error message)
+            }
+        },
+
 
   },
 
