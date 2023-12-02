@@ -49,42 +49,83 @@
     <!-- ./features -->
 
     <!-- categories -->
+    
+
+    
     <div class="container py-16">
         <h2 class="text-2xl font-semibold text-gray-700  mb-6">shop by category</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-            <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/2.jpg" alt="category 1" class="w-full md:h-72">
+
+        <div v-if="loading" class="flex justify-center items-center mt-3">
+            <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                    <g transform="translate(2 1)" stroke="#9F2DBE" stroke-width="1.5">
+                        <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="1;0;0;0;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;1;0;0;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;1;0;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;1;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;1;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;0;1;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;0;0;1;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;0;0;0;1" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                    </g>
+                </g>
+            </svg>
+        </div> 
+
+
+        <div v-else>
+        <div v-if="categories.length === 0" class="p-2.5 xl:p-5">
+            <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available!!!</p>
+        </div>   
+        <div v-else class="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <div  v-for="category in categories" :key="category._id" class="relative rounded-sm overflow-hidden group md:h-72">
+                <img :src="back_url + category.imageUrl" alt="category 1" class="w-full md:h-72">
                 <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Men</a>
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">{{category.name}}</a>
             </div>
-            <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/2.jpg" alt="category 1" class="w-full md:h-72">
-                <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Women</a>
-            </div>
-            <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/2.jpg" alt="category 1" class="w-full md:h-72">
-                <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Children
-                </a>
-            </div>
-            <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/2.jpg" alt="category 1" class="w-full md:h-72">
-                <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Shoes</a>
-            </div>
-            <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/2.jpg" alt="category 1" class="w-full md:h-72">
-                <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Accessories
-                    </a>
-            </div>
-            <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/2.jpg" alt="category 1" class="w-full md:h-72">
-                <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Head Wear</a>
-            </div>
+          
         </div>
+     </div>
     </div>
     <!-- ./categories -->
 
@@ -176,12 +217,12 @@
                             <p class="text-xl text-gray-900 font-semibold">${{latestProduct.price}}</p>
                             <!-- <p class="text-sm text-gray-400 line-through">$55.90</p> -->
                         </div>
-                        <div class="flex items-center">
+                        <!-- <div class="flex items-center">
                             <div class="flex gap-1 text-sm text-yellow-400">
                                 <span><i class="fa-solid fa-star"></i></span>                                 
                             </div>
                             <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
+                        </div> -->
                     </div>
                     <button @click="addToCart(latestProduct._id)"
                         class="block w-full py-1 text-center text-white bg-gray-900 border border-gray-900 rounded-b hover:bg-transparent hover:text-gray-900 transition">Add
@@ -287,7 +328,7 @@
                             <p class="text-xl text-gray-900 font-semibold">${{recommendProduct.price}}</p>
                             <!-- <p class="text-sm text-gray-400 line-through">$55.90</p> -->
                         </div>
-                        <div class="flex items-center">
+                        <!-- <div class="flex items-center">
                             <div class="flex gap-1 text-sm text-yellow-400">
                                 <span><i class="fa-solid fa-star"></i></span>
                                 <span><i class="fa-solid fa-star"></i></span>
@@ -296,7 +337,7 @@
                                 <span><i class="fa-solid fa-star"></i></span>
                             </div>
                             <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
+                        </div> -->
                     </div>
                     <button  @click="addToCart(recommendProduct._id)"
                         class="block w-full py-1 text-center text-white bg-gray-900 border border-gray-900 rounded-b hover:bg-transparent hover:text-gray-900 transition">Add
@@ -332,7 +373,7 @@ export default {
     return {
       bgImage: bannerImage,
       ads : adImage,
-    
+      categories: [],
       latestProducts: [],
       recommendProducts: [],
       loading: true,
@@ -344,6 +385,7 @@ export default {
   created() {      
       this.fetchLatestProducts();  
       this.fetchRecommendedProducts();      
+      this.fetchCategories();
   },
 
   methods: {
@@ -411,6 +453,17 @@ export default {
                 // Handle the error (e.g., show an error message)
             }
         },
+
+        fetchCategories() {
+        axios.get(`${api}/categories/all`).then((response) => {
+        this.categories = response.data.categories;        
+        this.loading = false;     
+        })
+        .catch((error) => {
+        console.error('Error getting user images:', error);     
+        this.loading = false;       
+        });      
+       }, 
 
 
   },

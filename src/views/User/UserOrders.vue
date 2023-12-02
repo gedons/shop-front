@@ -98,9 +98,8 @@
                 <div class="space-y-1">
                     <h4 class="text-gray-700">Reference Id: <span class="font-medium">{{ order._id }}</span></h4>
                     <p class="text-gray-800">Price: <span class="font-medium">{{ order.totalPrice }}</span></p>
-                    <p class="text-gray-800">Status: <span class="font-medium text-green-600">{{ order.status }}</span></p>
-                    <p v-if="order.status != 'Paid'" class="text-gray-800">Date: <span class="font-medium text-red-600">Pending</span></p>
-                    <p class="text-gray-800">Date: <span class="font-medium">{{ order.createdAt  }}</span></p>
+                    <p class="text-gray-800">Status: <span class="font-medium">{{ order.status }}</span></p>
+                    <p class="text-gray-800">Date: <span class="font-medium">{{ formatDate(order.createdAt) }}</span></p>
                    
                 </div>
             </div>
@@ -216,6 +215,10 @@ export default {
         } catch (error) {
             console.log('Failed to fetch order count:', error);
         }
+        },
+
+        formatDate(date) {
+        return moment(date).fromNow();
         },
 
         logout() {

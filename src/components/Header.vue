@@ -55,14 +55,12 @@
               <span class="capitalize font-medium text-white ">Categories</span>
 
               <div class="absolute w-full left-0 top-full bg-white shadow-md py-6 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
+                <template v-for="category in categories" :key="category._id">
                 <a href="#" class="flex items-center px-6 py-3 hover:bg-gray-100 transition">
-                    <img src="../assets/images/icons/sofa.svg" alt="sofa" class="w-5 h-5 object-contain">
-                    <span class="ml-6 text-gray-600 text-sm">Sofa</span>
+                    <img :src="back_url + category.imageUrl" alt="category image" class="w-5 h-5 object-contain">
+                    <span class="ml-6 text-gray-600 text-sm">{{category.name}}</span>
                 </a>
-                <a href="#" class="flex items-center px-6 py-3 hover:bg-gray-100 transition">
-                    <img src="../assets/images/icons/terrace.svg" alt="terrace" class="w-5 h-5 object-contain">
-                    <span class="ml-6 text-gray-600 text-sm">Terarce</span>
-                </a>
+              </template>
              </div>
             </div>
             </div>  
@@ -111,10 +109,15 @@
 </template>
 
 <script>
+import axios from 'axios';
+import api from '../api';
+import moment from 'moment';
 export default{
     data (){
         return{
             isOpen: false,
+            categories: [],
+            back_url: 'http://localhost:5000'
         }
     },
 
@@ -122,10 +125,25 @@ export default{
       window.addEventListener('beforeunload', this.handleBeforeUnload);
     },
 
+    created() {     
+      this.fetchCategories();
+    },
+
     methods: {
       handleBeforeUnload(event) {
       this.$store.dispatch('clearUserCart');
-    }
+    },
+
+    fetchCategories() {
+        axios.get(`${api}/categories/all`).then((response) => {
+        this.categories = response.data.categories;        
+        this.loading = false;     
+        })
+        .catch((error) => {
+        console.error('Error getting user images:', error);     
+        this.loading = false;       
+        });      
+    },
   },
 
   beforeUnmount() {

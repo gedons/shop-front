@@ -92,39 +92,14 @@
         <!-- ./sidebar -->
 
         <!-- info -->
-        <div class="col-span-12 md:col-span-9 grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-            <div class="shadow rounded bg-white px-4 pt-6 pb-8">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-medium text-gray-800 text-lg">Personal Profile</h3>
-                    <a href="#" class="text-primary">Edit</a>
-                </div>
+        <div  class="col-span-12 md:col-span-9 grid grid-cols-1 sm:grid-cols-2 gap-4">            
+            <div  v-for="order in orders" :key="order._id" class="shadow rounded bg-white px-4 pt-6 pb-8">
                 <div class="space-y-1">
-                    <h4 class="text-gray-700 font-medium">{{user.firstname}} {{user.lastname}}</h4>
-                    <p class="text-gray-800">{{user.email}}</p>
-                    <p class="text-gray-800">{{user.phone}}</p>
-                </div>
-            </div>
-
-            <div class="shadow rounded bg-white px-4 pt-6 pb-8">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-medium text-gray-800 text-lg">Shipping address</h3>                    
-                </div>
-                <div class="space-y-1">
-                    <h4 class="text-gray-700 font-medium">{{user.country}}</h4>
-                    <p class="text-gray-800">{{user.state}}, {{user.address}}</p>
-                    <p class="text-gray-800">{{user.postcode}}</p>                    
-                </div>
-            </div>
-
-            <div class="shadow rounded bg-white px-4 pt-6 pb-8">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-medium text-gray-800 text-lg">Total Orders</h3>
-                    <p class="text-primary text-lg font-medium">{{orderCount}}</p>
-                </div>
-                <div class="space-y-1">
-                    <a href="#" class="bg-gray-900 border border-bg-gray-900 text-white px-4 py-2 font-medium 
-                    rounded-lg hover:bg-transparent hover:text-gray-900">view</a>
+                    <h4 class="text-gray-700">Reference Id: <span class="font-medium">{{ order._id }}</span></h4>
+                    <p class="text-gray-800">Price: <span class="font-medium">{{ order.totalPrice }}</span></p>
+                    <p v-if="order.status == 'Pending'" class="text-gray-800">Status: <span class="font-medium text-red-600">Pending</span></p>
+                    <p class="text-gray-800">Date: <span class="font-medium">{{  formatDate(order.createdAt)  }}</span></p>
+                   
                 </div>
             </div>
 
@@ -239,6 +214,10 @@ export default {
         } catch (error) {
             console.log('Failed to fetch order count:', error);
         }
+        },
+
+        formatDate(date) {
+        return moment(date).fromNow();
         },
 
         logout() {
