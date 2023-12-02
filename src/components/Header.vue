@@ -16,8 +16,8 @@
         </button>
       </div>
 
-      <router-link :to="{name: 'Index'}">
-                <img src="../assets/images/logo-1.png" alt="Logo" class="w-20">
+      <router-link :to="{name: 'Index'}" >
+                <img src="../assets/images/logo-1.png" alt="Logo" >
             </router-link>
 
             <div class="flex items-center space-x-6">
@@ -60,7 +60,7 @@
               <div class="mx-auto flex items-baseline space-x-6 font-rubik">
                 <router-link :to="{name: 'Index'}" class="text-white hover:text-primary transition font-[2rem]">Home</router-link>
                 <router-link :to="{name: 'UserProducts'}" class="text-white hover:text-primary transition font-[2rem]">Shop</router-link>
-                <router-link :to="{name: 'Terms'}" class="text-white hover:text-primary transition font-[2rem]">Terms & Condition</router-link>
+                <router-link :to="{name: 'Terms'}" class="text-white hover:text-primary transition font-[2rem]">About Us</router-link>
                 <router-link :to="{name: 'Contact'}" class="text-white hover:text-primary transition font-[2rem]">Contact</router-link>
                 <router-link :to="{name: 'Register'}" class="text-white bg-[#dc3545] border border-[#000000] font-[2rem] px-3 py-1 rounded-md hover:text-white hover:bg-transparent font-rubik transition">Get Started</router-link>
               </div>
@@ -89,7 +89,7 @@
           <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <router-link :to="{name: 'Index'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-rubik font-[2rem] transition">Home</router-link>
               <router-link :to="{name: 'UserProducts'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-rubik font-[2rem] transition">Shop</router-link>
-              <router-link :to="{name: 'Terms'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-rubik font-[2rem] transition">Terms & Condition</router-link>
+              <router-link :to="{name: 'Terms'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-rubik font-[2rem] transition">About Us</router-link>
               <router-link :to="{name: 'Contact'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-rubik font-[2rem] transition">Contact</router-link>
               <router-link :to="{name: 'Register'}" class="text-white hover:bg-primary hover:text-white block px-3 py-2 rounded-md text-base font-rubik font-[2rem] transition">Get Started</router-link>
           </div>
@@ -109,5 +109,4 @@ export default{
 </script>
 
 <style>
-/* Your header component styles */
 </style>

@@ -4,11 +4,11 @@
     <!-- end header -->
 
     <!-- breadcrumb -->
-    <div class="container py-4 flex  items-center gap-3">
-        <router-link :to="{name: 'Index'}" class="text-[#9F2DBE] text-base">
+    <div class="container py-4 flex bg-[#f6f6f6] h-[8rem] items-center justify-center  gap-3">
+        <router-link :to="{name: 'Index'}" class="text-[#dc3545] text-base">
             <i class="fa-solid fa-house"></i>
         </router-link>
-        <span class="text-sm text-gray-400">
+        <span class="text-sm font-light text-gray-400">
             <i class="fa-solid fa-chevron-right"></i>
         </span>
         <p class="text-gray-600 font-medium">Products</p>
@@ -307,7 +307,7 @@
                             <img :src="pro1Image" alt="product 1" class="w-full cursor-pointer">
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
                             justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <p class="text-white text-md flex items-center justify-center hover:text-[#9F2DBE] cursor-pointer font-semibold  transition">
+                                <p class="text-white text-md flex items-center justify-center hover:text-[#dc3545] cursor-pointer font-semibold  transition">
                                 <span>View Product</span>
                                 </p>                        
                             </div>
@@ -345,7 +345,7 @@
                             <img :src="pro1Image" alt="product 1" class="w-full cursor-pointer">
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
                             justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <p class="text-white text-md flex items-center justify-center hover:text-[#9F2DBE] cursor-pointer font-semibold  transition">
+                                <p class="text-white text-md flex items-center justify-center hover:text-[#dc3545] cursor-pointer font-semibold  transition">
                                 <span>View Product</span>
                                 </p>                        
                             </div>
@@ -392,18 +392,17 @@
 
 <script>
 import Header from '../components/Header.vue';
-import Footer from '../components/Footer.vue';
 import bannerImage from '../assets/images/bannerq.jpg';
 import product1Image from '../assets/images/products/product1.jpg';
 import adImage from '../assets/images/offer.jpg';
+import Footer from '../components/Footer.vue';
 
 export default {
   components: {
-    Header, 
+    Header,
     Footer,
-
-    
-  },
+    Footer
+},
 
   data() {
     return {

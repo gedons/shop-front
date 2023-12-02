@@ -3,10 +3,16 @@
        <Header/>
     <!-- end header -->
 
+
+    background: gray;
+    height: 8rem;
+    align-items: center;
+    justify-content: center;
+
       <!-- breadcrumb -->
-      <div class="container py-4 flex items-center gap-3">
-        <router-link :to="{name: 'Index'}" class="text-[#9F2DBE] text-base">
-            <i class="fa-solid fa-house"></i>
+      <div class="container bg-[#f6f6f6] h-[8rem] items-center justify-center py-4 flex gap-3">
+        <router-link :to="{name: 'Index'}" class="text-[#dc3545] text-base">
+            <i class="fa-solid fa-house text-[#dc3545]"></i>
         </router-link>
         <span class="text-sm text-gray-400">
             <i class="fa-solid fa-chevron-right"></i>
@@ -21,7 +27,7 @@
             <img :src="back_url + productDetails.images.slice(0, 1)" alt="product" class="w-full h-96">
             <div class="flex flex-wrap gap-4 mt-4">
                 <div v-for="(imageUrl, index) in productDetails.images.slice(0, 4)" :key="index" class="w-1/4">
-                  <img :src="back_url + imageUrl" :alt="`Product Image ${index + 2}`" class="w-full cursor-pointer border border-[#9F2DBE]">
+                  <img :src="back_url + imageUrl" :alt="`Product Image ${index + 2}`" class="w-full cursor-pointer border border-[#dc3545]">
                 </div>
               </div>
         </div>
@@ -58,7 +64,7 @@
                 </p> -->
             </div>
             <div class="flex items-baseline mb-1 space-x-2 font-roboto mt-4">
-                <p class="text-xl text-[#9F2DBE] font-semibold">$ {{productDetails.price}}</p>
+                <p class="text-xl text-[#dc3545] font-semibold">$ {{productDetails.price}}</p>
                 <!-- <p class="text-base text-gray-400 line-through">$55.00</p> -->
             </div>
 
@@ -98,11 +104,11 @@
 
             <div class="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5">
                 <a href="#"
-                    class="bg-[#9F2DBE] border border-[#9F2DBE] text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-[#9F2DBE] transition">
+                    class="bg-[#dc3545] border border-[#dc3545] text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-[#dc3545] transition">
                     <i class="fa-solid fa-bag-shopping"></i> Add to cart
                 </a>
                 <!-- <a href="#"
-                    class="border border-gray-300 text-gray-600 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-[#9F2DBE] transition">
+                    class="border border-gray-300 text-gray-600 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-[#dc3545] transition">
                     <i class="fa-solid fa-heart"></i> Wishlist
                 </a> -->
             </div>
@@ -158,50 +164,50 @@
         <div v-if="loading" class="flex justify-center items-center mt-3">
             <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" fill-rule="evenodd">
-                    <g transform="translate(2 1)" stroke="#9F2DBE" stroke-width="1.5">
-                        <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#9F2DBE">
+                    <g transform="translate(2 1)" stroke="#dc3545" stroke-width="1.5">
+                        <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#dc3545">
                             <animate attributeName="fill-opacity"
                                 begin="0s" dur="1.3s"
                                 values="1;0;0;0;0;0;0;0" calcMode="linear"
                                 repeatCount="indefinite" />
                         </circle>
-                        <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#9F2DBE">
+                        <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#dc3545">
                             <animate attributeName="fill-opacity"
                                 begin="0s" dur="1.3s"
                                 values="0;1;0;0;0;0;0;0" calcMode="linear"
                                 repeatCount="indefinite" />
                         </circle>
-                        <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#9F2DBE">
+                        <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#dc3545">
                             <animate attributeName="fill-opacity"
                                 begin="0s" dur="1.3s"
                                 values="0;0;1;0;0;0;0;0" calcMode="linear"
                                 repeatCount="indefinite" />
                         </circle>
-                        <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#9F2DBE">
+                        <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#dc3545">
                             <animate attributeName="fill-opacity"
                                 begin="0s" dur="1.3s"
                                 values="0;0;0;1;0;0;0;0" calcMode="linear"
                                 repeatCount="indefinite" />
                         </circle>
-                        <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#9F2DBE">
+                        <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#dc3545">
                             <animate attributeName="fill-opacity"
                                 begin="0s" dur="1.3s"
                                 values="0;0;0;0;1;0;0;0" calcMode="linear"
                                 repeatCount="indefinite" />
                         </circle>
-                        <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#9F2DBE">
+                        <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#dc3545">
                             <animate attributeName="fill-opacity"
                                 begin="0s" dur="1.3s"
                                 values="0;0;0;0;0;1;0;0" calcMode="linear"
                                 repeatCount="indefinite" />
                         </circle>
-                        <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#9F2DBE">
+                        <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#dc3545">
                             <animate attributeName="fill-opacity"
                                 begin="0s" dur="1.3s"
                                 values="0;0;0;0;0;0;1;0" calcMode="linear"
                                 repeatCount="indefinite" />
                         </circle>
-                        <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#9F2DBE">
+                        <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#dc3545">
                             <animate attributeName="fill-opacity"
                                 begin="0s" dur="1.3s"
                                 values="0;0;0;0;0;0;0;1" calcMode="linear"
@@ -225,7 +231,7 @@
                             </div>
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
                             justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <p class="text-white text-md flex items-center justify-center hover:text-[#9F2DBE] cursor-pointer font-semibold  transition">
+                                <p class="text-white text-md flex items-center justify-center hover:text-[#dc3545] cursor-pointer font-semibold  transition">
                                 <span>View Product</span>
                                 </p>                        
                             </div>
@@ -233,10 +239,10 @@
                     </div>
                     <div class="pt-4 pb-3 px-4">
                         <a :href="`/product/${relatedProduct._id}/${relatedProduct.title}`">
-                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-[#9F2DBE] transition">{{relatedProduct.title}}</h4>
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-[#dc3545] transition">{{relatedProduct.title}}</h4>
                         </a>
                         <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl text-[#9F2DBE] font-semibold">$ {{relatedProduct.price}}</p>
+                            <p class="text-xl text-[#dc3545] font-semibold">$ {{relatedProduct.price}}</p>
                             <!-- <p class="text-sm text-gray-400 line-through">$55.90</p> -->
                         </div>
                         <div class="flex items-center">
@@ -251,7 +257,7 @@
                         </div>
                     </div>
                     <a href="#"
-                        class="block w-full py-1 text-center text-white bg-[#9F2DBE] border border-[#9F2DBE] rounded-b hover:bg-transparent hover:text-[#9F2DBE] transition">Add
+                        class="block w-full py-1 text-center text-white bg-[#dc3545] border border-[#dc3545] rounded-b hover:bg-transparent hover:text-[#dc3545] transition">Add
                         to cart</a>
                 </div>
             </div>
