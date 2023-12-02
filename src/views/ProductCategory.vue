@@ -129,14 +129,16 @@
         <div class="col-span-3">
             <div class="flex items-center mb-4">
                 <select name="sort" id="sort"
-                    class="w-44 text-sm text-gray-600 py-3 px-4 border-gray-300 shadow-sm rounded focus:ring-primary focus:border-primary">
-                    <option value="">Default sorting</option>
-                    <option value="price-low-to-high">Price low to high</option>
-                    <option value="price-high-to-low">Price high to low</option>
-                    <option value="latest">Latest product</option>
+                  class="w-44 text-sm text-gray-600 py-3 px-4 border-gray-300 shadow-sm rounded focus:ring-primary focus:border-primary"
+                  v-model="selectedSortOption"
+                  @change="sortProducts"
+                >
+                  <option value="">Default sorting</option>
+                  <option value="price-low-to-high">Price low to high</option>
+                  <option value="price-high-to-low">Price high to low</option>
+                  <option value="latest">Latest product</option>
                 </select>
- 
-            </div>
+              </div>
 
             <div v-if="loading" class="flex justify-center items-center mt-3">
                 <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
@@ -262,7 +264,8 @@
         categoryId: this.$route.params.categoryId,
         products: [],
         categories: [], 
-        selectedCategories: [],        
+        selectedCategories: [],  
+        selectedSortOption: '',       
         loading: true, 
         back_url: 'http://localhost:5000' 
       };
@@ -324,6 +327,23 @@
         this.loading = false;
         // Handle error
         }
+      },
+
+      sortProducts() {
+      switch (this.selectedSortOption) {
+        case 'price-low-to-high':
+          this.products.sort((a, b) => a.price - b.price);
+          break;
+        case 'price-high-to-low':
+          this.products.sort((a, b) => b.price - a.price);
+          break;
+        case 'latest':          
+          this.products.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+          break;
+        default:           
+          this.fetchProductsByCategory();
+          break;
+      }
     },
 
       async addToCart(productId) {
