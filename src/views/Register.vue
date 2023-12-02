@@ -8,22 +8,22 @@
         <div class="max-w-lg mx-auto shadow px-6 py-7 rounded overflow-hidden">
             <h2 class="text-2xl uppercase font-medium mb-1">Create an account</h2>
             <p class="text-gray-600 mb-6 text-sm">
-                Register for new cosutumer
+                Register for new customer
             </p>
             <form @submit.prevent="registerUser">
                 <div class="space-y-2">
                     <div class="mt-5">                        
                         <div class="px-5 pb-5">
-                        <input type="text" placeholder="FirstName" v-model="firstname" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base  transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
-                        <input type="text" placeholder="Lastname" v-model="lastname" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white"> 
-                        <input type="email" placeholder="Email" v-model="email" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white"> 
-                        <input type="number" placeholder="Phone Number" v-model="phone" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white"> 
+                        <input type="text" placeholder="FirstName" v-model="firstname" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base  transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#dc3545] focus:bg-white">
+                        <input type="text" placeholder="Lastname" v-model="lastname" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#dc3545] focus:bg-white"> 
+                        <input type="email" placeholder="Email" v-model="email" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#dc3545] focus:bg-white"> 
+                        <input type="number" placeholder="Phone Number" v-model="phone" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#dc3545] focus:bg-white"> 
                         <div class="flex">
                             <div class="flex-grow pr-2">
-                                <input type="password" placeholder="Password" v-model="password" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
+                                <input type="password" placeholder="Password" v-model="password" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#dc3545] focus:bg-white">
                             </div>
                             <div class="flex-grow">
-                                <input type="password" placeholder="Confirm Password" v-model="passwordConfirmation" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
+                                <input type="password" placeholder="Confirm Password" v-model="passwordConfirmation" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#dc3545] focus:bg-white">
                             </div>
                         </div>                        
                         </div>
@@ -42,14 +42,14 @@
                         <div class="flex-none pt-2.5 pr-2.5 pl-1"></div>
                         </div>
                         <div class="px-5 pb-5">
-                        <input type="text" placeholder="Country" v-model="country" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
-                        <input type="text" placeholder="State" v-model="state" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white"> 
+                        <input type="text" placeholder="Country" v-model="country" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#dc3545] focus:bg-white">
+                        <input type="text" placeholder="State" v-model="state" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#dc3545] focus:bg-white"> 
                         <div class="flex">
                             <div class="flex-grow pr-2">
-                                <input type="text" placeholder="Address" v-model="address" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
+                                <input type="text" placeholder="Address" v-model="address" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#dc3545] focus:bg-white">
                             </div>
                             <div class="flex-grow">
-                                <input type="text" placeholder="Postcode" v-model="postcode" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#9F2DBE] focus:bg-white">
+                                <input type="text" placeholder="Postcode" v-model="postcode" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:ring-0 focus:border-[#dc3545] focus:bg-white">
                             </div>
                         </div>                        
                         </div>                       
@@ -58,15 +58,14 @@
                 <div class="mt-6">
                     <div class="flex items-center">
                         <input type="checkbox" name="aggrement" id="aggrement"
-                            class="text-[#9F2DBE] focus:ring-0 rounded-sm cursor-pointer">
+                            class="text-[#dc3545] focus:ring-0 rounded-sm cursor-pointer">
                         <label for="aggrement" class="text-gray-600 ml-3 cursor-pointer">I have read and agree to the <a
-                                href="#" class="text-[#9F2DBE]">terms & conditions</a></label>
+                                href="#" class="text-[#dc3545]">terms & conditions</a></label>
                     </div>
                 </div>
                 <div class="mt-4">
                     <button type="submit"
-                        class="block w-full py-2 text-center text-white bg-[#9F2DBE] border border-[#9F2DBE] rounded hover:bg-transparent hover:text-[#9F2DBE] transition uppercase font-roboto font-medium">create
-                        account</button>
+                        class="block w-full py-2 text-center text-white bg-[#252525] border border-[#252525] rounded hover:bg-[#dc3545] hover:text-[#fff] transition uppercase font-roboto font-medium">Register</button>
                 </div>
             </form>
 
@@ -84,7 +83,7 @@
             <!-- ./login with -->
 
             <p class="mt-4 text-center text-gray-600">Already have account? <router-link :to="{name: 'UserLogin'}"
-                    class="text-[#9F2DBE]">Login now</router-link></p>
+                    class="text-[#dc3545]">Login now</router-link></p>
         </div>
     </div>
     <!-- end register -->

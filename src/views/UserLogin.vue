@@ -15,27 +15,27 @@
                     <div>
                         <label for="email" class="text-gray-600 mb-2 block">Email address</label>
                         <input type="email" v-model="email" 
-                            class="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-[#9F2DBE] placeholder-gray-400"
+                            class="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-[#252525] placeholder-gray-400"
                             placeholder="youremail.@domain.com">
                     </div>
                     <div>
                         <label for="password" class="text-gray-600 mb-2 block">Password</label>
                         <input type="password"   v-model="password" 
-                            class="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-[#9F2DBE] placeholder-gray-400"
+                            class="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-[#252525] placeholder-gray-400"
                             placeholder="*******">
                     </div>
                 </div>
                 <div class="flex items-center justify-between mt-6">
                     <div class="flex items-center">
                         <input type="checkbox" name="remember" id="remember"
-                            class="text-[#9F2DBE] focus:ring-0 rounded-sm cursor-pointer">
+                            class="text-[#252525] focus:ring-0 rounded-sm cursor-pointer">
                         <label for="remember" class="text-gray-600 ml-3 cursor-pointer">Remember me</label>
                     </div>
-                    <a href="#" class="text-[#9F2DBE]">Forgot password</a>
+                    <a href="#" class="text-[#252525] text-[0.9rem] hover:text-[#cc2121]">Forgot your password?</a>
                 </div>
                 <div class="mt-4">
                     <button type="submit"
-                        class="block w-full py-2 text-center text-white bg-[#9F2DBE] border border-[#9F2DBE] rounded hover:bg-transparent hover:text-[#9F2DBE] transition uppercase font-roboto font-medium">Login</button>
+                        class="block w-full px-3 py-2 text-center text-white bg-[#252525] border border-[#252525] rounded hover:bg-[#cc2121] hover:text-[#fff] transition uppercase font-roboto font-medium">Login</button>
                 </div>
             </form>
 
@@ -53,7 +53,7 @@
             <!-- ./login with -->
 
             <p class="mt-4 text-center text-gray-600">Don't have account? <router-link :to="{name: 'Register'}"
-                    class="text-[#9F2DBE]">Register
+                    class="text-[#cc2121]">Register
                     now</router-link></p>
         </div>
     </div>

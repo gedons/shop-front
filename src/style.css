@@ -6,7 +6,7 @@
 
 @layer base {
     body {
-      @apply font-sans;
+      @apply font-rubik;
     }
     h1,
     h2,
@@ -14,7 +14,7 @@
     h4,
     h5,
     h6 {
-      @apply font-sans;
+      @apply font-rubik;
     }
   }
   
@@ -30,4 +30,8 @@
       @apply block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded placeholder-gray-400 focus:border-primary focus:ring-0;
     }
   }
+
+  .swiper-pagination-bullet-active {
+    background-color: #dc3545 !important;
+}
   

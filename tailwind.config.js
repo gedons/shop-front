@@ -17,11 +17,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        rubik: ['Rubik', "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
       },
       colors: {
-        primary: "#111827",
+        primary: "#cc2121",
       },
     },
   },
