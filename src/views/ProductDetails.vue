@@ -3,12 +3,9 @@
        <Header/>
     <!-- end header -->
 
+    
 
-    background: gray;
-    height: 8rem;
-    align-items: center;
-    justify-content: center;
-
+    
       <!-- breadcrumb -->
       <div class="container bg-[#f6f6f6] h-[8rem] items-center justify-center py-4 flex gap-3">
         <router-link :to="{name: 'Index'}" class="text-[#dc3545] text-base">
@@ -18,16 +15,75 @@
             <i class="fa-solid fa-chevron-right"></i>
         </span>
         <p class="text-gray-600 font-medium">Product Details</p>
-    </div>
+      </div>
     <!-- ./breadcrumb -->
 
+    <div class="flex flex-col min-h-screen">
+    <div v-if="loading" class="flex justify-center items-center mt-3">
+        <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fill-rule="evenodd">
+                <g transform="translate(2 1)" stroke="#9F2DBE" stroke-width="1.5">
+                    <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#9F2DBE">
+                        <animate attributeName="fill-opacity"
+                            begin="0s" dur="1.3s"
+                            values="1;0;0;0;0;0;0;0" calcMode="linear"
+                            repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#9F2DBE">
+                        <animate attributeName="fill-opacity"
+                            begin="0s" dur="1.3s"
+                            values="0;1;0;0;0;0;0;0" calcMode="linear"
+                            repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#9F2DBE">
+                        <animate attributeName="fill-opacity"
+                            begin="0s" dur="1.3s"
+                            values="0;0;1;0;0;0;0;0" calcMode="linear"
+                            repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#9F2DBE">
+                        <animate attributeName="fill-opacity"
+                            begin="0s" dur="1.3s"
+                            values="0;0;0;1;0;0;0;0" calcMode="linear"
+                            repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#9F2DBE">
+                        <animate attributeName="fill-opacity"
+                            begin="0s" dur="1.3s"
+                            values="0;0;0;0;1;0;0;0" calcMode="linear"
+                            repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#9F2DBE">
+                        <animate attributeName="fill-opacity"
+                            begin="0s" dur="1.3s"
+                            values="0;0;0;0;0;1;0;0" calcMode="linear"
+                            repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#9F2DBE">
+                        <animate attributeName="fill-opacity"
+                            begin="0s" dur="1.3s"
+                            values="0;0;0;0;0;0;1;0" calcMode="linear"
+                            repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#9F2DBE">
+                        <animate attributeName="fill-opacity"
+                            begin="0s" dur="1.3s"
+                            values="0;0;0;0;0;0;0;1" calcMode="linear"
+                            repeatCount="indefinite" />
+                    </circle>
+                </g>
+            </g>
+        </svg>
+    </div> 
+
+    <div v-else>
      <!-- product-detail -->
      <div class="container grid grid-cols-2 gap-6">
         <div>
             <img :src="back_url + productDetails.images.slice(0, 1)" alt="product" class="w-full h-96">
             <div class="flex flex-wrap gap-4 mt-4">
                 <div v-for="(imageUrl, index) in productDetails.images.slice(0, 4)" :key="index" class="w-1/4">
-                  <img :src="back_url + imageUrl" :alt="`Product Image ${index + 2}`" class="w-full cursor-pointer border border-[#dc3545]">
+                  <img :src="back_url + imageUrl" :alt="`Product Image ${index + 2}`" class="h-36 w-full cursor-pointer border border-[#9F2DBE]">
                 </div>
               </div>
         </div>
@@ -103,10 +159,14 @@
             </div> -->
 
             <div class="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5">
-                <a href="#"
-                    class="bg-[#dc3545] border border-[#dc3545] text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-[#dc3545] transition">
+                <button  v-if="productDetails.availability == 'InStock'" @click="addToCart(productDetails._id)"
+                class="bg-[#9F2DBE] border border-[#9F2DBE] text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-[#9F2DBE] transition">
+                <i class="fa-solid fa-bag-shopping"></i> Add to cart
+                 </button>
+                <button v-else
+                    class="bg-[#9F2DBE] border border-[#9F2DBE] text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 cursor-not-allowed hover:bg-transparent hover:text-[#9F2DBE] transition" disabled title="Out of Stock">
                     <i class="fa-solid fa-bag-shopping"></i> Add to cart
-                </a>
+                </button>
                 <!-- <a href="#"
                     class="border border-gray-300 text-gray-600 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-[#dc3545] transition">
                     <i class="fa-solid fa-heart"></i> Wishlist
@@ -133,7 +193,7 @@
 
      <!-- description -->
      <div class="container pb-16">
-        <h3 class="border-b border-gray-200 font-roboto text-gray-800 pb-3 font-medium">Product details</h3>
+        <h3 class="border-b border-gray-200 font-roboto text-gray-800 pb-3 font-medium mt-6">Product details</h3>
         <div class="w-3/5 pt-6">
             <div class="text-gray-600">
                 <p>{{productDetails.description}}</p>
@@ -265,12 +325,12 @@
     </div>
     <!-- ./related product -->
 
-      
+   </div> 
 
      <!-- footer -->
      <Footer/>
      <!-- end footer -->
-
+    </div>
 </template>
 
 <script>
@@ -298,7 +358,8 @@ export default {
         selectedColor: null,
         relatedProducts: [],
         loading: true,
-        back_url: 'http://localhost:5000' 
+       // back_url: 'https://shopo-api.onrender.com' 
+       back_url: 'http://localhost:5000' 
         
     };
   },
@@ -332,6 +393,44 @@ export default {
                 console.error('Error getting products:', error);   
                 this.loading = false;       
             });      
+        },
+
+        async addToCart(productId) {
+            try {
+                const token = sessionStorage.getItem('userToken');
+                if (!token) {
+                // If user is not authenticated, redirect to the login page
+                this.$router.push('/login');
+                return; 
+                }
+
+                const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                };
+
+                const currentCartCount = this.$store.state.cartCount.cartCount;
+                const quantityAdded = 1;
+
+                await axios.post(`${api}/cart/add-to-cart`, {
+                productId,
+                quantity: 1,
+                }, config);
+
+                const updatedCartCount = currentCartCount + quantityAdded;
+                this.$store.dispatch('updateCartCount', updatedCartCount);
+
+                this.$toast.success('Product Added To Cart.', {
+                timeout: 3000,
+                });
+            } catch (error) {
+                this.$toast.error('An Error Occurred. Please try again!', {
+                timeout: 9000,
+                });
+                console.error('Failed to add product to cart:', error);
+                // Handle the error (e.g., show an error message)
+            }
         },
         
 

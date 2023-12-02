@@ -736,6 +736,43 @@ export default {
             return moment(date).fromNow();
           },
 
+          onFileSelected(event){
+            this.selectedFile = event.target.files[0]
+          },     
+  
+          async handleImageUpload( productId ) {    
+            try {
+            const formData = new FormData();
+            formData.append('image', this.selectedFile, this.selectedFile.name);
+
+            const token = sessionStorage.getItem('adminToken'); 
+                const config = {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    Authorization: `Bearer ${token}`,
+                },
+            };
+             
+            await axios.post(`${api}/products/${productId}/image`, formData, config)
+                .then(success => {
+                    if (success) {
+                    this.$toast.success('Image Added Successfully.', {
+                        timeout: 3000, 
+                    });		                         
+                    //this.imagePreview = { imageUrl: success.data.imageUrl };                    
+                    this.fetchAllProducts();
+                    } else {
+                        this.$toast.error('An Error Occured. try again!', {
+                            timeout: 9000, 
+                        });	          
+                    }
+                })
+          
+            } catch (error) {
+                console.error('Error uploading product image:', error);
+                // Handle error
+            }
+          },
 
         toggleSidebar() {
             this.sidebarOpen = !this.sidebarOpen;

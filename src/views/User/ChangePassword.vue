@@ -35,7 +35,7 @@
                             <i class="fa-regular fa-address-card"></i>
                         </span>
                          Account
-                    </router-link>                     
+                    </router-link>             
                     <router-link :to="{name: 'UpdateAccount'}" class="relative hover:text-primary block capitalize transition">
                         Manage Account
                     </router-link>
@@ -87,6 +87,7 @@
                     </button>
                 </div>
 
+
             </div>
         </div>
         <!-- ./sidebar -->
@@ -94,39 +95,25 @@
         <!-- info -->
         <div class="col-span-12 md:col-span-9 grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-            <div class="shadow rounded bg-white px-4 pt-6 pb-8">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-medium text-gray-800 text-lg">Personal Profile</h3>
-                    <a href="#" class="text-primary">Edit</a>
+            <div class="space-y-4 md:col-span-9">
+                <h3 class="text-md font-medium capitalize mb-4">Change Password</h3>
+                 <form @submit.prevent="changePassword">
+                     
+                    <div class="mt-3">
+                        <label for="currentpassword" class="text-gray-600">Current Password</label>
+                        <input type="password" v-model="formData.currentPassword" id="currentpassword" class="input-box">
+                    </div>   
+                    <div class="mt-3">
+                        <label for="newPassword" class="text-gray-600">New Password</label>
+                        <input type="password" v-model="formData.newPassword" id="newPassword" class="input-box">
+                    </div>  
+                    
+                    <div class="mt-3">
+                        <button type="submit" class="bg-gray-900 border border-bg-gray-900 text-white px-4 py-2 font-medium 
+                        rounded-lg hover:bg-transparent hover:text-gray-900">Update</button>
+                    </div>
+                </form>
                 </div>
-                <div class="space-y-1">
-                    <h4 class="text-gray-700 font-medium">{{user.firstname}} {{user.lastname}}</h4>
-                    <p class="text-gray-800">{{user.email}}</p>
-                    <p class="text-gray-800">{{user.phone}}</p>
-                </div>
-            </div>
-
-            <div class="shadow rounded bg-white px-4 pt-6 pb-8">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-medium text-gray-800 text-lg">Shipping address</h3>                    
-                </div>
-                <div class="space-y-1">
-                    <h4 class="text-gray-700 font-medium">{{user.country}}</h4>
-                    <p class="text-gray-800">{{user.state}}, {{user.address}}</p>
-                    <p class="text-gray-800">{{user.postcode}}</p>                    
-                </div>
-            </div>
-
-            <div class="shadow rounded bg-white px-4 pt-6 pb-8">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-medium text-gray-800 text-lg">Total Orders</h3>
-                    <p class="text-primary text-lg font-medium">{{orderCount}}</p>
-                </div>
-                <div class="space-y-1">
-                    <a href="#" class="bg-gray-900 border border-bg-gray-900 text-white px-4 py-2 font-medium 
-                    rounded-lg hover:bg-transparent hover:text-gray-900">view</a>
-                </div>
-            </div>
 
         </div>
         <!-- ./info -->
@@ -161,11 +148,11 @@ export default {
     return {
       bgImage: bannerImage,
       ads : adImage,
-      orderCount: 0,
       user: {},
-      orders: {},
-      latestProducts: [],
-      recommendProducts: [],
+      formData: {
+        currentPassword: '',
+        newPassword: '',
+      },
       loading: true,
       //back_url: 'https://shopo-api.onrender.com' 
       back_url: 'http://localhost:5000' 
@@ -173,14 +160,13 @@ export default {
     };
   },
   created() {      
- 
-         this.fetchUserData();    
-         this.fetchUserOrder();  
-         this.fetchUserOrderCount();
+          this.fetchUserData();    
+        //  this.fetchUserOrder();  
+        //  this.fetchUserOrderCount();
   },
 
   methods: {
-        async fetchUserData() {
+    async fetchUserData() {
         try {
             const token = sessionStorage.getItem('userToken');
             if (!token) {
@@ -200,68 +186,48 @@ export default {
             console.error('Failed to fetch user data:', error);
             // Handle error
         }
-        },    
-        
-        async fetchUserOrder() {
-        try {
-            const token = sessionStorage.getItem('userToken');
-            if (!token) {
-            this.$router.push('/login');
-            return;
-            }
-            const config = {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-            };
-            // Make an API call to fetch user details
-            const response = await axios.get(`${api}/orders/user-orders`, config);
-            // Store user details in the component data
-            this.orders = response.data.orders;
-        } catch (error) {
-            console.error('Failed to fetch user data:', error);
-            // Handle error
-        }
-        },     
-        
-        async fetchUserOrderCount() {
-        try {
-            const token = sessionStorage.getItem('userToken');
-            const config = {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-            };
-            const response = await axios.get(`${api}/orders/order-count`, config);
-            const orderCount = response.data.orderCount;
-                        
-            this.orderCount = orderCount;
-        } catch (error) {
-            console.log('Failed to fetch order count:', error);
-        }
-        },
+    }, 
 
-        logout() {
-              this.$store.dispatch('userLogout')
-              .then((success) => {
-                  if (success) {
-                      this.$toast.default('Logout successful.', {
-                      timeout: 3000, 
-                      });		       
-                      this.$router.push('/login');
-                  } else {
-                      this.$toast.error('Logout Error. Please try again.', {
-                      timeout: 9000, 
-                      });
-                  }
-              })
-              .catch((error) => {
-              console.error('Logout Error:', error);
-              this.$toast.error('Logout Error. Please try again.', {
-                  timeout: 9000, 
-              });
-              });
-          }, 
+    async changePassword() {
+    try {
+        const token = sessionStorage.getItem('userToken');
+        const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+        };
+
+        const response = await axios.put(`${api}/users/change-password`, this.formData, config);
+
+        if (response.status === 200) {
+        this.$toast.success('Password updated successfully.', {
+            timeout: 3000,
+        });
+        this.$router.push({ name: 'UserAccount' });
+        } else {
+        this.$toast.error('An Error Occurred!!. Try Again', {
+            timeout: 3000,
+        });
+        }
+    } catch (error) {
+        if (error.response) {       
+        this.$toast.error('Error: ' + error.response.data.message, {
+            timeout: 3000,
+        });
+        } else if (error.request) {        
+        console.error('No response received:', error.request);
+        this.$toast.error('No response received from the server', {
+            timeout: 3000,
+        });
+        } else {       
+        console.error('Request error:', error.message);
+        this.$toast.error('Request Error: ' + error.message, {
+            timeout: 3000,
+        });
+        }
+    }
+    },
+  
 
   },
 

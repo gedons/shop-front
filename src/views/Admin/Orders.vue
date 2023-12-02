@@ -465,7 +465,7 @@
       
                                               <td
                                                   class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">                                                 
-                                                  <button @click="openDeleteModal(product)" class=" text-sm font-semibold px-2 py-2 text-red-500 hover:text-red-400">Delete</button>    
+                                                  <button @click="openDeleteModal(order)" class=" text-sm font-semibold px-2 py-2 text-red-500 hover:text-red-400">Delete</button>    
                                               </td>                                    
                                           </tr>                                                                                                                          
                                       </tbody> 
@@ -488,9 +488,9 @@
         <div id="modal-box4" class="sm:w-[385px] sm:min-w-[40vw] min-w-[80vw] min-h-[25vh] flex-col justify-between items-center gap-2 -translate-y-1/2 p-6 bg-[#FFFFFF] rounded-lg top-1/2 left-1/2 -translate-x-1/2 absolute hidden">              
         <!-- Delete confirmation -->
         <div v-if="isDeleteMode">
-            <p class="font-semibold">Are you sure you want to delete this product?</p>
+            <p class="font-semibold">Are you sure you want to delete this order?</p>
             <div class="flex gap-3">
-                <button class="bg-red-600 hover:bg-red-500 px-4 py-2 rounded-md mt-3 text-white" @click="confirmDelete(product)">Yes</button>
+                <button class="bg-red-600 hover:bg-red-500 px-4 py-2 rounded-md mt-3 text-white" @click="confirmDelete(order)">Yes</button>
                 <button class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-md mt-3 text-white" @click="cancelDelete">No</button>
             </div>
         </div>
@@ -520,7 +520,7 @@
         selected: '',  
         page: '' ,       
         isDeleteMode: false,              
-        deleteProduct: {},       
+        deleteOrder: {},       
         
       };
     },
@@ -584,16 +584,16 @@
                   Authorization: `Bearer ${token}`,
               },
               };
-              await axios.delete(`${api}/products/delete/${this.deleteProduct._id}`, config)            
+              await axios.delete(`${api}/orders/delete-order/${this.deleteOrder._id}`, config)            
                 .then((success) => {
                   if (success) {
-                      this.$toast.success('Product Deleted Successfully.', {
+                      this.$toast.success('Order Deleted Successfully.', {
                           timeout: 3000, 
                       });		 
                         this.closeModal1();  
-                        const productId = this.deleteProduct._id;  
-                        this.products = this.products.filter(product => product._id !== productId);
-                        this.products.sort((a, b) => {
+                        const orderId = this.deleteOrder._id;  
+                        this.orders = this.orders.filter(order => order._id !== orderId);
+                        this.orders.sort((a, b) => {
                         const dateA = new Date(a.createdAt).getTime();
                         const dateB = new Date(b.createdAt).getTime();
                         return dateB - dateA;  
@@ -607,7 +607,7 @@
                  
             
           } catch (error) {
-              console.error('Error deleting category', error);
+              console.log('Error deleting order', error);
               // Handle error
           }
           },
@@ -647,9 +647,9 @@
           },
           
   
-          openDeleteModal(product) {
+          openDeleteModal(order) {
           this.isDeleteMode = true;
-          this.deleteProduct = { ...product };
+          this.deleteOrder = { ...order };
           document.getElementById('modal-bg4').classList.remove('hidden');
           document.getElementById('modal-box4').classList.remove('hidden');
           },

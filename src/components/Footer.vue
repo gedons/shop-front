@@ -1,9 +1,9 @@
 <template>
-    <footer class="bg-[#242424] text-white py-8 mt-5 border-b border-[#303030]">
-        <div class="container mx-auto px-[9rem]">
-          <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="col-span-2 space-y-4 mr-6">
-                <h2 class="w-30 text-[40px]">DAEDS<span class="text-primary text-[4rem]">.</span></h2>
+    <footer class="bg-gray-900 text-white py-8 mt-5">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="col-span-1 space-y-4">
+                <img src="../assets/images/logo-1.svg" alt="logo" class="w-30">
                 <div class="mr-2">
                     <p class="text-gray-100 mb-3">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, hic?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam, cumque eius.
