@@ -121,32 +121,7 @@
                         </div>
                         
                     </div>
-                </div>               
-
-                <div class="pt-4">
-                    <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">size</h3>
-                    <div class="flex items-center gap-2">
-                        <div class="size-selector">
-                            <input type="radio" name="size" id="size-xs" class="hidden">
-                            <label for="size-xs"
-                                class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">XS</label>
-                        </div>                    
-                    </div>
-                </div>
-
-                <div class="pt-4">
-                    <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Color</h3>
-                    <div class="flex items-center gap-2">
-                        <div class="color-selector">
-                            <input type="radio" name="color" id="red" class="hidden">
-                            <label for="red"
-                                class="border border-gray-200 rounded-sm h-6 w-6  cursor-pointer shadow-sm block"
-                                style="background-color: #fc3d57;"></label>
-                        </div>
-                       
-
-                    </div>
-                </div>
+                </div>                                     
 
             </div>
         </div>
