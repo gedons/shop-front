@@ -21,7 +21,7 @@
 
                     <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-[#343a40]">Email</h2>
                     <p class="mt-2 text-sm text-gray-500 text-[#343a40]-400">Our friendly team is here to help.</p>
-                    <p class="mt-2 text-sm text-[#dc3545] ">hello@merakiui.com</p>
+                    <p class="mt-2 text-sm text-[#dc3545] ">Daedsfashion@gmail.com</p>
                 </div>
 
 
@@ -35,7 +35,7 @@
                     
                     <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-[#343a40]">Office</h2>
                     <p class="mt-2 text-sm text-gray-500 text-[#343a40]-400">Come say hello at our office HQ.</p>
-                    <p class="mt-2 text-sm text-[#dc3545] ">100 Smith Street Collingwood VIC 3066 AU</p>
+                    <p class="mt-2 text-sm text-[#dc3545] ">17 Awudu Ekpekha Boulevard Street Lekki Phase one</p>
                 </div>
 
                 <div>
@@ -47,7 +47,7 @@
                     
                     <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-[#343a40]">Phone</h2>
                     <p class="mt-2 text-sm text-gray-500 text-[#343a40]-400">Mon-Fri from 8am to 5pm.</p>
-                    <p class="mt-2 text-sm text-[#dc3545] ">+1 (555) 000-0000</p>
+                    <p class="mt-2 text-sm text-[#dc3545] ">+234 (555) 000-0000</p>
                 </div>
             </div>
 
