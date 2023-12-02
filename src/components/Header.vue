@@ -21,15 +21,7 @@
             </router-link>
 
             <div class="flex items-center space-x-6">
-                <a href="#" class="text-center text-gray-700 hover:text-[#cc2121] transition relative">
-                    <div class="text-1xl">
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                    <div class="text-xs leading-3">Wishlist</div>
-                    <div
-                        class="absolute right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-[#cc2121] text-white text-xs">
-                        8</div>
-                </a>
+                
                 <router-link :to="{name: 'Cart'}" class="text-center text-gray-700 hover:text-[#cc2121] transition relative">
                     <div class="text-1xl">
                         <i class="fa-solid fa-bag-shopping"></i>

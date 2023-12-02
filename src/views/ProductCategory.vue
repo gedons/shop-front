@@ -42,58 +42,24 @@
                 <div>
                     <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Categories</h3>
                     <div class="space-y-2">
-                        <div class="flex items-center">
-                            <input type="checkbox" name="cat-1" id="cat-1"
-                                class="text-primary focus:ring-0 rounded-sm cursor-pointer">
-                            <label for="cat-1" class="text-gray-600 ml-3 cusror-pointer">Bedroom</label>
-                            <div class="ml-auto text-gray-600 text-sm">(15)</div>
+                        <div v-if="categories.length === 0" class="p-2.5 xl:p-5">
+                            <p class="font-semibold text-sm leading-5 text-gray-700">No Category Available!!!</p>
                         </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" name="cat-2" id="cat-2"
-                                class="text-primary focus:ring-0 rounded-sm cursor-pointer">
-                            <label for="cat-2" class="text-gray-600 ml-3 cusror-pointer">Sofa</label>
-                            <div class="ml-auto text-gray-600 text-sm">(9)</div>
+                        <div v-else v-for="category in categories" :key="category._id" class="flex items-center">
+                            <input
+                            type="checkbox"
+                            :id="category._id"
+                            class="text-primary focus:ring-0 rounded-sm cursor-pointer"
+                            v-model="selectedCategories"
+                            :value="category._id"
+                            @change="filterProducts"
+                          >
+                          <label :for="category._id" class="text-gray-600 ml-3 cursor-pointer">{{ category.name }}</label>                         
                         </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" name="cat-3" id="cat-3"
-                                class="text-primary focus:ring-0 rounded-sm cursor-pointer">
-                            <label for="cat-3" class="text-gray-600 ml-3 cusror-pointer">Office</label>
-                            <div class="ml-auto text-gray-600 text-sm">(21)</div>
-                        </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" name="cat-4" id="cat-4"
-                                class="text-primary focus:ring-0 rounded-sm cursor-pointer">
-                            <label for="cat-4" class="text-gray-600 ml-3 cusror-pointer">Outdoor</label>
-                            <div class="ml-auto text-gray-600 text-sm">(10)</div>
-                        </div>
+                        
                     </div>
-                </div>
-               
+                </div>                                     
 
-                <div class="pt-4">
-                    <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">size</h3>
-                    <div class="flex items-center gap-2">
-                        <div class="size-selector">
-                            <input type="radio" name="size" id="size-xs" class="hidden">
-                            <label for="size-xs"
-                                class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">XS</label>
-                        </div>
-                         
-                    </div>
-                </div>
-
-                <div class="pt-4">
-                    <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Color</h3>
-                    <div class="flex items-center gap-2">
-                        <div class="color-selector">
-                            <input type="radio" name="color" id="red" class="hidden">
-                            <label for="red"
-                                class="border border-gray-200 rounded-sm h-6 w-6  cursor-pointer shadow-sm block"
-                                style="background-color: #fc3d57;"></label>
-                        </div>                        
-
-                    </div>
-                </div>
 
             </div>
              
