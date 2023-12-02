@@ -105,30 +105,21 @@
                 <div>
                     <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Categories</h3>
                     <div class="space-y-2">
-                        <div class="flex items-center">
-                            <input type="checkbox" name="cat-1" id="cat-1"
-                                class="text-primary focus:ring-0 rounded-sm cursor-pointer">
-                            <label for="cat-1" class="text-gray-600 ml-3 cusror-pointer">Bedroom</label>
-                            <div class="ml-auto text-gray-600 text-sm">(15)</div>
+                        <div v-if="categories.length === 0" class="p-2.5 xl:p-5">
+                            <p class="font-semibold text-sm leading-5 text-gray-700">No Category Available!!!</p>
                         </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" name="cat-2" id="cat-2"
-                                class="text-primary focus:ring-0 rounded-sm cursor-pointer">
-                            <label for="cat-2" class="text-gray-600 ml-3 cusror-pointer">Sofa</label>
-                            <div class="ml-auto text-gray-600 text-sm">(9)</div>
+                        <div v-else v-for="category in categories" :key="category._id" class="flex items-center">
+                            <input
+                            type="checkbox"
+                            :id="category._id"
+                            class="text-primary focus:ring-0 rounded-sm cursor-pointer"
+                            v-model="selectedCategories"
+                            :value="category._id"
+                            @change="filterProducts"
+                          >
+                          <label :for="category._id" class="text-gray-600 ml-3 cursor-pointer">{{ category.name }}</label>                         
                         </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" name="cat-3" id="cat-3"
-                                class="text-primary focus:ring-0 rounded-sm cursor-pointer">
-                            <label for="cat-3" class="text-gray-600 ml-3 cusror-pointer">Office</label>
-                            <div class="ml-auto text-gray-600 text-sm">(21)</div>
-                        </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" name="cat-4" id="cat-4"
-                                class="text-primary focus:ring-0 rounded-sm cursor-pointer">
-                            <label for="cat-4" class="text-gray-600 ml-3 cusror-pointer">Outdoor</label>
-                            <div class="ml-auto text-gray-600 text-sm">(10)</div>
-                        </div>
+                        
                     </div>
                 </div>               
 
@@ -230,10 +221,10 @@
             </div> 
 
             <div v-else class="grid md:grid-cols-3 grid-cols-2 gap-6">
-                <div v-if="products.length === 0" class="p-2.5 xl:p-5">
+                <div v-if="filteredProducts.length === 0" class="p-2.5 xl:p-5">
                     <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available For This Category!!!</p>
                 </div>                 
-                <div  v-else v-for="product in products" :key="product._id" class="bg-white shadow rounded overflow-hidden group">
+                <div  v-else v-for="product in filteredProducts" :key="product._id" class="bg-white shadow rounded overflow-hidden group">
                     <div class="relative">
                         <router-link :to="{name: 'ProductDetails',  params: {id: product._id, productName: product.title} }">
                             <div v-for="imageUrl in product.images.slice(0, 1)" :key="imageUrl">
@@ -295,12 +286,28 @@
       return {
         categoryId: this.$route.params.categoryId,
         products: [],
+        categories: [], 
+        selectedCategories: [],        
         loading: true, 
         back_url: 'http://localhost:5000' 
       };
     },
+    computed: {
+        filteredProducts() {
+        if (this.selectedCategories.length === 0) {
+            return this.products;
+        } else {
+            return this.products.filter(product => {
+            return this.selectedCategories.some(categoryId => product.category._id === categoryId);
+            });
+        }
+        },
+
+    },
     created() {
       this.fetchProductsByCategory();
+      this.fetchCategories();
+   
     },
     methods: {
       async fetchProductsByCategory() {
@@ -314,6 +321,35 @@
           // Handle error
         }
       },
+
+      fetchCategories() {
+        axios.get(`${api}/categories/all`).then((response) => {
+        this.categories = response.data.categories;        
+        this.loading = false;     
+        })
+        .catch((error) => {
+        console.error('Error getting user images:', error);     
+        this.loading = false;       
+        });      
+      }, 
+       
+      async filterProducts() {
+        try {
+        if (this.selectedCategories.length === 0) {          
+            this.fetchProductsByCategory();
+        } else {
+            // Filter products based on selected categories
+            const categoryIds = this.selectedCategories.join(',');
+            const response = await axios.get(`${api}/products/product-category/${categoryIds}`);
+            this.products = response.data.products;
+            this.loading = false;
+        }
+        } catch (error) {
+        console.error('Failed to filter products:', error);
+        this.loading = false;
+        // Handle error
+        }
+    },
 
       async addToCart(productId) {
             try {
@@ -356,7 +392,7 @@
                 console.error('Failed to add product to cart:', error);
                 // Handle the error (e.g., show an error message)
             }
-        },
+      },
     },
   };
   </script>

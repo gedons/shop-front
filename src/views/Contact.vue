@@ -120,35 +120,11 @@ export default {
   },
 
   created() {      
-      this.fetchProductDetails();  
-      this.fetchRelatedProduct();       
+          
   },
 
   methods: {
-        fetchProductDetails(){
-            const id = this.$route.params.id;
-
-            axios.get(`${api}/products/${id}`).then((response) => {
-                this.productDetails = response.data.product; 
-                this.loading = false;       
-                })
-                .catch((error) => {
-                console.error('Error getting products:', error);   
-                this.loading = false;       
-            });      
-        },
-
-        fetchRelatedProduct(){
-            const id = this.$route.params.id;            
-            axios.get(`${api}/products/${id}/related`).then((response) => {
-                this.relatedProducts = response.data.relatedProducts;
-                this.loading = false;       
-                })
-                .catch((error) => {
-                console.error('Error getting products:', error);   
-                this.loading = false;       
-            });      
-        },
+      
         
 
   },
