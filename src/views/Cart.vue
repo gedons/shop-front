@@ -15,7 +15,7 @@
    </div>
   <!-- ./breadcrumb -->
 
-    <div class="flex flex-col min-h-screen">
+  
     <!-- wrapper -->
     <div class="container grid grid-cols-1 items-start gap-6 pt-4 pb-16">
 
@@ -125,7 +125,7 @@
         <!-- footer -->
         <Footer/>
         <!-- end footer -->
-    </div>
+ 
 </template>
 
 <script>

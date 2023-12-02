@@ -293,9 +293,9 @@
                             <div class="text-xs text-gray-500 ml-3">(150)</div>
                         </div> -->
                     </div>
-                    <a href="#"
+                    <button @click="addToCart(latestProduct._id)"
                         class="block w-full py-1 text-center text-white bg-[#cc2121] border border-[#cc2121] rounded-b hover:bg-transparent hover:text-[#cc2121] transition">Add
-                        to cart</a>
+                        to cart</button>
                 </div>           
             </div>         
         </div>
@@ -408,9 +408,9 @@
                             <div class="text-xs text-gray-500 ml-3">(150)</div>
                         </div> -->
                     </div>
-                    <a href="#"
+                    <button  @click="addToCart(recommendProduct._id)"
                         class="block w-full py-1 text-center text-white bg-[#cc2121] border border-[#cc2121] rounded-b hover:bg-transparent hover:text-[#cc2121] transition">Add
-                        to cart</a>
+                        to cart</button>
                 </div>           
             </div>         
         </div>
