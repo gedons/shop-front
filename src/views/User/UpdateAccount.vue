@@ -24,7 +24,7 @@
             <div class="px-4 py-3 shadow flex items-center gap-4">                
                 <div class="flex-grow">
                     <p class="text-gray-600">Hello,</p>
-                    <h4 class="text-gray-800 font-medium">{{user.firstname}} {{user.lastname}}</h4>
+                    <h4 class="text-gray-800 font-medium">{{formData.firstname}} {{formData.lastname}}</h4>
                 </div>
             </div>
 
@@ -35,7 +35,7 @@
                             <i class="fa-regular fa-address-card"></i>
                         </span>
                          Account
-                    </router-link>                     
+                    </router-link>                 
                     <router-link :to="{name: 'UpdateAccount'}" class="relative hover:text-primary block capitalize transition">
                         Manage Account
                     </router-link>
@@ -87,6 +87,7 @@
                     </button>
                 </div>
 
+
             </div>
         </div>
         <!-- ./sidebar -->
@@ -94,38 +95,50 @@
         <!-- info -->
         <div class="col-span-12 md:col-span-9 grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-            <div class="shadow rounded bg-white px-4 pt-6 pb-8">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-medium text-gray-800 text-lg">Personal Profile</h3>
-                    <a href="#" class="text-primary">Edit</a>
+            <div class="space-y-4 md:col-span-9">
+            <h3 class="text-md font-medium capitalize mb-4">Manage Account</h3>
+             <form @submit.prevent="updateUserProfile">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="first-name" class="text-gray-600">First Name </label>
+                        <input type="text" v-model="formData.firstname"  id="first-name" class="input-box">
+                    </div>
+                    <div>
+                        <label for="last-name" class="text-gray-600">Last Name </label>
+                        <input type="text" v-model="formData.lastname" id="last-name" class="input-box">
+                    </div>
                 </div>
-                <div class="space-y-1">
-                    <h4 class="text-gray-700 font-medium">{{user.firstname}} {{user.lastname}}</h4>
-                    <p class="text-gray-800">{{user.email}}</p>
-                    <p class="text-gray-800">{{user.phone}}</p>
+                <div class="mt-3">
+                    <label for="email" class="text-gray-600">Email Address</label>
+                    <input type="email" v-model="formData.email" id="email" class="input-box">
+                </div>  
+                
+                <div class="mt-3">
+                    <label for="phone" class="text-gray-600">Phone number</label>
+                    <input type="number" v-model="formData.phone" id="phone" class="input-box">
+                </div>  
+                <div class="mt-3">
+                    <label for="country" class="text-gray-600">Country</label>
+                    <input type="text" v-model="formData.country" id="country" class="input-box">
+                </div>   
+                <div class="mt-3">
+                    <label for="state" class="text-gray-600">State</label>
+                    <input type="text" v-model="formData.state" id="state" class="input-box">
+                </div>        
+                <div class="mt-3">
+                    <label for="address" class="text-gray-600">Street address</label>
+                    <input type="text" v-model="formData.address" id="address" class="input-box">
                 </div>
-            </div>
-
-            <div class="shadow rounded bg-white px-4 pt-6 pb-8">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-medium text-gray-800 text-lg">Shipping address</h3>                    
+                <div class="mt-3">
+                    <label for="postcode" class="text-gray-600">Post Code</label>
+                    <input type="text" v-model="formData.postcode" id="postcode" class="input-box">
                 </div>
-                <div class="space-y-1">
-                    <h4 class="text-gray-700 font-medium">{{user.country}}</h4>
-                    <p class="text-gray-800">{{user.state}}, {{user.address}}</p>
-                    <p class="text-gray-800">{{user.postcode}}</p>                    
+               
+                <div class="mt-3">
+                    <button type="submit" class="bg-gray-900 border border-bg-gray-900 text-white px-4 py-2 font-medium 
+                    rounded-lg hover:bg-transparent hover:text-gray-900">Update</button>
                 </div>
-            </div>
-
-            <div class="shadow rounded bg-white px-4 pt-6 pb-8">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-medium text-gray-800 text-lg">Total Orders</h3>
-                    <p class="text-primary text-lg font-medium">{{orderCount}}</p>
-                </div>
-                <div class="space-y-1">
-                    <a href="#" class="bg-gray-900 border border-bg-gray-900 text-white px-4 py-2 font-medium 
-                    rounded-lg hover:bg-transparent hover:text-gray-900">view</a>
-                </div>
+            </form>
             </div>
 
         </div>
@@ -163,23 +176,30 @@ export default {
       ads : adImage,
       orderCount: 0,
       user: {},
-      orders: {},
-      latestProducts: [],
-      recommendProducts: [],
+      orders: {},      
       loading: true,
+      formData: {
+        firstname: '',
+        lastname: '',
+        email: '',
+        state: '',
+        country: '',
+        phone: '',
+        postcode: '',
+        address: '',
+      },
       //back_url: 'https://shopo-api.onrender.com' 
       back_url: 'http://localhost:5000' 
 
     };
   },
-  created() {      
- 
-         this.fetchUserData();    
-         this.fetchUserOrder();  
+  created() {       
+         this.fetchUserData();            
          this.fetchUserOrderCount();
   },
 
   methods: {
+
         async fetchUserData() {
         try {
             const token = sessionStorage.getItem('userToken');
@@ -192,10 +212,8 @@ export default {
                 Authorization: `Bearer ${token}`,
             },
             };
-            // Make an API call to fetch user details
             const response = await axios.get(`${api}/users/profile`, config);
-            // Store user details in the component data
-            this.user = response.data.user;
+            this.formData = response.data.user;
         } catch (error) {
             console.error('Failed to fetch user data:', error);
             // Handle error
@@ -241,27 +259,32 @@ export default {
         }
         },
 
-        logout() {
-              this.$store.dispatch('userLogout')
-              .then((success) => {
-                  if (success) {
-                      this.$toast.default('Logout successful.', {
-                      timeout: 3000, 
-                      });		       
-                      this.$router.push('/login');
-                  } else {
-                      this.$toast.error('Logout Error. Please try again.', {
-                      timeout: 9000, 
-                      });
-                  }
-              })
-              .catch((error) => {
-              console.error('Logout Error:', error);
-              this.$toast.error('Logout Error. Please try again.', {
-                  timeout: 9000, 
-              });
-              });
-          }, 
+        async updateUserProfile() {
+        try {
+            const token = sessionStorage.getItem('userToken');
+            const config = {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            };
+            await axios.put(`${api}/users/profile`, this.formData, config)
+            .then((success) => {
+            if (success) {
+                    this.$toast.success('Details updated successfully.', {
+                        timeout: 3000, 
+                    });		                            
+                this.$router.push({name: 'UserAccount'});
+                } else {
+                    this.$toast.error('An Error Occurred!!. Try Again', {
+                        timeout: 3000, 
+                    });	          
+                }
+            });       
+        } catch (error) {
+            console.error('Failed to update user profile:', error);
+            // Handle the error
+        }
+        },
 
   },
 

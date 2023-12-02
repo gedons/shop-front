@@ -7,6 +7,11 @@ import UserLogin from '../views/UserLogin.vue';
 import Register from '../views/Register.vue';
 
 import UserAccount from '../views/User/UserAccount.vue';
+import UpdateAccount from '../views/User/UpdateAccount.vue';
+import ChangePassword from '../views/User/ChangePassword.vue';
+import PendingOrders from '../views/User/PendingOrders.vue';
+import UserOrders from '../views/User/UserOrders.vue';
+
 import UserProducts from '../views/Products.vue';
 import UserOrder from '../views/UserOrder.vue';
 import ProductDetails from '../views/ProductDetails.vue';
@@ -64,6 +69,46 @@ const routes = [
         isUser: true, 
       },
     },
+    {
+      path: '/user/manage-account',
+      name: 'UpdateAccount',
+      component: UpdateAccount,
+      meta: {
+        requiresAuth: true,  
+        isUser: true, 
+      },
+    },
+    {
+      path: '/user/change-password',
+      name: 'ChangePassword',
+      component: ChangePassword,
+      meta: {
+        requiresAuth: true,  
+        isUser: true, 
+      },
+    },
+
+    {
+      path: '/user/all-orders',
+      name: 'UserOrders',
+      component: UserOrders,
+      meta: {
+        requiresAuth: true,  
+        isUser: true, 
+      },
+    },
+
+
+    {
+      path: '/user/pending-orders',
+      name: 'PendingOrders',
+      component: PendingOrders,
+      meta: {
+        requiresAuth: true,  
+        isUser: true, 
+      },
+    },
+
 
     //end user routes
 

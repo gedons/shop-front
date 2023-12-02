@@ -184,7 +184,7 @@
         try {
             const token = sessionStorage.getItem('userToken');
             if (!token) {
-            // Redirect to login page or handle not logged-in user
+                this.$router.push('/login');
             return;
             }
 
