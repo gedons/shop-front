@@ -13,6 +13,7 @@ import PendingOrders from '../views/User/PendingOrders.vue';
 import UserOrders from '../views/User/UserOrders.vue';
 
 import UserProducts from '../views/Products.vue';
+import ProductCategory from '../views/ProductCategory.vue';
 import UserOrder from '../views/UserOrder.vue';
 import ProductDetails from '../views/ProductDetails.vue';
 import Cart from '../views/Cart.vue';
@@ -56,6 +57,7 @@ const routes = [
     //user front routes
     { path: "/products", name: "UserProducts", component: UserProducts }, 
     { path: "/checkout", name: "UserOrder", component: UserOrder }, 
+    { path: '/category/:categoryId',name: 'ProductCategory', component: ProductCategory, props: true},
     { path: "/product/:id/:productName", name: "ProductDetails", component: ProductDetails },  
     { path: '/cart', name: 'Cart', component: Cart},
     { path: "/terms", name: "Terms", component: Terms },  

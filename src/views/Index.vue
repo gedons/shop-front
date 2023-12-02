@@ -120,8 +120,8 @@
         <div v-else class="grid grid-cols-2 md:grid-cols-3 gap-3">
             <div  v-for="category in categories" :key="category._id" class="relative rounded-sm overflow-hidden group md:h-72">
                 <img :src="back_url + category.imageUrl" alt="category 1" class="w-full md:h-72">
-                <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">{{category.name}}</a>
+                <router-link :to="{ name: 'ProductCategory', params: { categoryId: category._id } }"
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">{{category.name}}</router-link>
             </div>
           
         </div>
