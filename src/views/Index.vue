@@ -79,7 +79,7 @@
                 accusantium perspiciatis, sapiente
                 magni eos dolorum ex quos dolores odio</p>
             <div class="mt-12">
-                <a href="#" class="bg-[#9F2DBE] border border-[#9F2DBE] text-white px-8 py-3 font-medium 
+                <a href="#" class="bg-[#cc2121] border border-[#cc2121] text-white px-8 py-3 font-medium 
                     rounded-md hover:bg-transparent hover:text-white">Shop Now</a>
             </div>
         </div>
@@ -94,21 +94,21 @@
     <!-- features -->
     <div class="container py-16">
         <div class="w-10/12 grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto justify-center">
-            <div class="border border-[#9F2DBE] rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+            <div class="border border-[#cc2121] rounded-sm px-3 py-6 flex justify-center items-center gap-5">
                 <img src="../assets/images/icons/delivery-van.svg" alt="Delivery" class="w-12 h-12 object-contain">
                 <div>
                     <h4 class="font-medium capitalize text-[14px]">Free Shipping</h4>
                     <p class="text-gray-500 text-[12px]">Order over $200</p>
                 </div>
             </div>
-            <div class="border border-[#9F2DBE] rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+            <div class="border border-[#cc2121] rounded-sm px-3 py-6 flex justify-center items-center gap-5">
                 <img src="../assets/images/icons/money-back.svg" alt="Delivery" class="w-12 h-12 object-contain">
                 <div>
                     <h4 class="font-medium capitalize text-[14px]">Money Returns</h4>
                     <p class="text-gray-500 text-[12px]">30 days money returns</p>
                 </div>
             </div>
-            <div class="border border-[#9F2DBE] rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+            <div class="border border-[#cc2121] rounded-sm px-3 py-6 flex justify-center items-center gap-5">
                 <img src="../assets/images/icons/service-hours.svg" alt="Delivery" class="w-12 h-12 object-contain">
                 <div>
                     <h4 class="font-medium capitalize text-[14px]">24/7 Support</h4>
@@ -120,11 +120,11 @@
     <!-- ./features -->
 
     <!-- categories -->
-    <div class="container py-16">
+    <div class="container py-16 px-[9rem]">
         <h2 class="text-2xl font-semibold text-gray-700  mb-6">shop by category</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
             <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/2.jpg" alt="category 1" class="w-full md:h-72">
+                <img src="../assets/images/category/1.jpg" alt="category 1" class="w-full md:h-72">
                 <a href="#"
                     class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Men</a>
             </div>
@@ -134,26 +134,10 @@
                     class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Women</a>
             </div>
             <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/2.jpg" alt="category 1" class="w-full md:h-72">
+                <img src="../assets/images/category/3.jpg" alt="category 1" class="w-full md:h-72">
                 <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Children
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Shoes
                 </a>
-            </div>
-            <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/2.jpg" alt="category 1" class="w-full md:h-72">
-                <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Shoes</a>
-            </div>
-            <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/2.jpg" alt="category 1" class="w-full md:h-72">
-                <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Accessories
-                    </a>
-            </div>
-            <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/2.jpg" alt="category 1" class="w-full md:h-72">
-                <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Head Wear</a>
             </div>
         </div>
     </div>
@@ -234,7 +218,7 @@
                             </div>
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
                             justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <p class="text-white text-md flex items-center justify-center hover:text-[#9F2DBE] cursor-pointer font-semibold  transition">
+                                <p class="text-white text-md flex items-center justify-center hover:text-[#cc2121] cursor-pointer font-semibold  transition">
                                 <span>View Product</span>
                                 </p>                        
                             </div>
@@ -242,10 +226,10 @@
                     </div>
                     <div class="pt-4 pb-3 px-4">
                         <a href="#">
-                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-[#9F2DBE] transition">{{latestProduct.title}}</h4>
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-[#cc2121] transition">{{latestProduct.title}}</h4>
                         </a>
                         <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl text-[#9F2DBE] font-semibold">${{latestProduct.price}}</p>
+                            <p class="text-xl text-[#cc2121] font-semibold">${{latestProduct.price}}</p>
                             <!-- <p class="text-sm text-gray-400 line-through">$55.90</p> -->
                         </div>
                         <!-- <div class="flex items-center">
@@ -256,7 +240,7 @@
                         </div> -->
                     </div>
                     <a href="#"
-                        class="block w-full py-1 text-center text-white bg-[#9F2DBE] border border-[#9F2DBE] rounded-b hover:bg-transparent hover:text-[#9F2DBE] transition">Add
+                        class="block w-full py-1 text-center text-white bg-[#cc2121] border border-[#cc2121] rounded-b hover:bg-transparent hover:text-[#cc2121] transition">Add
                         to cart</a>
                 </div>           
             </div>         
@@ -345,7 +329,7 @@
                             </div>
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
                             justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                                <p class="text-white text-md flex items-center justify-center hover:text-[#9F2DBE] cursor-pointer font-semibold  transition">
+                                <p class="text-white text-md flex items-center justify-center hover:text-[#cc2121] cursor-pointer font-semibold  transition">
                                 <span>View Product</span>
                                 </p>                        
                             </div>
@@ -353,10 +337,10 @@
                     </div>
                     <div class="pt-4 pb-3 px-4">
                         <a href="#">
-                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-[#9F2DBE] transition">{{recommendProduct.title}}</h4>
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-[#cc2121] transition">{{recommendProduct.title}}</h4>
                         </a>
                         <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl text-[#9F2DBE] font-semibold">${{recommendProduct.price}}</p>
+                            <p class="text-xl text-[#cc2121] font-semibold">${{recommendProduct.price}}</p>
                             <!-- <p class="text-sm text-gray-400 line-through">$55.90</p> -->
                         </div>
                         <!-- <div class="flex items-center">
@@ -371,7 +355,7 @@
                         </div> -->
                     </div>
                     <a href="#"
-                        class="block w-full py-1 text-center text-white bg-[#9F2DBE] border border-[#9F2DBE] rounded-b hover:bg-transparent hover:text-[#9F2DBE] transition">Add
+                        class="block w-full py-1 text-center text-white bg-[#cc2121] border border-[#cc2121] rounded-b hover:bg-transparent hover:text-[#cc2121] transition">Add
                         to cart</a>
                 </div>           
             </div>         

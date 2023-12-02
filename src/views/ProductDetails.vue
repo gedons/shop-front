@@ -22,50 +22,50 @@
     <div v-if="loading" class="flex justify-center items-center mt-3">
         <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" fill-rule="evenodd">
-                <g transform="translate(2 1)" stroke="#9F2DBE" stroke-width="1.5">
-                    <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#9F2DBE">
+                <g transform="translate(2 1)" stroke="#cc2121" stroke-width="1.5">
+                    <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#cc2121">
                         <animate attributeName="fill-opacity"
                             begin="0s" dur="1.3s"
                             values="1;0;0;0;0;0;0;0" calcMode="linear"
                             repeatCount="indefinite" />
                     </circle>
-                    <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#9F2DBE">
+                    <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#cc2121">
                         <animate attributeName="fill-opacity"
                             begin="0s" dur="1.3s"
                             values="0;1;0;0;0;0;0;0" calcMode="linear"
                             repeatCount="indefinite" />
                     </circle>
-                    <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#9F2DBE">
+                    <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#cc2121">
                         <animate attributeName="fill-opacity"
                             begin="0s" dur="1.3s"
                             values="0;0;1;0;0;0;0;0" calcMode="linear"
                             repeatCount="indefinite" />
                     </circle>
-                    <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#9F2DBE">
+                    <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#cc2121">
                         <animate attributeName="fill-opacity"
                             begin="0s" dur="1.3s"
                             values="0;0;0;1;0;0;0;0" calcMode="linear"
                             repeatCount="indefinite" />
                     </circle>
-                    <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#9F2DBE">
+                    <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#cc2121">
                         <animate attributeName="fill-opacity"
                             begin="0s" dur="1.3s"
                             values="0;0;0;0;1;0;0;0" calcMode="linear"
                             repeatCount="indefinite" />
                     </circle>
-                    <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#9F2DBE">
+                    <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#cc2121">
                         <animate attributeName="fill-opacity"
                             begin="0s" dur="1.3s"
                             values="0;0;0;0;0;1;0;0" calcMode="linear"
                             repeatCount="indefinite" />
                     </circle>
-                    <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#9F2DBE">
+                    <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#cc2121">
                         <animate attributeName="fill-opacity"
                             begin="0s" dur="1.3s"
                             values="0;0;0;0;0;0;1;0" calcMode="linear"
                             repeatCount="indefinite" />
                     </circle>
-                    <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#9F2DBE">
+                    <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#cc2121">
                         <animate attributeName="fill-opacity"
                             begin="0s" dur="1.3s"
                             values="0;0;0;0;0;0;0;1" calcMode="linear"
@@ -83,7 +83,7 @@
             <img :src="back_url + productDetails.images.slice(0, 1)" alt="product" class="w-full h-96">
             <div class="flex flex-wrap gap-4 mt-4">
                 <div v-for="(imageUrl, index) in productDetails.images.slice(0, 4)" :key="index" class="w-1/4">
-                  <img :src="back_url + imageUrl" :alt="`Product Image ${index + 2}`" class="h-36 w-full cursor-pointer border border-[#9F2DBE]">
+                  <img :src="back_url + imageUrl" :alt="`Product Image ${index + 2}`" class="h-36 w-full cursor-pointer border border-[#cc2121]">
                 </div>
               </div>
         </div>
@@ -160,11 +160,11 @@
 
             <div class="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5">
                 <button  v-if="productDetails.availability == 'InStock'" @click="addToCart(productDetails._id)"
-                class="bg-[#9F2DBE] border border-[#9F2DBE] text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-[#9F2DBE] transition">
+                class="bg-[#cc2121] border border-[#cc2121] text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-[#cc2121] transition">
                 <i class="fa-solid fa-bag-shopping"></i> Add to cart
                  </button>
                 <button v-else
-                    class="bg-[#9F2DBE] border border-[#9F2DBE] text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 cursor-not-allowed hover:bg-transparent hover:text-[#9F2DBE] transition" disabled title="Out of Stock">
+                    class="bg-[#cc2121] border border-[#cc2121] text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 cursor-not-allowed hover:bg-transparent hover:text-[#cc2121] transition" disabled title="Out of Stock">
                     <i class="fa-solid fa-bag-shopping"></i> Add to cart
                 </button>
                 <!-- <a href="#"
