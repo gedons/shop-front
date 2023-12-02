@@ -336,8 +336,8 @@ export default {
       latestProducts: [],
       recommendProducts: [],
       loading: true,
-      back_url: 'https://shopo-api.onrender.com' 
-      //back_url: 'http://localhost:5000' 
+      //back_url: 'https://shopo-api.onrender.com' 
+      back_url: 'http://localhost:5000' 
 
     };
   },

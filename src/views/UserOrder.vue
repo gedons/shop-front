@@ -20,31 +20,37 @@
     <div class="flex flex-col min-h-screen">
      
   <!-- wrapper -->
-  <div class="container grid grid-cols-2  items-start pb-16 pt-4 gap-6">
+  <div v-if="cartProducts.length > 0" class="container grid grid-cols-2  items-start pb-16 pt-4 gap-6">
 
     <div class="col-span-4 border border-gray-200 p-4 rounded">
         <h3 class="text-lg font-medium capitalize mb-4">Customer Details</h3>
-        <div class="space-y-4">             
-            <div>
-                <label  class="text-gray-600">Email</label>
+        <div class="space-y-4">            
+            <div class="flex flex-col">
+                <label  class="text-gray-600 font-medium">Email</label>
                 <p>{{ user.email }}</p>
-
-                <label  class="text-gray-600">Name</label>
-                <p>{{ user.name }}</p>
-
-                <label  class="text-gray-600">Address</label>
+            </div>
+            <div class="flex flex-col">
+                <label  class="text-gray-600 font-medium">Name</label>
+                <p>{{ user.firstname }} {{ user.lastname }}</p>
+            </div>
+            <div class="flex flex-col">
+                <label  class="text-gray-600 font-medium">Address</label>
                 <p>{{ user.address }}</p>
-
-                <label  class="text-gray-600">Country</label>
+            </div>
+            <div class="flex flex-col">
+                <label  class="text-gray-600 font-medium">Country</label>
                 <p>{{ user.country }}</p>
-
-                <label  class="text-gray-600">State</label>
+            </div>
+            <div class="flex flex-col">
+                <label  class="text-gray-600 font-medium">State</label>
                 <p>{{ user.state }}</p>
-
-                <label  class="text-gray-600">Address</label>
+            </div>
+            <div class="flex flex-col">
+                <label  class="text-gray-600 font-medium">Address</label>
                 <p>{{ user.address }}</p>
-
-                <label  class="text-gray-600">Postcode</label>
+            </div>
+            <div class="flex flex-col">
+                <label  class="text-gray-600 font-medium">Postcode</label>
                 <p>{{ user.postcode }}</p>
             </div>           
         </div>
@@ -87,12 +93,15 @@
                     class="text-primary">terms & conditions</a></label>
         </div>
 
-        <a href="#"
-            class="block w-full py-3 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium">Place
-            order</a>
+        <button @click="initiatePayment"
+            class="block w-full py-3 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium">Pay Now</button>
     </div>
 
-</div>
+  </div>
+
+  <div v-else class="container grid grid-cols-2  items-start pb-16 pt-4 gap-6">
+    <p>No Order Available</p>
+  </div>
 <!-- ./wrapper -->        
   
 
@@ -150,7 +159,7 @@
             // Make an API call to fetch user details
             const response = await axios.get(`${api}/users/profile`, config);
             // Store user details in the component data
-            this.user = response.data;
+            this.user = response.data.user;
         } catch (error) {
             console.error('Failed to fetch user data:', error);
             // Handle error
@@ -171,11 +180,44 @@
             }, 0);
         },
 
-        // Method to initiate payment
-        initiatePayment() {
-            // Logic to initiate payment based on the calculated total price
-            // Make an API call to place an order and initialize payment
-            // Use this.$router.push to redirect to the payment gateway or handle the payment process
+        async initiatePayment() {
+        try {
+            const token = sessionStorage.getItem('userToken');
+            if (!token) {
+            // Redirect to login page or handle not logged-in user
+            return;
+            }
+
+            const config = {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            };
+
+            // Replace this logic with data needed for the API call
+            const email = this.user.email;
+            const amount = this.total;  
+            const products = this.cartProducts.map(item => {
+            return {
+                product: item.product._id,
+                quantity: item.quantity,
+            };
+            });
+
+            // Make API call to place order and initialize payment
+            const response = await axios.post(`${api}/orders/place-order`, {
+            email,
+            amount,
+            products,
+            }, config);
+
+           
+            const authorizationURL = response.data.paymentInfo.data.authorization_url;
+            window.location.href = authorizationURL;
+        } catch (error) {
+            console.log('Failed to initiate payment:', error);
+            
+        }
         },
     },
   };
