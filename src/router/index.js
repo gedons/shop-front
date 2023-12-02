@@ -57,7 +57,7 @@ const routes = [
     //user front routes
     { path: "/products", name: "UserProducts", component: UserProducts }, 
     { path: "/checkout", name: "UserOrder", component: UserOrder }, 
-    { path: '/category/:categoryId',name: 'ProductCategory', component: ProductCategory, props: true},
+    { path: '/category/:categoryId',name: 'ProductCategory', component: ProductCategory},
     { path: "/product/:id/:productName", name: "ProductDetails", component: ProductDetails },  
     { path: '/cart', name: 'Cart', component: Cart},
     { path: "/terms", name: "Terms", component: Terms },  

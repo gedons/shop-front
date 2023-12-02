@@ -295,7 +295,8 @@
                     </div>
                     <button @click="addToCart(latestProduct._id)"
                         class="block w-full py-1 text-center text-white bg-[#cc2121] border border-[#cc2121] rounded-b hover:bg-transparent hover:text-[#cc2121] transition">Add
-                        to cart</button>
+                        to cart
+                    </button>
                 </div>           
             </div>         
         </div>
@@ -434,7 +435,7 @@ import adImage from '../assets/images/offer.jpg';
 import axios from 'axios';
 import api from '../api';
 import moment from 'moment';
- import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -445,7 +446,7 @@ export default {
     Header, 
         Footer,  
         Swiper,
-      SwiperSlide,
+        SwiperSlide,
     },
     setup() {
       return {

@@ -24,7 +24,7 @@
         <!-- drawer init and toggle -->
         <div class="text-center md:hidden" >
             <button
-                class="text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 block md:hidden"
+                class="text-white hover:bg-red-400 bg-primary focus:ring-4 focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none block md:hidden"
                 type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
                 aria-controls="drawer-example">
                 <ion-icon name="grid-outline"></ion-icon>
@@ -90,19 +90,7 @@
                             <label for="red"
                                 class="border border-gray-200 rounded-sm h-6 w-6  cursor-pointer shadow-sm block"
                                 style="background-color: #fc3d57;"></label>
-                        </div>
-                        <div class="color-selector">
-                            <input type="radio" name="color" id="black" class="hidden">
-                            <label for="black"
-                                class="border border-gray-200 rounded-sm h-6 w-6  cursor-pointer shadow-sm block"
-                                style="background-color: #000;"></label>
-                        </div>
-                        <div class="color-selector">
-                            <input type="radio" name="color" id="white" class="hidden">
-                            <label for="white"
-                                class="border border-gray-200 rounded-sm h-6 w-6  cursor-pointer shadow-sm block"
-                                style="background-color: #fff;"></label>
-                        </div>
+                        </div>                        
 
                     </div>
                 </div>
@@ -142,56 +130,7 @@
                             <div class="ml-auto text-gray-600 text-sm">(10)</div>
                         </div>
                     </div>
-                </div>
-
-                <div class="pt-4">
-                    <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Brands</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center">
-                            <input type="checkbox" name="brand-1" id="brand-1"
-                                class="text-primary focus:ring-0 rounded-sm cursor-pointer">
-                            <label for="brand-1" class="text-gray-600 ml-3 cusror-pointer">Cooking Color</label>
-                            <div class="ml-auto text-gray-600 text-sm">(15)</div>
-                        </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" name="brand-2" id="brand-2"
-                                class="text-primary focus:ring-0 rounded-sm cursor-pointer">
-                            <label for="brand-2" class="text-gray-600 ml-3 cusror-pointer">Magniflex</label>
-                            <div class="ml-auto text-gray-600 text-sm">(9)</div>
-                        </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" name="brand-3" id="brand-3"
-                                class="text-primary focus:ring-0 rounded-sm cursor-pointer">
-                            <label for="brand-3" class="text-gray-600 ml-3 cusror-pointer">Ashley</label>
-                            <div class="ml-auto text-gray-600 text-sm">(21)</div>
-                        </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" name="brand-4" id="brand-4"
-                                class="text-primary focus:ring-0 rounded-sm cursor-pointer">
-                            <label for="brand-4" class="text-gray-600 ml-3 cusror-pointer">M&D</label>
-                            <div class="ml-auto text-gray-600 text-sm">(10)</div>
-                        </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" name="brand-5" id="brand-5"
-                                class="text-primary focus:ring-0 rounded-sm cursor-pointer">
-                            <label for="brand-5" class="text-gray-600 ml-3 cusror-pointer">Olympic</label>
-                            <div class="ml-auto text-gray-600 text-sm">(10)</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-4">
-                    <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Price</h3>
-                    <div class="mt-4 flex items-center">
-                        <input type="text" name="min" id="min"
-                            class="w-full border-gray-300 focus:border-primary rounded focus:ring-0 px-3 py-1 text-gray-600 shadow-sm"
-                            placeholder="min">
-                        <span class="mx-3 text-gray-500">-</span>
-                        <input type="text" name="max" id="max"
-                            class="w-full border-gray-300 focus:border-primary rounded focus:ring-0 px-3 py-1 text-gray-600 shadow-sm"
-                            placeholder="max">
-                    </div>
-                </div>
+                </div>               
 
                 <div class="pt-4">
                     <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">size</h3>
@@ -200,27 +139,7 @@
                             <input type="radio" name="size" id="size-xs" class="hidden">
                             <label for="size-xs"
                                 class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">XS</label>
-                        </div>
-                        <div class="size-selector">
-                            <input type="radio" name="size" id="size-sm" class="hidden">
-                            <label for="size-sm"
-                                class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">S</label>
-                        </div>
-                        <div class="size-selector">
-                            <input type="radio" name="size" id="size-m" class="hidden">
-                            <label for="size-m"
-                                class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">M</label>
-                        </div>
-                        <div class="size-selector">
-                            <input type="radio" name="size" id="size-l" class="hidden">
-                            <label for="size-l"
-                                class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">L</label>
-                        </div>
-                        <div class="size-selector">
-                            <input type="radio" name="size" id="size-xl" class="hidden">
-                            <label for="size-xl"
-                                class="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">XL</label>
-                        </div>
+                        </div>                    
                     </div>
                 </div>
 
@@ -233,18 +152,7 @@
                                 class="border border-gray-200 rounded-sm h-6 w-6  cursor-pointer shadow-sm block"
                                 style="background-color: #fc3d57;"></label>
                         </div>
-                        <div class="color-selector">
-                            <input type="radio" name="color" id="black" class="hidden">
-                            <label for="black"
-                                class="border border-gray-200 rounded-sm h-6 w-6  cursor-pointer shadow-sm block"
-                                style="background-color: #000;"></label>
-                        </div>
-                        <div class="color-selector">
-                            <input type="radio" name="color" id="white" class="hidden">
-                            <label for="white"
-                                class="border border-gray-200 rounded-sm h-6 w-6  cursor-pointer shadow-sm block"
-                                style="background-color: #fff;"></label>
-                        </div>
+                       
 
                     </div>
                 </div>
@@ -261,280 +169,104 @@
                     <option value="price-high-to-low">Price high to low</option>
                     <option value="latest">Latest product</option>
                 </select>
-
-                <div class="flex gap-2 ml-auto">
-                    <div
-                        class="border border-primary w-10 h-9 flex items-center justify-center text-white bg-primary rounded cursor-pointer">
-                        <i class="fa-solid fa-grip-vertical"></i>
-                    </div>
-                    <div
-                        class="border border-gray-300 w-10 h-9 flex items-center justify-center text-gray-600 rounded cursor-pointer">
-                        <i class="fa-solid fa-list"></i>
-                    </div>
-                </div>
+ 
             </div>
 
-            <div class="grid md:grid-cols-3 grid-cols-2 gap-6">
-                <div class="bg-white shadow rounded overflow-hidden group">
+            <div v-if="loading" class="flex justify-center items-center mt-3">
+                <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" fill-rule="evenodd">
+                        <g transform="translate(2 1)" stroke="#000" stroke-width="1.5">
+                            <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#000">
+                                <animate attributeName="fill-opacity"
+                                    begin="0s" dur="1.3s"
+                                    values="1;0;0;0;0;0;0;0" calcMode="linear"
+                                    repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#000">
+                                <animate attributeName="fill-opacity"
+                                    begin="0s" dur="1.3s"
+                                    values="0;1;0;0;0;0;0;0" calcMode="linear"
+                                    repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#000">
+                                <animate attributeName="fill-opacity"
+                                    begin="0s" dur="1.3s"
+                                    values="0;0;1;0;0;0;0;0" calcMode="linear"
+                                    repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#000">
+                                <animate attributeName="fill-opacity"
+                                    begin="0s" dur="1.3s"
+                                    values="0;0;0;1;0;0;0;0" calcMode="linear"
+                                    repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#000">
+                                <animate attributeName="fill-opacity"
+                                    begin="0s" dur="1.3s"
+                                    values="0;0;0;0;1;0;0;0" calcMode="linear"
+                                    repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#000">
+                                <animate attributeName="fill-opacity"
+                                    begin="0s" dur="1.3s"
+                                    values="0;0;0;0;0;1;0;0" calcMode="linear"
+                                    repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#000">
+                                <animate attributeName="fill-opacity"
+                                    begin="0s" dur="1.3s"
+                                    values="0;0;0;0;0;0;1;0" calcMode="linear"
+                                    repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#000">
+                                <animate attributeName="fill-opacity"
+                                    begin="0s" dur="1.3s"
+                                    values="0;0;0;0;0;0;0;1" calcMode="linear"
+                                    repeatCount="indefinite" />
+                            </circle>
+                        </g>
+                    </g>
+                </svg>
+            </div> 
+
+            <div v-else class="grid md:grid-cols-3 grid-cols-2 gap-6">
+                <div v-if="products.length === 0" class="p-2.5 xl:p-5">
+                    <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available For This Category!!!</p>
+                </div>                 
+                <div  v-else v-for="product in products" :key="product._id" class="bg-white shadow rounded overflow-hidden group">
                     <div class="relative">
-                        <img src="../assets/images/products/product1.jpg" alt="product 1" class="w-full">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                        justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                            <a href="#"
-                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                title="view product">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                            <a href="#"
-                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                title="add to wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
+                        <router-link :to="{name: 'ProductDetails',  params: {id: product._id, productName: product.title} }">
+                            <div v-for="imageUrl in product.images.slice(0, 1)" :key="imageUrl">
+                                <img :src="back_url + imageUrl" alt="product img" class="w-full h-52 cursor-pointer">
+                            </div>
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
+                            justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                                <p class="text-white text-md flex items-center justify-center hover:text-[#cc2121] cursor-pointer font-semibold  transition">
+                                <span>View Product</span>
+                                </p>                        
+                            </div>
+                    </router-link>
                     </div>
                     <div class="pt-4 pb-3 px-4">
                         <a href="#">
-                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
-                                Guyer
-                                Chair</h4>
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-[#cc2121] transition">{{product.title}}</h4>
                         </a>
                         <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl text-primary font-semibold">$45.00</p>
-                            <p class="text-sm text-gray-400 line-through">$55.90</p>
+                            <p class="text-xl text-[#cc2121] font-semibold">${{product.price}}</p>
+                            <!-- <p class="text-sm text-gray-400 line-through">$55.90</p> -->
                         </div>
-                        <div class="flex items-center">
+                        <!-- <div class="flex items-center">
                             <div class="flex gap-1 text-sm text-yellow-400">
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
+                                <span><i class="fa-solid fa-star"></i></span>                                 
                             </div>
                             <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
+                        </div> -->
                     </div>
-                    <a href="#"
-                        class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">Add
-                        to cart</a>
-                </div>
-
-                <div class="bg-white shadow rounded overflow-hidden group">
-                    <div class="relative">
-                        <img src="../assets/images/products/product2.jpg" alt="product 1" class="w-full">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                        justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                            <a href="#"
-                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                title="view product">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                            <a href="#"
-                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                title="add to wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-3 px-4">
-                        <a href="#">
-                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
-                                Guyer
-                                Chair</h4>
-                        </a>
-                        <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl text-primary font-semibold">$45.00</p>
-                            <p class="text-sm text-gray-400 line-through">$55.90</p>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="flex gap-1 text-sm text-yellow-400">
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                            </div>
-                            <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
-                    </div>
-                    <a href="#"
-                        class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">Add
-                        to cart</a>
-                </div>
-
-                <div class="bg-white shadow rounded overflow-hidden group">
-                    <div class="relative">
-                        <img src="../assets/images/products/product3.jpg" alt="product 1" class="w-full">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                        justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                            <a href="#"
-                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                title="view product">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                            <a href="#"
-                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                title="add to wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-3 px-4">
-                        <a href="#">
-                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
-                                Guyer
-                                Chair</h4>
-                        </a>
-                        <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl text-primary font-semibold">$45.00</p>
-                            <p class="text-sm text-gray-400 line-through">$55.90</p>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="flex gap-1 text-sm text-yellow-400">
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                            </div>
-                            <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
-                    </div>
-                    <a href="#"
-                        class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">Add
-                        to cart</a>
-                </div>
-
-                <div class="bg-white shadow rounded overflow-hidden group">
-                    <div class="relative">
-                        <img src="../assets/images/products/product4.jpg" alt="product 1" class="w-full">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                        justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                            <a href="#"
-                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                title="view product">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                            <a href="#"
-                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                title="add to wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-3 px-4">
-                        <a href="#">
-                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
-                                Guyer
-                                Chair</h4>
-                        </a>
-                        <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl text-primary font-semibold">$45.00</p>
-                            <p class="text-sm text-gray-400 line-through">$55.90</p>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="flex gap-1 text-sm text-yellow-400">
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                            </div>
-                            <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
-                    </div>
-                    <a href="#"
-                        class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">Add
-                        to cart</a>
-                </div>
-
-                <div class="bg-white shadow rounded overflow-hidden group">
-                    <div class="relative">
-                        <img src="../assets/images/products/product5.jpg" alt="product 1" class="w-full">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                        justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                            <a href="#"
-                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                title="view product">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                            <a href="#"
-                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                title="add to wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-3 px-4">
-                        <a href="#">
-                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
-                                Guyer
-                                Chair</h4>
-                        </a>
-                        <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl text-primary font-semibold">$45.00</p>
-                            <p class="text-sm text-gray-400 line-through">$55.90</p>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="flex gap-1 text-sm text-yellow-400">
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                            </div>
-                            <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
-                    </div>
-                    <a href="#"
-                        class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">Add
-                        to cart</a>
-                </div>
-
-                <div class="bg-white shadow rounded overflow-hidden group">
-                    <div class="relative">
-                        <img src="../assets/images/products/product6.jpg" alt="product 1" class="w-full">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                        justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                            <a href="#"
-                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                title="view product">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                            <a href="#"
-                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                title="add to wishlist">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-3 px-4">
-                        <a href="#">
-                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
-                                Guyer
-                                Chair</h4>
-                        </a>
-                        <div class="flex items-baseline mb-1 space-x-2">
-                            <p class="text-xl text-primary font-semibold">$45.00</p>
-                            <p class="text-sm text-gray-400 line-through">$55.90</p>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="flex gap-1 text-sm text-yellow-400">
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                                <span><i class="fa-solid fa-star"></i></span>
-                            </div>
-                            <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
-                    </div>
-                    <a href="#"
-                        class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">Add
-                        to cart</a>
-                </div>
-
-
-
+                    <button @click="addToCart(product._id)"
+                        class="block w-full py-1 text-center text-white bg-[#cc2121] border border-[#cc2121] rounded-b hover:bg-transparent hover:text-[#cc2121] transition">Add
+                        to cart
+                    </button>
+                </div>                                
             </div>
         </div>
 
@@ -563,6 +295,8 @@
       return {
         categoryId: this.$route.params.categoryId,
         products: [],
+        loading: true, 
+        back_url: 'http://localhost:5000' 
       };
     },
     created() {
@@ -573,11 +307,56 @@
         try {
           const response = await axios.get(`${api}/products/product-category/${this.categoryId}`);
           this.products = response.data.products;
+          this.loading = false;   
         } catch (error) {
           console.error('Failed to fetch products:', error);
+          this.loading = false;   
           // Handle error
         }
       },
+
+      async addToCart(productId) {
+            try {
+                const token = sessionStorage.getItem('userToken');
+                if (!token) {
+                // If user is not authenticated, redirect to the login page
+                this.$router.push('/login');
+                return; 
+                }
+
+                const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                };
+
+                // Fetch the product details including its price
+                const productDetails = await axios.get(`${api}/products/${productId}`);
+                const product = productDetails.data.product;
+
+                const currentCartCount = this.$store.state.cartCount.cartCount;
+                const quantityAdded = 1;
+
+                await axios.post(`${api}/cart/add-to-cart`, {
+                productId,
+                quantity: 1,
+                price: product.price,
+                }, config);
+
+                const updatedCartCount = currentCartCount + quantityAdded;
+                this.$store.dispatch('updateCartCount', updatedCartCount);
+
+                this.$toast.success('Product Added To Cart.', {
+                timeout: 3000,
+                });
+            } catch (error) {
+                this.$toast.error('An Error Occurred. Please try again!', {
+                timeout: 9000,
+                });
+                console.error('Failed to add product to cart:', error);
+                // Handle the error (e.g., show an error message)
+            }
+        },
     },
   };
   </script>

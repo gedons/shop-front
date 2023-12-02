@@ -410,12 +410,17 @@ export default {
                 },
                 };
 
+                // Fetch the product details including its price
+                const productDetails = await axios.get(`${api}/products/${productId}`);
+                const product = productDetails.data.product;
+
                 const currentCartCount = this.$store.state.cartCount.cartCount;
                 const quantityAdded = 1;
 
                 await axios.post(`${api}/cart/add-to-cart`, {
                 productId,
                 quantity: 1,
+                price: product.price,
                 }, config);
 
                 const updatedCartCount = currentCartCount + quantityAdded;
