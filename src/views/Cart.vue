@@ -4,7 +4,7 @@
     <!-- end header -->
 
    <!-- breadcrumb -->
-   <div class="container py-4 flex items-center gap-3">
+   <div class="container justify-center py-[3rem] bg-[#f6f6f6] flex items-center gap-3 mb-[5rem]">
     <router-link :to="{name: 'Index'}" class="text-primary text-base">
         <i class="fa-solid fa-house"></i>
     </router-link>
@@ -15,7 +15,7 @@
    </div>
   <!-- ./breadcrumb -->
 
-    <div class="flex flex-col min-h-screen">
+    <div class="flex flex-col">
     <!-- wrapper -->
     <div class="container grid grid-cols-1 items-start gap-6 pt-4 pb-16">
 
@@ -76,7 +76,7 @@
                 </g>
             </svg>
         </div> 
-        <div v-else class="col-span-9 space-y-4">  
+        <div v-else class="col-span-9 space-y-4 text-center">  
             <div v-if="cartProducts.length === 0"> 
                 <p>No item in the cart</p>
             </div> 
@@ -109,7 +109,7 @@
                    
                 </div>
                 <p  v-if="cartProducts.length !== 0">Total: <span class="font-medium">${{ TotalPrice() }}</span></p>
-                <div class="flex justify-between">
+                <div class="flex justify-center ">
                     <router-link  :to="{name: 'UserProducts'}"  v-if="cartProducts.length === 0" class="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition">Continue Shopping</router-link>
                     <router-link :to="{name: 'UserOrder'}" v-else class="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition">Proceed to Checkout</router-link>
                 </div>  
@@ -122,10 +122,10 @@
 
 
     
-        <!-- footer -->
-        <Footer/>
-        <!-- end footer -->
-    </div>
+  </div>
+  <!-- footer -->
+  <Footer/>
+  <!-- end footer -->
 </template>
 
 <script>

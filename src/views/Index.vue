@@ -16,18 +16,17 @@
     :pagination="{
       clickable: true,
     }"
-    :navigation="false"
+    :navigation="true"
     :modules="modules"
-    class="mySwiper"
   >
     <swiper-slide>
 
-        <div class="bg-cover bg-no-repeat bg-center  py-[10rem]" v-bind:style="{ 'background-image': 'url(' + bgImage + ')' }">
-        <div class="container pl-[6rem]">
-            <h1 class="text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
+        <div class="transition bg-cover  bg-no-repeat bg-center  py-[10rem]" v-bind:style="{ 'background-image': 'url(' + bgImage + ')' }">
+        <div class="container pl-[6rem] max-md:pl-2">
+            <h1 class="max-md:text-4xl text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
                 best clothing wears <br> available for you
             </h1>
-            <p class="text-[#000] bg-opacity-40">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam <br>
+            <p class="text-[#000] bg-opacity-40 max-md:text-[14px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam <br>
                 accusantium perspiciatis, sapiente
                 magni eos dolorum ex quos dolores odio</p>
             <div class="mt-12">
@@ -39,12 +38,12 @@
 
     </swiper-slide>
     <swiper-slide> 
-        <div class="bg-cover bg-no-repeat bg-center  py-[10rem]" v-bind:style="{ 'background-image': 'url(' + bgImage1 + ')' }">
-        <div class="container pl-[6rem]">
-            <h1 class="text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
+        <div class="transition bg-cover bg-no-repeat bg-center  py-[10rem]" v-bind:style="{ 'background-image': 'url(' + bgImage1 + ')' }">
+            <div class="container pl-[6rem] max-md:pl-2">
+            <h1 class="max-md:text-4xl text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
                 best clothing wears <br> available for you
             </h1>
-            <p class="text-[#000] bg-opacity-40">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam <br>
+            <p class="text-[#000] bg-opacity-40 max-md:text-[14px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam <br>
                 accusantium perspiciatis, sapiente
                 magni eos dolorum ex quos dolores odio</p>
             <div class="mt-12">
@@ -54,12 +53,12 @@
         </div>
     </div>
 </swiper-slide>
-    <swiper-slide> <div class="bg-cover bg-no-repeat bg-center  py-[10rem]" v-bind:style="{ 'background-image': 'url(' + bgImage2 + ')' }">
-        <div class="container pl-[6rem]">
-            <h1 class="text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
+    <swiper-slide> <div class="transition bg-cover bg-no-repeat bg-center  py-[10rem]" v-bind:style="{ 'background-image': 'url(' + bgImage2 + ')' }">
+        <div class="container pl-[6rem] max-md:pl-2">
+            <h1 class="max-md:text-4xl text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
                 best clothing wears <br> available for you
             </h1>
-            <p class="text-[#000] bg-opacity-40">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam <br>
+            <p class="text-[#000] bg-opacity-40 max-md:text-[14px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam <br>
                 accusantium perspiciatis, sapiente
                 magni eos dolorum ex quos dolores odio</p>
             <div class="mt-12">
@@ -70,16 +69,16 @@
     </div>
 </swiper-slide>
     <swiper-slide>
-        <div class="bg-cover bg-no-repeat bg-center  py-[10rem]" v-bind:style="{ 'background-image': 'url(' + bgImage3 + ')' }">
-        <div class="container pl-[6rem]">
-            <h1 class="text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
+        <div class="transition bg-cover bg-no-repeat bg-center  py-[10rem]" v-bind:style="{ 'background-image': 'url(' + bgImage3 + ')' }">
+            <div class="container pl-[6rem] max-md:pl-2">
+            <h1 class="max-md:text-4xl text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
                 best clothing wears <br> available for you
             </h1>
-            <p class="text-[#000] bg-opacity-40">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam <br>
+            <p class="text-[#000] bg-opacity-40 max-md:text-[14px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam <br>
                 accusantium perspiciatis, sapiente
                 magni eos dolorum ex quos dolores odio</p>
             <div class="mt-12">
-                <a href="#" class="bg-[#cc2121] border border-[#cc2121] text-white px-8 py-3 font-medium 
+                <a href="#" class="bg-[#000] border hover:bg-[#cc2121] text-white px-8 py-3 font-medium 
                     rounded-md hover:bg-transparent hover:text-white">Shop Now</a>
             </div>
         </div>
@@ -92,26 +91,26 @@
     <!-- ./banner -->
 
     <!-- features -->
-    <div class="container py-16">
+    <div class="container py-12">
         <div class="w-10/12 grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto justify-center">
-            <div class="border border-[#cc2121] rounded-sm px-3 py-6 flex justify-center items-center gap-5">
-                <img src="../assets/images/icons/delivery-van.svg" alt="Delivery" class="w-12 h-12 object-contain">
+            <div class=" rounded-sm px-3 py-6 flex justify-center items-center gap-3">
+                <img src="../assets/images/icons/delivery-van.svg" alt="Delivery" class="w-10 h-10 object-contain">
                 <div>
-                    <h4 class="font-medium capitalize text-[14px]">Free Shipping</h4>
+                    <h4 class="font-medium text-center capitalize text-[14px]">Free Shipping</h4>
                     <p class="text-gray-500 text-[12px]">Order over $200</p>
                 </div>
             </div>
-            <div class="border border-[#cc2121] rounded-sm px-3 py-6 flex justify-center items-center gap-5">
-                <img src="../assets/images/icons/money-back.svg" alt="Delivery" class="w-12 h-12 object-contain">
+            <div class="border-l border-[#848484] max-md:border-none  rounded-sm px-3 py-6 flex justify-center items-center gap-3">
+                <img src="../assets/images/icons/money-back.svg" alt="Delivery" class="w-10 h-10 object-contain">
                 <div>
-                    <h4 class="font-medium capitalize text-[14px]">Money Returns</h4>
+                    <h4 class="font-medium text-center capitalize text-[14px]">Money Returns</h4>
                     <p class="text-gray-500 text-[12px]">30 days money returns</p>
                 </div>
             </div>
-            <div class="border border-[#cc2121] rounded-sm px-3 py-6 flex justify-center items-center gap-5">
-                <img src="../assets/images/icons/service-hours.svg" alt="Delivery" class="w-12 h-12 object-contain">
+            <div class="border-l border-[#848484] max-md:border-none rounded-sm px-3 py-6 flex justify-center items-center gap-3">
+                <img src="../assets/images/icons/service-hours.svg" alt="Delivery" class="w-10 h-10 object-contain">
                 <div>
-                    <h4 class="font-medium capitalize text-[14px]">24/7 Support</h4>
+                    <h4 class="font-medium text-center capitalize text-[14px]">24/7 Support</h4>
                     <p class="text-gray-500 text-[12px]">Customer support</p>
                 </div>
             </div>
@@ -120,21 +119,20 @@
     <!-- ./features -->
 
     <!-- categories -->
-    <div class="container py-16 px-[9rem]">
-        <h2 class="text-2xl font-semibold text-gray-700  mb-6">shop by category</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-            <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/1.jpg" alt="category 1" class="w-full md:h-72">
+    <div class="container py-16 md:px-[13rem]">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="relative rounded-sm overflow-hidden  group md:h-72">
+                <img src="../assets/images/category/1.jpg" alt="Men's Clothing" class="max-md:w-full md:h-72">
                 <a href="#"
                     class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Men</a>
             </div>
             <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/2.jpg" alt="category 1" class="w-full md:h-72">
+                <img src="../assets/images/category/2.jpg" alt="Women's Clothing" class="max-md:w-full md:h-72">
                 <a href="#"
                     class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Women</a>
             </div>
             <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/3.jpg" alt="category 1" class="w-full md:h-72">
+                <img src="../assets/images/category/3.jpg" alt="Shoes" class="max-md:w-full md:h-72">
                 <a href="#"
                     class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Shoes
                 </a>
@@ -249,7 +247,7 @@
      <!-- ./product -->
 
       <!-- ads -->
-    <div class="container pb-16 h-[50%]">
+    <div class="container pb-16">
         <a href="#">
             <img :src="ads" alt="ads" class="w-full h-[40%]">
         </a>

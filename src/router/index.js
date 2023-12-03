@@ -18,6 +18,7 @@ import ProductDetails from '../views/ProductDetails.vue';
 import Cart from '../views/Cart.vue';
 import Terms from '../views/Terms.vue';
 import Contact from '../views/Contact.vue';
+import About from '../views/About.vue'
 
 import Dashboard from '../views/Admin/Dashboard.vue';
 import Categories from '../views/Admin/Categories.vue';
@@ -59,6 +60,7 @@ const routes = [
     { path: "/product/:id/:productName", name: "ProductDetails", component: ProductDetails },  
     { path: '/cart', name: 'Cart', component: Cart},
     { path: "/terms", name: "Terms", component: Terms },  
+    { path: "/about", name: "Terms", component: About },  
     { path: "/contact", name: "Contact", component: Contact },  
     {
       path: '/user/account',

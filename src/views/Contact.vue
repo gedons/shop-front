@@ -1,5 +1,18 @@
 <template>
     <Header/>
+
+      <!-- breadcrumb -->
+      <div class="container justify-center py-[3rem] bg-[#f6f6f6] flex items-center gap-3 mb-[5rem]">
+    <router-link :to="{name: 'Index'}" class="text-primary text-base">
+        <i class="fa-solid fa-house"></i>
+    </router-link>
+    <span class="text-sm text-gray-400">
+        <i class="fa-solid fa-chevron-right"></i>
+    </span>
+    <p class="text-gray-600 font-medium">Contact</p>
+   </div>
+  <!-- ./breadcrumb -->
+
    <section class="bg-white ">
     <div class="container px-12 py-12 mx-auto">
         <div>
@@ -101,8 +114,6 @@ export default {
   components: {
     Header, 
     Footer,
-
-    
   },
 
   data() {

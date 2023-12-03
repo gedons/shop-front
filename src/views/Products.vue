@@ -4,16 +4,16 @@
     <!-- end header -->
 
     <!-- breadcrumb -->
-    <div class="container py-4 flex bg-[#f6f6f6] h-[8rem] items-center justify-center  gap-3">
-        <router-link :to="{name: 'Index'}" class="text-[#dc3545] text-base">
-            <i class="fa-solid fa-house"></i>
-        </router-link>
-        <span class="text-sm font-light text-gray-400">
-            <i class="fa-solid fa-chevron-right"></i>
-        </span>
-        <p class="text-gray-600 font-medium">Products</p>
-    </div>
-    <!-- ./breadcrumb -->
+    <div class="container justify-center py-[3rem] bg-[#f6f6f6] flex items-center gap-3 mb-[5rem]">
+    <router-link :to="{name: 'Index'}" class="text-primary text-base">
+        <i class="fa-solid fa-house"></i>
+    </router-link>
+    <span class="text-sm text-gray-400">
+        <i class="fa-solid fa-chevron-right"></i>
+    </span>
+    <p class="text-gray-600 font-medium">Products</p>
+   </div>
+  <!-- ./breadcrumb -->
     
     <!-- shop wrapper -->
     <div class="container grid md:grid-cols-4 grid-cols-2 gap-6 pt-4  pb-16 items-start">

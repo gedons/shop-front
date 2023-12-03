@@ -6,17 +6,17 @@
     
 
     
-      <!-- breadcrumb -->
-      <div class="container bg-[#f6f6f6] h-[8rem] items-center justify-center py-4 flex gap-3">
-        <router-link :to="{name: 'Index'}" class="text-[#dc3545] text-base">
-            <i class="fa-solid fa-house text-[#dc3545]"></i>
-        </router-link>
-        <span class="text-sm text-gray-400">
-            <i class="fa-solid fa-chevron-right"></i>
-        </span>
-        <p class="text-gray-600 font-medium">Product Details</p>
-      </div>
-    <!-- ./breadcrumb -->
+    <!-- breadcrumb -->
+    <div class="container justify-center py-[3rem] bg-[#f6f6f6] flex items-center gap-3 mb-[5rem]">
+    <router-link :to="{name: 'Index'}" class="text-primary text-base">
+        <i class="fa-solid fa-house"></i>
+    </router-link>
+    <span class="text-sm text-gray-400">
+        <i class="fa-solid fa-chevron-right"></i>
+    </span>
+    <p class="text-gray-600 font-medium">Product Details</p>
+   </div>
+  <!-- ./breadcrumb -->
 
     <div class="flex flex-col min-h-screen">
     <div v-if="loading" class="flex justify-center items-center mt-3">
@@ -327,10 +327,10 @@
 
    </div> 
 
-     <!-- footer -->
-     <Footer/>
-     <!-- end footer -->
-    </div>
+</div>
+<!-- footer -->
+<Footer/>
+<!-- end footer -->
 </template>
 
 <script>

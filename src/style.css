@@ -32,6 +32,25 @@
   }
 
   .swiper-pagination-bullet-active {
-    background-color: #dc3545 !important;
+    background-color: #cc2121 !important;
+}
+.swiper-button-prev{
+  color: #000 !important;
+}
+
+.swiper-button-prev:hover{
+  color: #cc2121 !important;
+}
+
+.swiper-button-next{
+  color: #000 !important;
+}
+
+.swiper-button-next:hover{
+  color: #cc2121 !important;
+}
+
+.container{
+  width: 90% !important;
 }
   
