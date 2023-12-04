@@ -23,6 +23,7 @@
         
       
 
+<<<<<<< HEAD
             <div class="flex items-center gap-1 space-x-4">
                 <!-- <a href="#" class="text-center text-gray-700 hover:text-[#cc2121] transition relative">
                     <div class="text-1xl">
@@ -34,20 +35,25 @@
                         8</div>
                 </a> -->
                 <a href="#" class="text-center text-gray-700 hover:text-[#cc2121] transition relative">
+=======
+            <div class="flex items-center space-x-6">
+                
+                <router-link :to="{name: 'Cart'}" class="text-center text-gray-700 hover:text-[#cc2121] transition relative">
+>>>>>>> 163a36b37c00bc28a8bc7d322a2b0f5ec1e7f4e8
                     <div class="text-1xl">
                         <i class="fa-solid fa-bag-shopping"></i>
                     </div>
                     <div class="text-xs leading-3">Cart</div>
                     <div
                         class="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-[#cc2121] text-white text-xs">
-                        2</div>
-                </a>
-                <a href="#" class="text-center text-gray-700 hover:text-[#cc2121] transition relative">
+                        {{ $store.state.cartCount.cartCount }}</div>
+                </router-link>
+                <router-link :to="{name: 'UserAccount'}" class="text-center text-gray-700 hover:text-[#cc2121] transition relative">
                     <div class="text-1xl">
                         <i class="fa-regular fa-user"></i>
                     </div>
                     <div class="text-xs leading-3">Account</div>
-                    </a>
+                </router-link>
             </div>
         </div>
     </div>

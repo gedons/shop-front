@@ -15,7 +15,11 @@
    </div>
   <!-- ./breadcrumb -->
 
+<<<<<<< HEAD
     <div class="flex flex-col">
+=======
+  
+>>>>>>> 163a36b37c00bc28a8bc7d322a2b0f5ec1e7f4e8
     <!-- wrapper -->
     <div class="container grid grid-cols-1 items-start gap-6 pt-4 pb-16">
 
@@ -122,10 +126,17 @@
 
 
     
+<<<<<<< HEAD
   </div>
   <!-- footer -->
   <Footer/>
   <!-- end footer -->
+=======
+        <!-- footer -->
+        <Footer/>
+        <!-- end footer -->
+ 
+>>>>>>> 163a36b37c00bc28a8bc7d322a2b0f5ec1e7f4e8
 </template>
 
 <script>
@@ -156,8 +167,8 @@ export default {
       latestProducts: [],
       recommendProducts: [],
       loading: true,
-      //back_url: 'https://shopo-api.onrender.com' 
-      back_url: 'http://localhost:5000',
+      back_url: 'https://shopo-api.onrender.com' 
+      //back_url: 'http://localhost:5000',
     };
   },
 

@@ -90,7 +90,7 @@
 
         <div>
             <h2 class="text-3xl font-medium uppercase mb-2">{{productDetails.title}}</h2>
-            <div class="flex items-center mb-4">
+            <!-- <div class="flex items-center mb-4">
                 <div class="flex gap-1 text-sm text-yellow-400">
                     <span><i class="fa-solid fa-star"></i></span>
                     <span><i class="fa-solid fa-star"></i></span>
@@ -99,7 +99,7 @@
                     <span><i class="fa-solid fa-star"></i></span>
                 </div>
                 <div class="text-xs text-gray-500 ml-3">(150 Reviews)</div>
-            </div>
+            </div> -->
             <div class="space-y-2">
                 <p class="text-gray-800 font-semibold space-x-2">
                     <span>Availability: </span>
@@ -358,8 +358,8 @@ export default {
         selectedColor: null,
         relatedProducts: [],
         loading: true,
-       // back_url: 'https://shopo-api.onrender.com' 
-       back_url: 'http://localhost:5000' 
+        back_url: 'https://shopo-api.onrender.com' 
+      // back_url: 'http://localhost:5000' 
         
     };
   },
@@ -410,12 +410,17 @@ export default {
                 },
                 };
 
+                // Fetch the product details including its price
+                const productDetails = await axios.get(`${api}/products/${productId}`);
+                const product = productDetails.data.product;
+
                 const currentCartCount = this.$store.state.cartCount.cartCount;
                 const quantityAdded = 1;
 
                 await axios.post(`${api}/cart/add-to-cart`, {
                 productId,
                 quantity: 1,
+                price: product.price,
                 }, config);
 
                 const updatedCartCount = currentCartCount + quantityAdded;

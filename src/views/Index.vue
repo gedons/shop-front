@@ -119,6 +119,7 @@
     <!-- ./features -->
 
     <!-- categories -->
+<<<<<<< HEAD
     <div class="container py-16 md:px-[13rem]">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="relative rounded-sm overflow-hidden  group md:h-72">
@@ -136,8 +137,82 @@
                 <a href="#"
                     class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Shoes
                 </a>
+=======
+    <div class="container py-16 px-[9rem]">
+        <h2 class="text-2xl font-semibold text-gray-700  mb-6">shop by category</h2>
+
+        <div v-if="loading" class="flex justify-center items-center mt-3">
+            <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                    <g transform="translate(2 1)" stroke="#9F2DBE" stroke-width="1.5">
+                        <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="1;0;0;0;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;1;0;0;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;1;0;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;1;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;1;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;0;1;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;0;0;1;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#9F2DBE">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;0;0;0;1" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                    </g>
+                </g>
+            </svg>
+        </div> 
+
+
+        <div v-else>
+        <div v-if="categories.length === 0" class="p-2.5 xl:p-5">
+            <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available!!!</p>
+        </div>   
+        <div v-else class="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <div v-for="category in categories" :key="category._id" class="relative rounded-sm overflow-hidden group md:h-72">
+                <img :src="back_url + category.imageUrl" alt="category 1" class="w-full md:h-72">
+                <router-link :to="{ name: 'ProductCategory', params: { categoryId: category._id } }"
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">{{category.name}}</router-link>
+>>>>>>> 163a36b37c00bc28a8bc7d322a2b0f5ec1e7f4e8
             </div>
+          
         </div>
+     </div>
     </div>
     <!-- ./categories -->
 
@@ -237,9 +312,10 @@
                             <div class="text-xs text-gray-500 ml-3">(150)</div>
                         </div> -->
                     </div>
-                    <a href="#"
+                    <button @click="addToCart(latestProduct._id)"
                         class="block w-full py-1 text-center text-white bg-[#cc2121] border border-[#cc2121] rounded-b hover:bg-transparent hover:text-[#cc2121] transition">Add
-                        to cart</a>
+                        to cart
+                    </button>
                 </div>           
             </div>         
         </div>
@@ -352,9 +428,9 @@
                             <div class="text-xs text-gray-500 ml-3">(150)</div>
                         </div> -->
                     </div>
-                    <a href="#"
+                    <button  @click="addToCart(recommendProduct._id)"
                         class="block w-full py-1 text-center text-white bg-[#cc2121] border border-[#cc2121] rounded-b hover:bg-transparent hover:text-[#cc2121] transition">Add
-                        to cart</a>
+                        to cart</button>
                 </div>           
             </div>         
         </div>
@@ -378,7 +454,7 @@ import adImage from '../assets/images/offer.jpg';
 import axios from 'axios';
 import api from '../api';
 import moment from 'moment';
- import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -389,7 +465,7 @@ export default {
     Header, 
         Footer,  
         Swiper,
-      SwiperSlide,
+        SwiperSlide,
     },
     setup() {
       return {
@@ -408,8 +484,8 @@ export default {
       latestProducts: [],
       recommendProducts: [],
       loading: true,
-      //back_url: 'https://shopo-api.onrender.com' 
-      back_url: 'http://localhost:5000' 
+      back_url: 'https://shopo-api.onrender.com' 
+     // back_url: 'http://localhost:5000' 
 
     };
   },
