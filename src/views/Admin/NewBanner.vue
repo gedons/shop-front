@@ -16,16 +16,16 @@
               </div>
       
               <nav class="mt-10">
-                <router-link :to="{name: 'Dashboard'}"  class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-gray-700 bg-opacity-25">
-                      <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                          stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
-                      </svg>
-      
-                      <span class="mx-3">Dashboard</span>
+                <router-link :to="{name: 'Dashboard'}" class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-gray-700 bg-opacity-25">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                    </svg>
+    
+                    <span class="mx-3">Dashboard</span>
                 </router-link>
                   
                   <!-- customer link start -->
@@ -206,7 +206,9 @@
                               href="form-layout.html">Faqs</a
                           >
                           </li>
-                         
+                          <li>
+                            
+                          </li>
                       </ul>
                       </div>
                       <!-- Dropdown Menu End -->
@@ -321,62 +323,49 @@
               <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
                   <div class="container px-6 py-8 mx-auto">
                       <div class="flex">
-                          <h3 class="text-3xl font-medium text-gray-700">Admin Settings</h3>
-                          
+                          <h3 class="text-3xl font-medium text-gray-700">Add Banner</h3>
+                          <router-link :to="{name: 'Banner'}"   class="ml-3 font-medium text-white px-4 py-2 bg-gray-900 rounded-md hover:bg-gray-700">All Banners</router-link>
                       </div>
                                          
                       <div class="flex flex-col mt-8">
                           <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-                             
+                            <form @submit.prevent="createBanner">
                                 <div class="p-6.5">
-                                <form @submit.prevent="updateAdminPassword">
-                                  <div class="mb-4.5 flex flex-col gap-6 xl:flex-row bg-white px-4 py-4 rounded-md">
+                                  <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
                                     <div class="w-full xl:w-1/2">
                                       <label class="mb-2.5 block text-black">
-                                         Current Password
+                                        Paragraph
                                       </label>
-                                      <input type="password" id="current password"  v-model="currentPassword" placeholder="Current Password"
+                                      <input type="text" id="paragraph" v-model="paragraph" placeholder="Paragraph Text"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
                                     </div>
               
                                     <div class="w-full xl:w-1/2">
                                       <label class="mb-2.5 block text-black">
-                                         New Password
+                                         Header
                                       </label>
-                                      <input type="password" id="new password"  v-model="newPassword" placeholder=" New Password"
+                                      <input type="text" id="header" multiple v-model="header" placeholder="Header Text"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
                                     </div>
-                                  </div> 
-                                  
-                                  <button type="submit" class="flex mt-4 justify-center rounded bg-gray-900 hover:bg-gray-700 text-white p-3 font-medium text-gray">
-                                    Save
-                                  </button>
-                                </form>         
- 
-                                <form @submit.prevent="updateAdminDetails">
-                                  <div class="mt-11 mb-4.5 flex flex-col gap-6 xl:flex-row bg-white px-4 py-4 rounded-md">
-                                    <div class="w-full xl:w-1/2">
-                                      <label class="mb-2.5 mt-3 block text-black">
-                                         Username
-                                      </label>
-                                      <input type="text" id="color" v-model="admin.firstname" placeholder="Username"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
-                                    </div>
+                                  </div>                                              
               
-                                    <div class="w-full xl:w-1/2">
-                                      <label class="mb-2.5 mt-3 block text-black">
-                                         Email
+                                  <div class="mb-4.5">
+                                    <label class="mb-2.5 mt-7 block text-black">
+                                        Banner Image
                                       </label>
-                                      <input type="email" id="price" v-model="admin.email" placeholder="Email"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
-                                    </div>
-                                  </div>                                    
-                                  
-                                  <button type="submit" class="flex mt-4 justify-center rounded bg-gray-900 hover:bg-gray-700 text-white p-3 font-medium text-gray">
+                                      <div class="relative z-20 bg-transparent dark:bg-form-input">
+                                          <input type="file" id="image" ref="imageFiles" multiple @change="handleFileChange" accept="image/*" placeholder="Product Title"
+                                          class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />                                                                 
+                                      </div>
+                                  </div>
+
+                                
+              
+                                  <button type="submit" class="flex mt-7  justify-center rounded bg-gray-900 hover:bg-gray-700 text-white p-3 font-medium text-gray">
                                     Save
                                   </button>
-                                </form>
-                                </div>                            
+                                </div>
+                            </form>
                           </div>
                       </div>                                       
                       
@@ -401,105 +390,27 @@
         notificationOpen: false,
         dropdownOpen: false,
         selected: '',  
-        currentPassword: '',
-        newPassword: '',
-        admin: {
-        firstname: '', 
-        email: '',  
-      },
+        page: '' ,
+        paragraph: '',
+        header: '',
+        imageFiles: [], 
         
         
       };
     },
-    created() {
-     this.fetchAdmin();
-    },
+    
     methods: {
-          fetchAdmin() {
-            
-            const token = sessionStorage.getItem('adminToken');  
-              const config = {
-              headers: {
-                  Authorization: `Bearer ${token}`,
-              },
-              };
-
-              axios.get(`${api}/users/profile`,config).then((response) => {
-              this.admin = response.data.user;           
-              })
-              .catch((error) => {
-              console.error('Error getting Details:', error);          
-              });      
+     
+          handleFileChange(event) {
+            this.imageFiles = event.target.files;
+            console.log(this.imageFiles);
           },
-         
 
-        async updateAdminPassword() {
-            try {
-                const token = sessionStorage.getItem('adminToken');  
-                const config = {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-                };
-                await axios.put(`${api}/users/admin/update-password`, {
-                currentPassword: this.currentPassword,
-                newPassword: this.newPassword,
-                }, config)
-
-                .then((success) => {
-                if (success) {
-                    this.$toast.success('Password Updated Successfully.', {
-                        timeout: 3000, 
-                    });		                          
-                } else {
-                    this.$toast.error('An Error Occured. try again!', {
-                        timeout: 9000, 
-                    });	          
-                }
-                });
-            } catch (error) {
-                console.error(error); 
-            }
-        },
-
-        async updateAdminDetails() {
-            try {
-                const token = sessionStorage.getItem('adminToken');  
-                const config = {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-                };
-                await axios.put(`${api}/users/admin/update-details`, {
-                firstname: this.admin.firstname,
-                email: this.admin.email,
-                }, config)
-
-                .then((success) => {
-                if (success) {
-                    this.$toast.success('Details Updated Successfully.', {
-                        timeout: 3000, 
-                    });		                          
-                } else {
-                    this.$toast.error('An Error Occured. try again!', {
-                        timeout: 9000, 
-                    });	          
-                }
-                });
-            } catch (error) {
-                console.error(error.response.data); 
-        }
-        },
-
-        async updateAdminDetails() {
+        async createBanner() {
             try {
                 const formData = new FormData();
-                formData.append('title', this.title);
-                formData.append('size', this.size);
-                formData.append('color', this.color);
-                formData.append('price', this.price);
-                formData.append('description', this.description);
-                formData.append('categoryId', this.categoryId);
+                formData.append('paragraph', this.paragraph);
+                formData.append('header', this.header);               
 
                 //auth token
                 const token = sessionStorage.getItem('adminToken'); 
@@ -509,7 +420,7 @@
                 formData.append('images', this.imageFiles[i]);
                 }
 
-                await axios.post(`${api}/products/create`, formData, {
+                await axios.post(`${api}/banner/create`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                      Authorization: `Bearer ${token}`,
@@ -517,10 +428,10 @@
                 })
                 .then(success => {
                     if (success) {
-                    this.$toast.success('Product Created Successfully!.', {
+                    this.$toast.success('Banner Created Successfully.', {
                         timeout: 3000, 
                     });		                         
-                    this.$router.push({name: 'Products'});                                    
+                    this.$router.push({name: 'Banner'});                                    
                     } else {
                         this.$toast.error('An Error Occured. try again!', {
                             timeout: 9000, 
@@ -528,7 +439,7 @@
                     }
                 })
             } catch (error) {
-                console.error('Error creating product:', error);
+                console.error('Error creating banner:', error);
                 // Handle error, show error message, etc.
             }
         },
@@ -555,7 +466,7 @@
               });
           },  
   
-    
+  
   
           toggleSidebar() {
               this.sidebarOpen = !this.sidebarOpen;

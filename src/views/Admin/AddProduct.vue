@@ -189,10 +189,9 @@
                       :class="(selected === 'Page') ? 'block' : 'hidden'">
                       <ul class="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
                           <li>
-                          <a
-                              class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out text-gray-500 hover:text-white"
-                              href="form-elements.html"
-                              >Banner</a
+                            <router-link :to="{name: 'Banner'}"
+                            class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out text-gray-500 hover:text-white"                            
+                            >Banner</router-link
                           >
                           </li>
                           <li>
@@ -208,10 +207,7 @@
                           >
                           </li>
                           <li>
-                              <a
-                                  class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out text-gray-500 hover:text-white"
-                                  href="form-layout.html">Terms & Conditions</a
-                              >
+                            
                           </li>
                       </ul>
                       </div>
@@ -536,116 +532,6 @@
               });
               });
           },  
-  
-        //   async editCategory() {
-        //   try {
-        //       const token = sessionStorage.getItem('adminToken');  
-        //       const config = {
-        //       headers: {
-        //           Authorization: `Bearer ${token}`,
-        //       },
-        //       };
-        //       await axios.put(`${api}/categories/update/${this.editedCategory._id}`, { name: this.editedCategory.name }, config)
-        //       .then((success) => {
-        //        if (success) {
-        //             this.$toast.success('Category Updated Successfully.', {
-        //               timeout: 3000, 
-        //             });		       
-        //             this.closeModal();
-        //             this.fetchCategories();
-        //         } else {
-        //            this.$toast.error('An Error Occured. try again!', {
-        //               timeout: 9000, 
-        //             });	          
-        //         }
-        //       });            
-        //   } catch (error) {
-        //       console.error('Error editing category', error);
-        //       // Handle error
-        //   }
-        //   },
-  
-        //   async addNewCategory(){
-        //       try {
-        //           const formData = new FormData();
-        //           formData.append('name', this.newCategoryName);
-  
-        //           const token = sessionStorage.getItem('adminToken'); 
-        //           const config = {
-        //           headers: {
-        //               Authorization: `Bearer ${token}`,
-        //           },
-        //           };
-                 
-        //           const response = await axios.post(`${api}/categories/create`, formData, config)
-        //           .then((success) => {
-        //           if (success) {
-        //               this.$toast.success('Category Added Successfully.', {
-        //                   timeout: 3000, 
-        //               });		 
-        //               console.log('Category added:', response.data);      
-        //               this.closeModal1();
-        //               this.fetchCategories();
-        //           } else {
-        //               this.$toast.error('An Error Occured. try again!', {
-        //                   timeout: 9000, 
-        //               });	          
-        //           }
-        //           });     
-        //       } catch (error) {
-        //           console.error('Error adding new category', error);
-        //           // Handle error
-        //       }
-        //   },
-  
-        //   async handleImageUpload(categoryId) {
-        //   try {
-        //       const token = sessionStorage.getItem('adminToken');  
-        //       const formData = new FormData();
-        //       const fileInput = this.$refs.uploadInput.files[0];  
-        //       formData.append('image', fileInput);
-  
-        //       const config = {
-        //       headers: {
-        //           Authorization: `Bearer ${token}`,
-        //           'Content-Type': 'multipart/form-data',
-        //       },
-        //       };
-  
-        //       // Perform the API request to upload the image for a specific category
-        //       await axios.post(`${api}/categories/${categoryId}/image`, formData, config);
-        //       this.fetchCategories(); // Refresh category list after image upload
-        //   } catch (error) {
-        //       console.error('Error uploading image:', error);
-        //       // Handle error
-        //   }
-        //   },
-  
-        //   async confirmDelete() {
-        //   try {
-        //       const token = sessionStorage.getItem('adminToken');  
-        //       const config = {
-        //       headers: {
-        //           Authorization: `Bearer ${token}`,
-        //       },
-        //       };
-        //       await axios.delete(`${api}/categories/delete/${this.editedCategory._id}`, config);
-        //       this.closeModal();
-        //       this.fetchCategories();
-        //   } catch (error) {
-        //       console.error('Error deleting category', error);
-        //       // Handle error
-        //   }
-        //   },
-  
-        //   cancelDelete() {
-        //   this.closeModal();
-        //   },
-  
-        //   formatDate(date) {
-        //   return moment(date).fromNow();
-        //   },
-  
   
   
           toggleSidebar() {

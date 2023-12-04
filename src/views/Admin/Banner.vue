@@ -16,7 +16,7 @@
               </div>
       
               <nav class="mt-10">
-                <router-link :to="{name: 'Dashboard'}"  class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-gray-700 bg-opacity-25">
+                  <router-link :to="{name: 'Dashboard'}" class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-gray-700 bg-opacity-25">
                       <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                           stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -26,11 +26,11 @@
                       </svg>
       
                       <span class="mx-3">Dashboard</span>
-                </router-link>
+                  </router-link>
                   
                   <!-- customer link start -->
                   <router-link :to="{name: 'Customers'}" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                      >
+                  >
                       <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="9.00098" cy="6" r="4" fill="#6B7280"></circle> <ellipse cx="9.00098" cy="17.001" rx="7" ry="4" fill="#6B7280"></ellipse> <path d="M20.9996 17.0005C20.9996 18.6573 18.9641 20.0004 16.4788 20.0004C17.211 19.2001 17.7145 18.1955 17.7145 17.0018C17.7145 15.8068 17.2098 14.8013 16.4762 14.0005C18.9615 14.0005 20.9996 15.3436 20.9996 17.0005Z" fill="#6B7280"></path> <path d="M17.9996 6.00073C17.9996 7.65759 16.6565 9.00073 14.9996 9.00073C14.6383 9.00073 14.292 8.93687 13.9712 8.81981C14.4443 7.98772 14.7145 7.02522 14.7145 5.99962C14.7145 4.97477 14.4447 4.01294 13.9722 3.18127C14.2927 3.06446 14.6387 3.00073 14.9996 3.00073C16.6565 3.00073 17.9996 4.34388 17.9996 6.00073Z" fill="#6B7280"></path> </g></svg>
       
                       <span class="mx-3">Customers</span>
@@ -80,6 +80,14 @@
                               <svg class="w-6 h-6"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12" stroke="#6B7280" stroke-width="1.5"></path> <path d="M2 14C2 11.1997 2 9.79961 2.54497 8.73005C3.02433 7.78924 3.78924 7.02433 4.73005 6.54497C5.79961 6 7.19974 6 10 6H14C16.8003 6 18.2004 6 19.27 6.54497C20.2108 7.02433 20.9757 7.78924 21.455 8.73005C22 9.79961 22 11.1997 22 14C22 16.8003 22 18.2004 21.455 19.27C20.9757 20.2108 20.2108 20.9757 19.27 21.455C18.2004 22 16.8003 22 14 22H10C7.19974 22 5.79961 22 4.73005 21.455C3.78924 20.9757 3.02433 20.2108 2.54497 19.27C2 18.2004 2 16.8003 2 14Z" stroke="#6B7280" stroke-width="1.5"></path> <path d="M9.5 14.4L10.9286 16L14.5 12" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                               Categories</router-link
                           >
+                          </li>
+                          <li>
+                          <a @click="openAddModal"
+                              class="cursor-pointer group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out text-gray-500 hover:text-white"
+                              >
+                              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 14H12M12 14H14M12 14V16M12 14V12" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"></path> <path d="M2 6.94975C2 6.06722 2 5.62595 2.06935 5.25839C2.37464 3.64031 3.64031 2.37464 5.25839 2.06935C5.62595 2 6.06722 2 6.94975 2C7.33642 2 7.52976 2 7.71557 2.01738C8.51665 2.09229 9.27652 2.40704 9.89594 2.92051C10.0396 3.03961 10.1763 3.17633 10.4497 3.44975L11 4C11.8158 4.81578 12.2237 5.22367 12.7121 5.49543C12.9804 5.64471 13.2651 5.7626 13.5604 5.84678C14.0979 6 14.6747 6 15.8284 6H16.2021C18.8345 6 20.1506 6 21.0062 6.76946C21.0849 6.84024 21.1598 6.91514 21.2305 6.99383C22 7.84935 22 9.16554 22 11.7979V14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V6.94975Z" stroke="#6B7280" stroke-width="1.5"></path> </g></svg>
+                              Add Category</a
+                          >                           
                           </li>                        
                       </ul>
                       </div>
@@ -206,26 +214,28 @@
                               href="form-layout.html">Faqs</a
                           >
                           </li>
-                         
+                          <li>
+                             
+                          </li>
                       </ul>
                       </div>
                       <!-- Dropdown Menu End -->
                    </li>
                    <!-- pages link end -->
                    
-                    <!-- settings link start -->
-                    <router-link :to="{name: 'Settings'}" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                    >
-                      <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                          stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
-                          </path>
-                      </svg>
+                   <!-- settings link start -->
+                   <router-link :to="{name: 'Settings'}" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                   >
+                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                             d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                         </path>
+                     </svg>
   
-                      <span class="mx-3">Settings</span>
-               </router-link>
-              <!-- settings link end -->
+                     <span class="mx-3">Settings</span>
+              </router-link>
+             <!-- settings link end -->
   
                    <!-- logout link start -->
                    <a @click="logoutAdmin" class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 cursor-pointer">                           
@@ -321,62 +331,133 @@
               <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
                   <div class="container px-6 py-8 mx-auto">
                       <div class="flex">
-                          <h3 class="text-3xl font-medium text-gray-700">Admin Settings</h3>
-                          
+                          <h3 class="text-3xl font-medium text-gray-700">Banner</h3>
+                          <router-link  :to="{name: 'NewBanner'}" class="ml-3 font-medium text-white px-4 py-2 bg-gray-900 rounded-md hover:bg-gray-700">Add New</router-link>
                       </div>
                                          
                       <div class="flex flex-col mt-8">
                           <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-                             
-                                <div class="p-6.5">
-                                <form @submit.prevent="updateAdminPassword">
-                                  <div class="mb-4.5 flex flex-col gap-6 xl:flex-row bg-white px-4 py-4 rounded-md">
-                                    <div class="w-full xl:w-1/2">
-                                      <label class="mb-2.5 block text-black">
-                                         Current Password
-                                      </label>
-                                      <input type="password" id="current password"  v-model="currentPassword" placeholder="Current Password"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
-                                    </div>
-              
-                                    <div class="w-full xl:w-1/2">
-                                      <label class="mb-2.5 block text-black">
-                                         New Password
-                                      </label>
-                                      <input type="password" id="new password"  v-model="newPassword" placeholder=" New Password"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
-                                    </div>
-                                  </div> 
-                                  
-                                  <button type="submit" class="flex mt-4 justify-center rounded bg-gray-900 hover:bg-gray-700 text-white p-3 font-medium text-gray">
-                                    Save
-                                  </button>
-                                </form>         
- 
-                                <form @submit.prevent="updateAdminDetails">
-                                  <div class="mt-11 mb-4.5 flex flex-col gap-6 xl:flex-row bg-white px-4 py-4 rounded-md">
-                                    <div class="w-full xl:w-1/2">
-                                      <label class="mb-2.5 mt-3 block text-black">
-                                         Username
-                                      </label>
-                                      <input type="text" id="color" v-model="admin.firstname" placeholder="Username"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
-                                    </div>
-              
-                                    <div class="w-full xl:w-1/2">
-                                      <label class="mb-2.5 mt-3 block text-black">
-                                         Email
-                                      </label>
-                                      <input type="email" id="price" v-model="admin.email" placeholder="Email"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
-                                    </div>
-                                  </div>                                    
-                                  
-                                  <button type="submit" class="flex mt-4 justify-center rounded bg-gray-900 hover:bg-gray-700 text-white p-3 font-medium text-gray">
-                                    Save
-                                  </button>
-                                </form>
-                                </div>                            
+  
+                              <div v-if="loading" class="flex justify-center items-center mt-3">
+                          <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+                              <g fill="none" fill-rule="evenodd">
+                                  <g transform="translate(2 1)" stroke="#000" stroke-width="1.5">
+                                      <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#000">
+                                          <animate attributeName="fill-opacity"
+                                              begin="0s" dur="1.3s"
+                                              values="1;0;0;0;0;0;0;0" calcMode="linear"
+                                              repeatCount="indefinite" />
+                                      </circle>
+                                      <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#000">
+                                          <animate attributeName="fill-opacity"
+                                              begin="0s" dur="1.3s"
+                                              values="0;1;0;0;0;0;0;0" calcMode="linear"
+                                              repeatCount="indefinite" />
+                                      </circle>
+                                      <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#000">
+                                          <animate attributeName="fill-opacity"
+                                              begin="0s" dur="1.3s"
+                                              values="0;0;1;0;0;0;0;0" calcMode="linear"
+                                              repeatCount="indefinite" />
+                                      </circle>
+                                      <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#000">
+                                          <animate attributeName="fill-opacity"
+                                              begin="0s" dur="1.3s"
+                                              values="0;0;0;1;0;0;0;0" calcMode="linear"
+                                              repeatCount="indefinite" />
+                                      </circle>
+                                      <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#000">
+                                          <animate attributeName="fill-opacity"
+                                              begin="0s" dur="1.3s"
+                                              values="0;0;0;0;1;0;0;0" calcMode="linear"
+                                              repeatCount="indefinite" />
+                                      </circle>
+                                      <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#000">
+                                          <animate attributeName="fill-opacity"
+                                              begin="0s" dur="1.3s"
+                                              values="0;0;0;0;0;1;0;0" calcMode="linear"
+                                              repeatCount="indefinite" />
+                                      </circle>
+                                      <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#000">
+                                          <animate attributeName="fill-opacity"
+                                              begin="0s" dur="1.3s"
+                                              values="0;0;0;0;0;0;1;0" calcMode="linear"
+                                              repeatCount="indefinite" />
+                                      </circle>
+                                      <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#000">
+                                          <animate attributeName="fill-opacity"
+                                              begin="0s" dur="1.3s"
+                                              values="0;0;0;0;0;0;0;1" calcMode="linear"
+                                              repeatCount="indefinite" />
+                                      </circle>
+                                  </g>
+                              </g>
+                          </svg>
+                              </div>
+  
+                              <div v-else
+                                  class="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
+                                  <table class="min-w-full">
+                                      <thead>
+                                          <tr>
+                                              <th
+                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                  Image</th>
+                                              <th
+                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                  Header Text</th>
+                                             <th
+                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                  Paragraph Text</th>
+                                              <th
+                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                  Created</th>
+                                              <th
+                                                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                                  Actions</th>
+                                              
+                                          </tr>
+                                      </thead>
+                                      <div v-if="banners.length === 0" class="p-2.5 xl:p-5">
+                                          <p class="font-semibold text-sm leading-5 text-gray-700">No Banner Available!!!</p>
+                                      </div>
+                                      <tbody v-else v-for="banner in banners" :key="banner._id" class="bg-white">
+                                          <tr>
+                                              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                  <div class="flex items-center">
+                                                     
+                                                        <div v-for="imageUrl in banner.images.slice(0, 1)" :key="imageUrl">                                                          
+                                                              <img class="w-10 h-9 rounded-full" :src="back_url + imageUrl" loading="lazy" alt="">                                                                                                                                
+                                                        </div> 
+                                                                                                           
+                                                                                                        
+                                                      
+                                                  </div>
+                                              </td>
+      
+                                              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                  <div class="text-sm leading-5 font-semibold text-gray-900">{{banner.header}}</div>                                                
+                                              </td>
+
+                                              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                <div class="text-sm leading-5 font-semibold text-gray-900">{{banner.paragraph}}</div>                                                
+                                            </td>
+      
+                                              <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                  <span
+                                                      class="inline-flex text-sm font-semibold leading-5 text-green-800"> {{ formatDate(banner.createdAt) }}</span>
+                                              </td>
+      
+                                              <td
+                                                  class="px-4 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                                                  <button  @click="openEditModal(banner)" class=" text-sm px-2 py-2 font-semibold text-gray-900  hover:text-gray-800">Edit</button>
+                                                  <button @click="openDeleteModal(banner)" class=" text-sm font-semibold px-2 py-2 text-red-500 hover:text-red-400">Delete</button>    
+                                              </td>                                    
+                                          </tr>                                                                                
+                                    
+                                      </tbody>
+                                  </table>
+                              </div>
                           </div>
                       </div>                                       
                       
@@ -384,7 +465,34 @@
               </main>
           </div>
       </div>
-
+  
+  <!-- modal -->
+      <div>
+          <div id="modal-bg" class="w-full h-full bg-[#848A97] top-0 absolute hidden opacity-80"></div>
+          <div id="modal-box" class="sm:w-[385px] sm:min-w-[40vw] min-w-[80vw] min-h-[25vh] flex-col justify-between items-center gap-2 -translate-y-1/2 p-6 bg-[#FFFFFF] rounded-lg top-1/2 left-1/2 -translate-x-1/2 absolute hidden">
+            <!-- Modal content -->
+            <!-- Edit category form -->
+            <form v-if="isEditMode" @submit.prevent="editBanner">
+              <input type="text" placeholder="Edit Header Text" v-model="editedBanner.header"
+                        class="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter" />
+              <input type="text" placeholder="Edit Paragraph Text" v-model="editedBanner.paragraph"
+                    class=" mt-4 w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter" />
+              <button class="bg-gray-900 px-3 py-2 rounded-md mt-3 text-white text-sm font-semibold" type="submit">Update</button>
+            </form>
+            <!-- Delete confirmation -->
+            <div v-else>
+              <p class="font-semibold">Are you sure you want to delete this banner?</p>
+              <div class="flex gap-3">
+                  <button class="bg-red-600 hover:bg-red-500 px-4 py-2 rounded-md mt-3 text-white" @click="confirmDelete">Yes</button>
+                  <button class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-md mt-3 text-white" @click="cancelDelete">No</button>
+              </div>
+            </div>
+            <button id="modal-close" class="p-3 w-full text-gray-900  hover:bg-gray-200 rounded-md mt-3"  @click="closeModal">Close</button>
+          </div>
+      </div>
+  <!-- modal end -->
+  
+  
      
   </div>
   </template>
@@ -397,141 +505,37 @@
   export default {
     data() {
       return {
+        banners: [],
+        loading: true,
         sidebarOpen: false,
         notificationOpen: false,
         dropdownOpen: false,
         selected: '',  
-        currentPassword: '',
-        newPassword: '',
-        admin: {
-        firstname: '', 
-        email: '',  
-      },
-        
+        isEditMode: false,      
+        editedBanner: {},
+        newCategoryHeader: '',
+        newCategoryParagraph: '',
+        page: '' ,
+        back_url: 'https://shopo-api.onrender.com' 
+        //back_url: 'http://localhost:5000'
         
       };
     },
     created() {
-     this.fetchAdmin();
+      // Fetch banner on component mount
+      this.fetchBanners();
     },
     methods: {
-          fetchAdmin() {
-            
-            const token = sessionStorage.getItem('adminToken');  
-              const config = {
-              headers: {
-                  Authorization: `Bearer ${token}`,
-              },
-              };
-
-              axios.get(`${api}/users/profile`,config).then((response) => {
-              this.admin = response.data.user;           
+          fetchBanners() {
+              axios.get(`${api}/banner/all`).then((response) => {
+              this.banners = response.data.banners;        
+              this.loading = false;     
               })
               .catch((error) => {
-              console.error('Error getting Details:', error);          
+              console.error('Error getting banner:', error);     
+              this.loading = false;       
               });      
           },
-         
-
-        async updateAdminPassword() {
-            try {
-                const token = sessionStorage.getItem('adminToken');  
-                const config = {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-                };
-                await axios.put(`${api}/users/admin/update-password`, {
-                currentPassword: this.currentPassword,
-                newPassword: this.newPassword,
-                }, config)
-
-                .then((success) => {
-                if (success) {
-                    this.$toast.success('Password Updated Successfully.', {
-                        timeout: 3000, 
-                    });		                          
-                } else {
-                    this.$toast.error('An Error Occured. try again!', {
-                        timeout: 9000, 
-                    });	          
-                }
-                });
-            } catch (error) {
-                console.error(error); 
-            }
-        },
-
-        async updateAdminDetails() {
-            try {
-                const token = sessionStorage.getItem('adminToken');  
-                const config = {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-                };
-                await axios.put(`${api}/users/admin/update-details`, {
-                firstname: this.admin.firstname,
-                email: this.admin.email,
-                }, config)
-
-                .then((success) => {
-                if (success) {
-                    this.$toast.success('Details Updated Successfully.', {
-                        timeout: 3000, 
-                    });		                          
-                } else {
-                    this.$toast.error('An Error Occured. try again!', {
-                        timeout: 9000, 
-                    });	          
-                }
-                });
-            } catch (error) {
-                console.error(error.response.data); 
-        }
-        },
-
-        async updateAdminDetails() {
-            try {
-                const formData = new FormData();
-                formData.append('title', this.title);
-                formData.append('size', this.size);
-                formData.append('color', this.color);
-                formData.append('price', this.price);
-                formData.append('description', this.description);
-                formData.append('categoryId', this.categoryId);
-
-                //auth token
-                const token = sessionStorage.getItem('adminToken'); 
-
-                // Append each selected image file to the form data
-                for (let i = 0; i < this.imageFiles.length; i++) {
-                formData.append('images', this.imageFiles[i]);
-                }
-
-                await axios.post(`${api}/products/create`, formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                     Authorization: `Bearer ${token}`,
-                },
-                })
-                .then(success => {
-                    if (success) {
-                    this.$toast.success('Product Created Successfully!.', {
-                        timeout: 3000, 
-                    });		                         
-                    this.$router.push({name: 'Products'});                                    
-                    } else {
-                        this.$toast.error('An Error Occured. try again!', {
-                            timeout: 9000, 
-                        });	          
-                    }
-                })
-            } catch (error) {
-                console.error('Error creating product:', error);
-                // Handle error, show error message, etc.
-            }
-        },
   
           logoutAdmin() {
               this.$store.dispatch('adminLogout')
@@ -553,9 +557,80 @@
                   timeout: 9000, 
               });
               });
-          },  
+          },                                     
   
-    
+          async confirmDelete() {
+          try {
+              const token = sessionStorage.getItem('adminToken');  
+              const config = {
+              headers: {
+                  Authorization: `Bearer ${token}`,
+              },
+              };
+              await axios.delete(`${api}/categories/delete/${this.editedCategory._id}`, config);
+              this.closeModal();
+              this.fetchCategories();
+          } catch (error) {
+              console.error('Error deleting category', error);
+              // Handle error
+          }
+          },
+  
+          cancelDelete() {
+          this.closeModal();
+          },
+  
+          formatDate(date) {
+          return moment(date).fromNow();
+          },
+
+          async editBanner() {
+            try {
+                const token = sessionStorage.getItem('adminToken');  
+                const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                };
+                await axios.put(`${api}/banner/update/${this.editedBanner._id}`, { header: this.editedBanner.header, paragraph: this.editedBanner.paragraph }, config)
+                .then((success) => {
+                if (success) {
+                    this.$toast.success('Banner Updated Successfully.', {
+                        timeout: 3000, 
+                    });		       
+                    this.closeModal();
+                    this.fetchBanners();
+                } else {
+                    this.$toast.error('An Error Occured. try again!', {
+                        timeout: 9000, 
+                    });	          
+                }
+                });            
+            } catch (error) {
+                console.error('Error editing banner', error);
+                // Handle error
+            }
+          },
+
+          async confirmDelete() {
+            try {
+                const token = sessionStorage.getItem('adminToken');  
+                const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                };
+                await axios.delete(`${api}/banner/delete/${this.editedBanner._id}`, config);
+                this.closeModal();
+                this.fetchBanners();
+            } catch (error) {
+                console.error('Error deleting banner', error);
+                // Handle error
+            }
+          },
+
+  
+  
   
           toggleSidebar() {
               this.sidebarOpen = !this.sidebarOpen;
@@ -585,7 +660,30 @@
            this.selected = (this.selected === 'Page') ? '' : 'Page';
           },
   
-        
+          openEditModal(banner) {
+          this.isEditMode = true;
+          this.editedBanner = { ...banner };
+          document.getElementById('modal-bg').classList.remove('hidden');
+          document.getElementById('modal-box').classList.remove('hidden');
+          },
+  
+  
+          openDeleteModal(banner) {
+          this.isEditMode = false;
+          this.editedBanner = { ...banner };
+          document.getElementById('modal-bg').classList.remove('hidden');
+          document.getElementById('modal-box').classList.remove('hidden');
+          },
+  
+          closeModal() {       
+          document.getElementById('modal-bg').classList.add('hidden');
+          document.getElementById('modal-box').classList.add('hidden');
+          },                                                                  
+  
+          closeModal1() {       
+          document.getElementById('modal-bg1').classList.add('hidden');
+          document.getElementById('modal-box1').classList.add('hidden');
+          },
     },
   };
   </script>

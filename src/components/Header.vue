@@ -140,7 +140,7 @@ export default{
     },
 
     searchProducts() {       
-      this.$router.push({ name: 'SearchResults', query: { searchQuery: this.searchQuery } });
+      this.$router.push({ name: 'SearchResults', query: { q: this.searchQuery } });
     },
   },
 

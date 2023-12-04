@@ -24,13 +24,14 @@ import About from '../views/About.vue'
 
 import Dashboard from '../views/Admin/Dashboard.vue';
 import Categories from '../views/Admin/Categories.vue';
-import AddCategory from '../views/Admin/AddCategory.vue';
 import Products from '../views/Admin/Products.vue';
 import AddProduct from '../views/Admin/AddProduct.vue';
 import Orders from '../views/Admin/Orders.vue';
 import Customers from '../views/Admin/Customers.vue';
 import CustomerOrder from '../views/Admin/CustomerOrder.vue';
 import Settings from '../views/Admin/Settings.vue';
+import Banner from '../views/Admin/Banner.vue';
+import NewBanner from '../views/Admin/NewBanner.vue';
 
  
 
@@ -139,7 +140,7 @@ const routes = [
     //category
     { path: "/admin/categories", name: "Categories", component: Categories, meta: { requiresAuth: true, isAdmin: true, }, },  
     { path: "/admin/category/:id", name: "CategoryEdit",  meta: { requiresAuth: true, isAdmin: true, }, },  
-    { path: "/admin/category/newcategory", name: "AddCategory", component: AddCategory, meta: { requiresAuth: true, isAdmin: true, }, },    
+       
 
     //products
     { path: "/admin/products", name: "Products", component: Products, meta: { requiresAuth: true, isAdmin: true, }, },  
@@ -155,6 +156,10 @@ const routes = [
 
     //admin settings
     { path: "/admin/settings", name: "Settings", component: Settings, meta: { requiresAuth: true, isAdmin: true, }, },
+
+     //admin banner
+     { path: "/admin/banner", name: "Banner", component: Banner, meta: { requiresAuth: true, isAdmin: true, }, },
+     { path: "/admin/newbanner", name: "NewBanner", component: NewBanner, meta: { requiresAuth: true, isAdmin: true, }, },
     //end admin routes
 ];
 

@@ -17,16 +17,34 @@
     :navigation="true"
     :modules="modules"
   >
-    <swiper-slide>
+    <div v-if="banners.length === 0" class="p-2.5 xl:p-5">
+        <swiper-slide>
 
-        <div class="transition bg-cover  bg-no-repeat bg-center  py-[10rem]" v-bind:style="{ 'background-image': 'url(' + bgImage + ')' }">
+            <div class="transition bg-cover  bg-no-repeat bg-center  py-[10rem]" v-bind:style="{ 'background-image': 'url(' + bgImage + ')' }">
+            <div class="container pl-[6rem] max-md:pl-2">
+                <h1 class="max-md:text-4xl text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
+                    best clothing wears <br> available for you
+                </h1>
+                <p class="text-[#000] bg-opacity-40 max-md:text-[14px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam <br>
+                    accusantium perspiciatis, sapiente
+                    magni eos dolorum ex quos dolores odio</p>
+                <div class="mt-12">
+                    <a href="#" class="bg-[#000]  hover:bg-primary text-white px-8 py-3 font-medium 
+                        rounded-md  hover:text-white">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    
+    </swiper-slide>
+    </div>
+    <swiper-slide v-else  v-for="banner in banners" :key="banner._id">
+
+        <div v-for="(imageUrl, index) in banner.images.slice(0, 1)" :key="index" class="transition bg-cover bg-no-repeat bg-center py-[10rem]" v-bind:style="{ 'background-image': 'url(' + back_url + imageUrl + ')' }">
         <div class="container pl-[6rem] max-md:pl-2">
             <h1 class="max-md:text-4xl text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
-                best clothing wears <br> available for you
+               {{banner.header}}
             </h1>
-            <p class="text-[#000] bg-opacity-40 max-md:text-[14px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam <br>
-                accusantium perspiciatis, sapiente
-                magni eos dolorum ex quos dolores odio</p>
+            <p class="text-[#000] bg-opacity-40 max-md:text-[14px]">{{banner.paragraph}}</p>
             <div class="mt-12">
                 <a href="#" class="bg-[#000]  hover:bg-primary text-white px-8 py-3 font-medium 
                     rounded-md  hover:text-white">Shop Now</a>
@@ -35,53 +53,8 @@
     </div>
 
     </swiper-slide>
-    <swiper-slide> 
-        <div class="transition bg-cover bg-no-repeat bg-center  py-[10rem]" v-bind:style="{ 'background-image': 'url(' + bgImage1 + ')' }">
-            <div class="container pl-[6rem] max-md:pl-2">
-            <h1 class="max-md:text-4xl text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
-                best clothing wears <br> available for you
-            </h1>
-            <p class="text-[#000] bg-opacity-40 max-md:text-[14px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam <br>
-                accusantium perspiciatis, sapiente
-                magni eos dolorum ex quos dolores odio</p>
-            <div class="mt-12">
-                <a href="#" class="bg-[#000]  hover:bg-primary text-white px-8 py-3 font-medium 
-                    rounded-md  hover:text-white">Shop Now</a>
-            </div>
-        </div>
-    </div>
-</swiper-slide>
-    <swiper-slide> <div class="transition bg-cover bg-no-repeat bg-center  py-[10rem]" v-bind:style="{ 'background-image': 'url(' + bgImage2 + ')' }">
-        <div class="container pl-[6rem] max-md:pl-2">
-            <h1 class="max-md:text-4xl text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
-                best clothing wears <br> available for you
-            </h1>
-            <p class="text-[#000] bg-opacity-40 max-md:text-[14px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam <br>
-                accusantium perspiciatis, sapiente
-                magni eos dolorum ex quos dolores odio</p>
-            <div class="mt-12">
-                <a href="#" class="bg-[#000]  hover:bg-primary text-white px-8 py-3 font-medium 
-                    rounded-md  hover:text-white">Shop Now</a>
-            </div>
-        </div>
-    </div>
-</swiper-slide>
-    <swiper-slide>
-        <div class="transition bg-cover bg-no-repeat bg-center  py-[10rem]" v-bind:style="{ 'background-image': 'url(' + bgImage3 + ')' }">
-            <div class="container pl-[6rem] max-md:pl-2">
-            <h1 class="max-md:text-4xl text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
-                best clothing wears <br> available for you
-            </h1>
-            <p class="text-[#000] bg-opacity-40 max-md:text-[14px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam <br>
-                accusantium perspiciatis, sapiente
-                magni eos dolorum ex quos dolores odio</p>
-            <div class="mt-12">
-                <a href="#" class="bg-[#000] border hover:bg-[#cc2121] text-white px-8 py-3 font-medium 
-                    rounded-md hover:bg-transparent hover:text-white">Shop Now</a>
-            </div>
-        </div>
-    </div>
-    </swiper-slide>
+    
+ 
     </swiper>
     <!-- ./banner -->
 
@@ -457,6 +430,7 @@ export default {
       categories: [],
       latestProducts: [],
       recommendProducts: [],
+      banners: [],
       loading: true,
       back_url: 'https://shopo-api.onrender.com' 
       //back_url: 'http://localhost:5000' 
@@ -467,6 +441,7 @@ export default {
       this.fetchLatestProducts();  
       this.fetchRecommendedProducts();      
       this.fetchCategories();
+      this.fetchBanners();
   },
 
   methods: {
@@ -544,7 +519,18 @@ export default {
         console.error('Error getting user images:', error);     
         this.loading = false;       
         });      
-       }, 
+        }, 
+
+       fetchBanners() {
+              axios.get(`${api}/banner/all`).then((response) => {
+              this.banners = response.data.banners;        
+              this.loading = false;     
+              })
+              .catch((error) => {
+              console.error('Error getting banner:', error);     
+              this.loading = false;       
+              });      
+       },
 
 
   },
