@@ -193,7 +193,7 @@
 
      <!-- description -->
      <div class="container pb-16">
-        <h3 class="border-b border-gray-200 font-roboto text-gray-800 pb-3 font-medium mt-6">Product details</h3>
+        <h3 class="border-b border-gray-200 font-semibold text-gray-800 pb-3  mt-6">Product details</h3>
         <div class="w-3/5 pt-6">
             <div class="text-gray-600">
                 <p>{{productDetails.description}}</p>
@@ -216,6 +216,48 @@
         </div>
     </div>
     <!-- ./description -->
+
+    <!-- review -->
+    <div class="container pb-9">
+        <h3 class="border-b border-gray-200 text-gray-800 pb-3 font-semibold mt-6">Reviews</h3>
+        <div class="w-full md:w-3/5 pt-6">
+            <div v-if="reviews.length > 0">              
+                <div v-for="review in reviews" :key="review._id">
+                  <p>Rating: {{ review.rating }}</p>
+                  <p>Comment: {{ review.comment }}</p>                  
+                </div>
+              </div>
+              <div v-else>
+                <p>No reviews available for this product.</p>
+              </div>
+        </div>
+    </div>
+
+    <div class="container pb-16">
+        <h3 class="border-b border-gray-200 text-gray-800 pb-3 font-semibold mt-6">Add a review</h3>
+        <div class="w-full md:w-3/5 pt-6">
+            <form @submit.prevent="submitReview">
+                <div class="mb-4">
+                    <label for="rating" class="block text-gray-700">Rating:</label>
+                    <input type="number" id="rating" v-model="rating" min="1" max="5" required
+                        class="w-full rounded-md border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50">
+                </div>
+    
+                <div class="mb-4">
+                    <label for="comment" class="block text-gray-700">Comment:</label>
+                    <textarea id="comment" v-model="comment" required
+                        class="w-full rounded-md border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"></textarea>
+                </div>
+    
+                <button type="submit"
+                    class="px-4 py-2 bg-primary text-white rounded-md hover:bg-opacity-90 focus:outline-none focus:bg-opacity-90">
+                    Submit Review
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- ./review -->
 
       <!-- related product -->
     <div class="container pb-16">
@@ -327,6 +369,8 @@
 
    </div> 
 
+
+
 </div>
 <!-- footer -->
 <Footer/>
@@ -359,6 +403,7 @@ export default {
         },
         selectedColor: null,
         relatedProducts: [],
+        reviews: [],
         loading: true,
         back_url: 'https://shopo-api.onrender.com' 
       // back_url: 'http://localhost:5000' 
@@ -368,7 +413,9 @@ export default {
 
   created() {      
       this.fetchProductDetails();  
-      this.fetchRelatedProduct();       
+      this.fetchRelatedProduct(); 
+      const productId = this.$route.params.id; 
+      this.fetchReviewsForProduct(productId);      
   },
 
   methods: {
@@ -440,7 +487,39 @@ export default {
             }
         },
 
-       
+        async submitReview() {
+        const productId = this.$route.params.id; 
+        try {
+            const token = sessionStorage.getItem('userToken');
+            if (!token) {
+            this.$router.push('/login');
+            return;
+            }
+            const config = {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            };
+            const response = await axios.post(`${api}/reviews/products/${productId}/reviews`, {
+            rating: this.rating,
+            comment: this.comment
+            }, config);
+            console.log('Review added successfully:', response.data);            
+            this.fetchReviewsForProduct(productId);   
+        } catch (error) {
+            console.error('Failed to add review:', error.response.data.message);
+            
+        }
+        },
+
+        async fetchReviewsForProduct(productId) {
+        try {
+            const response = await axios.get(`${api}/reviews/products/${productId}/reviews`);
+            this.reviews = response.data.reviews;
+        } catch (error) {
+            console.error('Failed to fetch reviews:', error);            
+        }
+      }
 
   },
 

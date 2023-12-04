@@ -39,7 +39,7 @@
     </div>
     <swiper-slide v-else  v-for="banner in banners" :key="banner._id">
 
-        <div v-for="(imageUrl, index) in banner.images.slice(0, 1)" :key="index" class="transition bg-cover bg-no-repeat bg-center py-[10rem]" v-bind:style="{ 'background-image': 'url(' + back_url + imageUrl + ')' }">
+        <div v-for="(imageUrl, index) in banner.images.slice(0, 4)" :key="index" class="transition bg-cover bg-no-repeat bg-center py-[10rem]" v-bind:style="{ 'background-image': 'url(' + back_url + imageUrl + ')' }">
         <div class="container pl-[6rem] max-md:pl-2">
             <h1 class="max-md:text-4xl text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
                {{banner.header}}
