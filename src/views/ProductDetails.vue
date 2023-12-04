@@ -221,8 +221,9 @@
     <div class="container pb-9">
         <h3 class="border-b border-gray-200 text-gray-800 pb-3 font-semibold mt-6">Reviews</h3>
         <div class="w-full md:w-3/5 pt-6">
-            <div v-if="reviews.length > 0">              
+            <div v-if="reviews.length > 0">                
                 <div v-for="review in reviews" :key="review._id">
+                <h2 class="font-semibold">{{review.user.firstname}} {{review.user.lastname}}</h2>
                   <p>Rating: {{ review.rating }}</p>
                   <p>Comment: {{ review.comment }}</p>                  
                 </div>
