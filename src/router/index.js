@@ -16,6 +16,7 @@ import UserProducts from '../views/Shop.vue';
 import ProductCategory from '../views/ProductCategory.vue';
 import UserOrder from '../views/UserOrder.vue';
 import ProductDetails from '../views/ProductDetails.vue';
+import SearchResults from '../views/SearchResults.vue';
 import Cart from '../views/Cart.vue';
 import Terms from '../views/Terms.vue';
 import Contact from '../views/Contact.vue';
@@ -99,7 +100,13 @@ const routes = [
       meta: {
         requiresAuth: true,  
         isUser: true, 
-      },
+      },     
+    },
+
+    {
+      path: '/search-results',
+      name: 'SearchResults',
+      component: SearchResults,
     },
 
 

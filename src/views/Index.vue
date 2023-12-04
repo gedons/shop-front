@@ -87,6 +87,8 @@
 
     <!-- features -->
     <div class="container py-12">
+
+        <div>
         <div class="w-10/12 grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto justify-center">
             <div class=" rounded-sm px-3 py-6 flex justify-center items-center gap-3">
                 <img src="../assets/images/icons/delivery-van.svg" alt="Delivery" class="w-10 h-10 object-contain">
@@ -111,28 +113,79 @@
             </div>
         </div>
     </div>
+    </div>
     <!-- ./features -->
 
     <!-- categories -->
     <div class="container py-16 md:px-[13rem]">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="relative rounded-sm overflow-hidden  group md:h-72">
-                <img src="../assets/images/category/1.jpg" alt="Men's Clothing" class="max-md:w-full md:h-72">
-                <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Men</a>
-            </div>
-            <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/2.jpg" alt="Women's Clothing" class="max-md:w-full md:h-72">
-                <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Women</a>
-            </div>
-            <div class="relative rounded-sm overflow-hidden group md:h-72">
-                <img src="../assets/images/category/3.jpg" alt="Shoes" class="max-md:w-full md:h-72">
-                <a href="#"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">Shoes
-                </a>
-            </div>
-          
+        <div v-if="loading" class="flex justify-center items-center mt-3">
+            <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                    <g transform="translate(2 1)" stroke="#000" stroke-width="1.5">
+                        <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#000">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="1;0;0;0;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#000">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;1;0;0;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#000">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;1;0;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#000">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;1;0;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#000">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;1;0;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#000">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;0;1;0;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#000">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;0;0;1;0" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#000">
+                            <animate attributeName="fill-opacity"
+                                begin="0s" dur="1.3s"
+                                values="0;0;0;0;0;0;0;1" calcMode="linear"
+                                repeatCount="indefinite" />
+                        </circle>
+                    </g>
+                </g>
+            </svg>
+        </div> 
+        <div v-else>
+        <div v-if="categories.length === 0" class="p-2.5 xl:p-5">
+            <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available!!!</p>
+        </div>  
+        <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div v-for="category in categories" :key="category._id"  class="relative rounded-sm overflow-hidden  group md:h-64">
+                <img v-if="category.imageUrl"  :src="back_url + category.imageUrl" alt="image" class="max-md:w-full md:h-64">
+                <img v-else :src="bgImage2" alt="image" class="max-md:w-full md:h-64">
+                <router-link :to="{name: 'ProductCategory', params: {categoryId: category._id} }"
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">{{category.name}}</router-link>
+            </div>                   
+        </div>
         </div>
      </div>
     <!-- ./categories -->
@@ -406,7 +459,7 @@ export default {
       recommendProducts: [],
       loading: true,
       back_url: 'https://shopo-api.onrender.com' 
-     // back_url: 'http://localhost:5000' 
+      //back_url: 'http://localhost:5000' 
 
     };
   },

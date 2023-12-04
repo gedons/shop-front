@@ -97,7 +97,7 @@
             <div class="shadow rounded bg-white px-4 pt-6 pb-8">
                 <div class="flex items-center justify-between mb-4">
                     <h3 class="font-medium text-gray-800 text-lg">Personal Profile</h3>
-                    <a href="#" class="text-primary">Edit</a>
+                    <router-link :to="{name: 'UpdateAccount'}" class="text-primary">Edit</router-link>
                 </div>
                 <div class="space-y-1">
                     <h4 class="text-gray-700 font-medium">{{user.firstname}} {{user.lastname}}</h4>
@@ -123,8 +123,8 @@
                     <p class="text-primary text-lg font-medium">{{orderCount}}</p>
                 </div>
                 <div class="space-y-1">
-                    <a href="#" class="bg-gray-900 border border-bg-gray-900 text-white px-4 py-2 font-medium 
-                    rounded-lg hover:bg-transparent hover:text-gray-900">view</a>
+                    <router-link :to="{name: 'UserOrders'}" class="bg-gray-900 border border-bg-gray-900 text-white px-4 py-2 font-medium 
+                    rounded-lg hover:bg-transparent hover:text-gray-900">view</router-link>
                 </div>
             </div>
 

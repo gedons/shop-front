@@ -172,9 +172,7 @@ export default {
       return cartItem.product.price * cartItem.quantity;
     },
 
-    TotalPrice() {
-      // Logic to calculate total price from cart items
-      // Replace this with your own calculation logic
+    TotalPrice() {       
       return this.cartProducts.reduce((total, cartItem) => {
         return total + cartItem.product.price * cartItem.quantity;
       }, 0);
