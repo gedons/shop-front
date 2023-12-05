@@ -591,7 +591,12 @@
                                               </td>
 
                                               <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                <div class="text-sm leading-5 font-semibold text-gray-900">{{product.category.name}}</div>                                                
+                                                <template v-if="product.category"> 
+                                                    <div class="text-sm leading-5 font-semibold text-gray-900">{{product.category.name}}</div>       
+                                                </template>  
+                                                <template v-else>
+                                                    <div class="text-sm leading-5 font-semibold text-red-500">[Category Deleted]</div>       
+                                                </template>                                                        
                                             </td>
 
                                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
