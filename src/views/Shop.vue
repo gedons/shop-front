@@ -165,7 +165,7 @@
 
        <div v-else class="grid md:grid-cols-3 grid-cols-2 gap-6">
            <div v-if="filteredProducts.length === 0" class="p-2.5 xl:p-5">
-               <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available For This Category!!!</p>
+               <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available!!!</p>
            </div>                 
            <div  v-else v-for="product in filteredProducts" :key="product._id" class="bg-white shadow rounded overflow-hidden group">
                <div class="relative">

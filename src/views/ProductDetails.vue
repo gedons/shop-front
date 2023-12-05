@@ -224,8 +224,18 @@
             <div v-if="reviews.length > 0">                
                 <div v-for="review in reviews" :key="review._id">
                 <h2 class="font-semibold">{{review.user.firstname}} {{review.user.lastname}}</h2>
-                  <p>Rating: {{ review.rating }}</p>
-                  <p>Comment: {{ review.comment }}</p>                  
+                    <template v-for="n in 5">
+                        <span class="text-yellow-400" v-if="n <= review.rating">
+                        <i class="fa-solid fa-star"></i>
+                        </span>
+                        <span v-else>
+                        <i class="far fa-star"></i>
+                        </span>
+                    </template>                   
+                  <p>Comment: {{ review.comment }}</p>    
+                  <!-- <button @click="deleteReview(review._id)" class="text-red-500 ml-2 focus:outline-none">
+                    <i class="fas fa-trash"></i>
+                  </button>               -->
                 </div>
               </div>
               <div v-else>
@@ -406,6 +416,8 @@ export default {
         relatedProducts: [],
         reviews: [],
         loading: true,
+        rating: 0,
+        comment: '',
         back_url: 'https://shopo-api.onrender.com' 
       // back_url: 'http://localhost:5000' 
         
@@ -506,7 +518,9 @@ export default {
             comment: this.comment
             }, config);
             console.log('Review added successfully:', response.data);            
-            this.fetchReviewsForProduct(productId);   
+            this.fetchReviewsForProduct(productId);  
+            this.comment = ""; 
+            this.rating = 0; 
         } catch (error) {
             console.error('Failed to add review:', error.response.data.message);
             
@@ -520,7 +534,29 @@ export default {
         } catch (error) {
             console.error('Failed to fetch reviews:', error);            
         }
-      }
+        },
+
+        // async deleteReview(reviewId) {
+        // try {
+        //     const token = sessionStorage.getItem('userToken');
+        //     if (!token) {
+        //     this.$router.push('/login');
+        //     return;
+        //     }
+        //     const config = {
+        //     headers: {
+        //         Authorization: `Bearer ${token}`,
+        //     },
+        //     };
+        // const response = await axios.delete(`${api}/reviews/reviews/${reviewId}`, config);
+        // console.log(response.data.message); 
+        //     this.fetchReviewsForProduct(reviewId);  
+        // } catch (error) {
+        // console.error('Failed to delete review:', error);
+        // // Handle error (e.g., show an error message)
+        // }
+        // }
+
 
   },
 
