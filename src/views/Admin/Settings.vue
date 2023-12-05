@@ -491,47 +491,7 @@
         }
         },
 
-        async updateAdminDetails() {
-            try {
-                const formData = new FormData();
-                formData.append('title', this.title);
-                formData.append('size', this.size);
-                formData.append('color', this.color);
-                formData.append('price', this.price);
-                formData.append('description', this.description);
-                formData.append('categoryId', this.categoryId);
-
-                //auth token
-                const token = sessionStorage.getItem('adminToken'); 
-
-                // Append each selected image file to the form data
-                for (let i = 0; i < this.imageFiles.length; i++) {
-                formData.append('images', this.imageFiles[i]);
-                }
-
-                await axios.post(`${api}/products/create`, formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                     Authorization: `Bearer ${token}`,
-                },
-                })
-                .then(success => {
-                    if (success) {
-                    this.$toast.success('Product Created Successfully!.', {
-                        timeout: 3000, 
-                    });		                         
-                    this.$router.push({name: 'Products'});                                    
-                    } else {
-                        this.$toast.error('An Error Occured. try again!', {
-                            timeout: 9000, 
-                        });	          
-                    }
-                })
-            } catch (error) {
-                console.error('Error creating product:', error);
-                // Handle error, show error message, etc.
-            }
-        },
+      
   
           logoutAdmin() {
               this.$store.dispatch('adminLogout')
