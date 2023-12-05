@@ -89,17 +89,7 @@
         </div>
 
         <div>
-            <h2 class="text-3xl font-medium uppercase mb-2">{{productDetails.title}}</h2>
-            <!-- <div class="flex items-center mb-4">
-                <div class="flex gap-1 text-sm text-yellow-400">
-                    <span><i class="fa-solid fa-star"></i></span>
-                    <span><i class="fa-solid fa-star"></i></span>
-                    <span><i class="fa-solid fa-star"></i></span>
-                    <span><i class="fa-solid fa-star"></i></span>
-                    <span><i class="fa-solid fa-star"></i></span>
-                </div>
-                <div class="text-xs text-gray-500 ml-3">(150 Reviews)</div>
-            </div> -->
+            <h2 class="text-3xl font-medium uppercase mb-2">{{productDetails.title}}</h2>           
             <div class="space-y-2">
                 <p class="text-gray-800 font-semibold space-x-2">
                     <span>Availability: </span>
@@ -127,27 +117,26 @@
             <p class="mt-4 text-gray-600">{{productDetails.description}}</p>
 
             <div class="pt-4">
-                <h3 class="text-2xl text-gray-800 uppercase mb-1 font-medium">Size</h3>
-                <div class="flex items-center gap-2">
-                    <!-- <div class="size-selector">
-                        <input type="radio" name="size" id="size-xs" class="hidden">
-                        <label for="size-xs"
-                            class="text-sm border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600">{{productDetails.size}}</label>
-                    </div> -->
-                    <span class="text-sm">{{productDetails.size}}</span>
-                 
-                </div>
+                <div v-if="productDetails.size.length > 0" class="pt-4">
+                    <h3 class="text-2xl text-gray-800 uppercase mb-1 font-medium">Size</h3>
+                    <div class="flex items-center gap-2">
+                      <div v-for="(sizes, index) in productDetails.size" :key="index" class="size-selector">
+                        <input type="text" :value="sizes" class="text-sm border border-gray-200 rounded-sm h-8 px-3 flex items-center justify-center cursor-pointer shadow-sm text-gray-600" disabled>
+                      </div>
+                    </div>
+                  </div>
             </div>
 
             <div class="pt-4">
-                <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">{{productDetails.color}}</h3>
-                <div class="flex items-center gap-2">
-                    <div class="color-selector">
-                        <input type="radio" :id="productDetails.color" class="hidden" :value="productDetails.color" v-model="selectedColor">
-                        <label :for="productDetails.color" class="border border-gray-200 rounded-sm h-6 w-6 cursor-pointer shadow-sm block" :style="{ backgroundColor: productDetails.color }"></label>
-                      </div>
-                </div>
+                <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Color</h3>
+                <p class="text-sm text-gray-600 mb-3 uppercase">{{ productDetails.color }}</p>
+                <!-- <div class="flex items-center gap-2">
+                    <div class="flex items-center">
+                        <label class="rounded-sm h-6 w-6 cursor-pointer shadow-sm block"></label>
+                    </div>
+                </div> -->
             </div>
+            
 
             <!-- <div class="mt-4">
                 <h3 class="text-sm text-gray-800 uppercase mb-1">Quantity</h3>
@@ -410,9 +399,11 @@ export default {
     return {
         
         productDetails: {
-             color: '#FF0000'
+             color: [],
+             size: [],
         },
-        selectedColor: null,
+        selectedSize: '',
+        selectedColor: '',
         relatedProducts: [],
         reviews: [],
         loading: true,
@@ -516,11 +507,21 @@ export default {
             const response = await axios.post(`${api}/reviews/products/${productId}/reviews`, {
             rating: this.rating,
             comment: this.comment
-            }, config);
-            console.log('Review added successfully:', response.data);            
-            this.fetchReviewsForProduct(productId);  
-            this.comment = ""; 
-            this.rating = 0; 
+            }, config)
+            .then(success => {
+                    if (success) {
+                    this.$toast.success('Review Added Successfully.', {
+                        timeout: 3000, 
+                    });		                         
+                    this.fetchReviewsForProduct(productId);  
+                    this.comment = ""; 
+                    this.rating = 0;                                     
+                    } else {
+                        this.$toast.error('An Error Occured. try again!', {
+                            timeout: 9000, 
+                        });	          
+                    }
+                })                     
         } catch (error) {
             console.error('Failed to add review:', error.response.data.message);
             

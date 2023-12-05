@@ -344,7 +344,7 @@
                                       <label class="mb-2.5 block text-black">
                                          Size
                                       </label>
-                                      <input type="text" id="size" multiple v-model="size" placeholder="Product Size"
+                                      <input type="text" id="size" multiple v-model="size" placeholder="Product Size (separate with commas)"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
                                     </div>
                                   </div>                                              
@@ -366,7 +366,7 @@
                                       <label class="mb-2.5 mt-3 block text-black">
                                          Color
                                       </label>
-                                      <input type="text" id="color" v-model="color" placeholder="Product Color"
+                                      <input type="text" id="color" v-model="color" placeholder="Product Color (separate with commas)"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input" />
                                     </div>
               
@@ -468,12 +468,17 @@
             console.log(this.imageFiles);
           },
 
+        //create product
         async createProduct() {
             try {
+
+                const sizesArray = this.size.split(',').map((size) => size.trim());
+                const colorsArray = this.color.split(',').map((color) => color.trim());
+
                 const formData = new FormData();
                 formData.append('title', this.title);
-                formData.append('size', this.size);
-                formData.append('color', this.color);
+                formData.append('size', sizesArray);
+                formData.append('color', colorsArray);
                 formData.append('price', this.price);
                 formData.append('availability', this.availability);
                 formData.append('description', this.description);
