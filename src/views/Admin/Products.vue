@@ -424,7 +424,7 @@
                                                   <div class="flex items-center">
                                                     <div v-if="product.images"  class="flex gap-2">
                                                         <div v-for="imageUrl in product.images.slice(0, 3)" :key="imageUrl">
-                                                            <img class="w-10 h-9 rounded-full" :src="back_url + imageUrl" loading="lazy" alt="">       
+                                                            <img class="w-10 h-9 rounded-full" :src="imageUrl" loading="lazy" alt="">       
                                                         </div>                                                    
                                                     </div>
                                                     <div v-else class="flex-shrink-0 w-10 h-10">                                                        

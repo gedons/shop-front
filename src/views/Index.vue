@@ -234,7 +234,7 @@
                     <div class="relative">
                         <router-link :to="{name: 'ProductDetails',  params: {id: latestProduct._id, productName: latestProduct.title} }">
                             <div v-for="imageUrl in latestProduct.images.slice(0, 1)" :key="imageUrl">
-                                <img :src="back_url + imageUrl" alt="product img" class="w-full h-52 cursor-pointer">
+                                <img :src="imageUrl" alt="product img" class="w-full h-52 cursor-pointer">
                             </div>
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
                             justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
@@ -346,7 +346,7 @@
                     <div class="relative">
                         <router-link :to="{name: 'ProductDetails',  params: {id: recommendProduct._id, productName: recommendProduct.title} }">
                             <div v-for="imageUrl in recommendProduct.images.slice(0, 1)" :key="imageUrl">
-                                <img :src="back_url + imageUrl" alt="product img" class="w-full h-56 cursor-pointer">
+                                <img :src="imageUrl" alt="product img" class="w-full h-56 cursor-pointer">
                             </div>
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
                             justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
