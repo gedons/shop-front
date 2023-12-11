@@ -83,7 +83,7 @@
             <div class="space-y-3">
                 <div v-for="cartItem in cartProducts" :key="cartItem._id" class="flex items-center justify-between border gap-3 p-4 border-gray-200 rounded">
                     <div v-for="imageUrl in cartItem.product.images.slice(0, 1)"  class="w-28">
-                        <img :src="back_url + imageUrl"  alt="product img" class="w-full">
+                        <img :src="imageUrl"  alt="product img" class="w-full">
                     </div>
                     <div class="w-1/3">
                         <h2 class="text-gray-800 text-xl font-medium uppercase">{{cartItem.product.title}}</h2>

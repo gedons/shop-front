@@ -80,10 +80,10 @@
      <!-- product-detail -->
      <div class="container grid grid-cols-2 gap-6">
         <div>
-            <img :src="back_url + productDetails.images.slice(0, 1)" alt="product" class="w-full h-96">
+            <img :src="productDetails.images.slice(0, 1)" alt="product" class="w-full h-96">
             <div class="flex flex-wrap gap-4 mt-4">
                 <div v-for="(imageUrl, index) in productDetails.images.slice(0, 4)" :key="index" class="w-1/4">
-                  <img :src="back_url + imageUrl" :alt="`Product Image ${index + 2}`" class="h-36 w-full cursor-pointer border border-[#cc2121]">
+                  <img :src="imageUrl" :alt="`Product Image ${index + 2}`" class="h-36 w-full cursor-pointer border border-[#cc2121]">
                 </div>
               </div>
         </div>
@@ -329,7 +329,7 @@
                     <div class="relative">
                         <a :href="`/product/${relatedProduct._id}/${relatedProduct.title}`">
                             <div v-for="imageUrl in relatedProduct.images.slice(0, 1)" :key="imageUrl">
-                                <img :src="back_url + imageUrl" alt="product img" class="w-full h-52 cursor-pointer">
+                                <img :src="imageUrl" alt="product img" class="w-full h-52 cursor-pointer">
                             </div>
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
                             justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
