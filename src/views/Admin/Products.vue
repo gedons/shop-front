@@ -499,13 +499,25 @@
                 <label class="mb-2.5 mt-3 block text-black">
                     Product Color
                     </label>                        
-                <input type="text" placeholder="Edit Color" v-model="editedProduct.color"
-                        class="mt-3 w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter" />                        
+                    <div v-for="(color, index) in editedProduct.colors" :key="index">
+                        <input
+                          type="text"
+                          :placeholder="'Edit Color ' + (index + 1)"
+                          v-model="editedProduct.colors[index]"
+                          class="mt-3 w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter"
+                        />
+                    </div>
                 <label class="mb-2.5 mt-3 block text-black">
                     Product Size
                 </label>                        
-                <input type="text" placeholder="Edit Size" v-model="editedProduct.size"
-                        class="mt-3 w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter" />                        
+                <div v-for="(size, index) in editedProduct.sizes" :key="index">
+                    <input
+                      type="text"
+                      :placeholder="'Edit Size ' + (index + 1)"
+                      v-model="editedProduct.sizes[index]"
+                      class="mt-3 w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-gray-900 active:border-gray-900 disabled:cursor-default disabled:bg-whiter"
+                    />
+                </div>
                
                 <label class="mb-2.5 mt-3 block text-black">
                     Product Price
@@ -677,7 +689,7 @@
           },
                
       
-  
+    
           async handleImageUpload( productId ) {    
             try {
             const formData = new FormData();
@@ -690,7 +702,7 @@
                     Authorization: `Bearer ${token}`,
                 },
             };
-             
+            
             await axios.post(`${api}/products/${productId}/image`, formData, config)
                 .then(success => {
                     if (success) {
@@ -705,12 +717,12 @@
                         });	          
                     }
                 })
-          
+        
             } catch (error) {
                 console.error('Error uploading product image:', error);
                 // Handle error
             }
-        },
+          },
   
           async confirmDelete() {
           try {

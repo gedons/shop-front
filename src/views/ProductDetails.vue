@@ -116,36 +116,24 @@
 
             <p class="mt-4 text-gray-600">{{productDetails.description}}</p>
 
-            <div class="pt-4">
-                <div v-if="productDetails.size.length > 0" class="pt-4">
-                    <h3 class="text-2xl text-gray-800 uppercase mb-1 font-medium">Size</h3>
-                    <div class="flex items-center gap-2">
-                      <div v-for="(sizes, index) in productDetails.size" :key="index" class="size-selector">
-                        <input type="text" :value="sizes" class="text-sm border border-gray-200 rounded-sm h-8 px-3 flex items-center justify-center cursor-pointer shadow-sm text-gray-600" disabled>
-                      </div>
-                    </div>
-                  </div>
+            <div class="pt-4">                 
+                <h3 class="text-xl text-gray-800 uppercase mb-1 font-medium">Sizes: </h3>
+                <select v-model="selectedSize" id="sizeDropdown" class="border rounded-md px-4 py-2 focus:outline-none focus:border-gray-500" style="width: 150px;">
+                    <option v-for="(size, index) in productDetails.sizes" :key="index" :value="size">
+                        {{ size }}
+                    </option>
+                </select>
             </div>
 
             <div class="pt-4">
-                <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Color</h3>
-                <p class="text-sm text-gray-600 mb-3 uppercase">{{ productDetails.color }}</p>
-                <!-- <div class="flex items-center gap-2">
-                    <div class="flex items-center">
-                        <label class="rounded-sm h-6 w-6 cursor-pointer shadow-sm block"></label>
-                    </div>
-                </div> -->
+                <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Colors: </h3>
+                <select v-model="selectedColor" id="colorDropdown" class="border rounded-md px-4 py-2 focus:outline-none focus:border-gray-500" style="width: 150px;">
+                    <option v-for="(color, index) in productDetails.colors" :key="index" :value="color">
+                      {{ color }}
+                    </option>
+                </select>
             </div>
             
-
-            <!-- <div class="mt-4">
-                <h3 class="text-sm text-gray-800 uppercase mb-1">Quantity</h3>
-                <div class="flex border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max">
-                        <button @click="decreaseQuantity()" class="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none">-</button>
-                        <div class="h-8 w-8 text-base flex items-center justify-center">5</div>
-                        <button @click="increaseQuantity()" class="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none">+</button>
-                </div>
-            </div> -->
 
             <div class="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5">
                 <button  v-if="productDetails.availability == 'InStock'" @click="addToCart(productDetails._id)"
@@ -191,7 +179,7 @@
             <table class="table-auto border-collapse w-full text-left text-gray-600 text-sm mt-6">
                 <tr>
                     <th class="py-2 px-4 border border-gray-300 w-40 font-medium">Color</th>
-                    <th class="py-2 px-4 border border-gray-300 ">{{productDetails.color}}</th>
+                    <th class="py-2 px-4 border border-gray-300 ">{{productDetails.colors}}</th>
                 </tr>
                 <!-- <tr>
                     <th class="py-2 px-4 border border-gray-300 w-40 font-medium">Material</th>
