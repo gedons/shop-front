@@ -137,12 +137,12 @@
 
             <div class="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5">
                 <button  v-if="productDetails.availability == 'InStock'" @click="addToCart(productDetails._id)"
-                class="bg-[#cc2121] border border-[#cc2121] text-white  px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-[#cc2121] transition">
-                <i class="fa-solid fa-bag-shopping"></i> Add to cart
+                class="bg-[#cc2121] border border-[#cc2121] text-white w-full sm:w-auto px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-[#cc2121] transition">
+                <i class="fa-solid fa-bag-shopping"></i><span>Add to Cart</span>
                  </button>
                 <button v-else
-                    class="bg-[#cc2121] border border-[#cc2121] text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 cursor-not-allowed hover:bg-transparent hover:text-[#cc2121] transition" disabled title="Out of Stock">
-                    <i class="fa-solid fa-bag-shopping"></i> Add to cart
+                    class="bg-[#cc2121] border border-[#cc2121] text-white  w-full sm:w-auto px-8 py-2 font-medium rounded uppercase flex items-center gap-2 cursor-not-allowed hover:bg-transparent hover:text-[#cc2121] transition" disabled title="Out of Stock">
+                    <i class="fa-solid fa-bag-shopping"></i><span>Add to Cart</span>
                 </button>
                 <!-- <a href="#"
                     class="border border-gray-300 text-gray-600 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-[#dc3545] transition">
@@ -462,11 +462,12 @@ export default {
                 timeout: 3000,
                 });
             } catch (error) {
-                this.$toast.error('An Error Occurred. Please try again!', {
+                this.$toast.info('An Error Occurred', {
                 timeout: 9000,
                 });
                 console.error('Failed to add product to cart:', error);
-                // Handle the error (e.g., show an error message)
+                this.$router.push('/login');
+                return; 
             }
         },
 
