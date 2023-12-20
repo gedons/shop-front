@@ -427,7 +427,7 @@
                                                   <div class="flex items-center">
                                                      
                                                         <div v-for="imageUrl in banner.images.slice(0, 1)" :key="imageUrl">                                                          
-                                                              <img class="w-10 h-9 rounded-full" :src="back_url + imageUrl" loading="lazy" alt="">                                                                                                                                
+                                                              <img class="w-10 h-9 rounded-full" :src="imageUrl" loading="lazy" alt="">                                                                                                                                
                                                         </div> 
                                                                                                            
                                                                                                         

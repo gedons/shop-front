@@ -39,15 +39,15 @@
     </div>
     <swiper-slide v-else  v-for="banner in banners" :key="banner._id">
 
-        <div v-for="(imageUrl, index) in banner.images.slice(0, 4)" :key="index" class="transition bg-cover bg-no-repeat bg-center py-[10rem]" v-bind:style="{ 'background-image': 'url(' + back_url + imageUrl + ')' }">
+        <div v-for="(imageUrl, index) in banner.images.slice(0, 4)" :key="index" class="transition bg-cover bg-no-repeat bg-center py-[10rem]" v-bind:style="{ 'background-image': 'url(' + imageUrl + ')' }">
         <div class="container pl-[6rem] max-md:pl-2">
             <h1 class="max-md:text-4xl text-6xl text-[#000] bg-opacity-40 font-medium mb-4 capitalize">
                {{banner.header}}
             </h1>
             <p class="text-[#000] bg-opacity-40 max-md:text-[14px]">{{banner.paragraph}}</p>
             <div class="mt-12">
-                <a href="#" class="bg-[#000]  hover:bg-primary text-white px-8 py-3 font-medium 
-                    rounded-md  hover:text-white">Shop Now</a>
+                <router-link :to="{name: 'UserProducts'}" class="bg-[#000]  hover:bg-primary text-white px-8 py-3 font-medium 
+                    rounded-md  hover:text-white">Shop Now</router-link>
             </div>
         </div>
     </div>
@@ -153,7 +153,7 @@
         </div>  
         <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div v-for="category in categories" :key="category._id"  class="relative rounded-sm overflow-hidden  group md:h-64">
-                <img v-if="category.imageUrl"  :src="back_url + category.imageUrl" alt="image" class="max-md:w-full md:h-64">
+                <img v-if="category.imageUrl"  :src="category.imageUrl" alt="image" class="max-md:w-full md:h-64">
                 <img v-else :src="bgImage2" alt="image" class="max-md:w-full md:h-64">
                 <router-link :to="{name: 'ProductCategory', params: {categoryId: category._id} }"
                     class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-sans font-medium group-hover:bg-opacity-60 transition">{{category.name}}</router-link>
