@@ -60,10 +60,8 @@
     <div class="col-span-4 border border-gray-200 p-4 rounded">
         <h4 class="text-gray-800 text-lg mb-4 font-medium uppercase">order summary</h4>
         <div class="space-y-2">
-            <div class="flex justify-between" v-for="cartItem in cartProducts" :key="cartItem.product._id">
-                <div>
-                    <h5 class="text-gray-800 font-medium">{{ cartItem.product.title }}</h5>                   
-                </div>
+            <div class="flex justify-between" v-for="cartItem in cartProducts" :key="cartItem.product._id">                
+                    <h5 class="text-gray-800 font-medium">{{ cartItem.product.title }}</h5>                                                                                      
                 <p class="text-gray-600">
                    x {{ cartItem.quantity }}
                 </p>

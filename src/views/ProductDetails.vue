@@ -78,9 +78,9 @@
 
     <div v-else>
      <!-- product-detail -->
-     <div class="container grid grid-cols-2 gap-6">
+     <div class="container grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-            <img :src="productDetails.images.slice(0, 1)" alt="product" class="w-full h-36 md:h-96">
+            <img :src="productDetails.images.slice(0, 1)" alt="product" class="w-72 h-36 md:w-full md:h-96">
             <div class="flex flex-wrap gap-4 mt-4">
                 <div v-for="(imageUrl, index) in productDetails.images.slice(0, 4)" :key="index" class="w-1/4">
                   <img :src="imageUrl" :alt="`Product Image ${index + 2}`" class="h-11 md:h-36 w-full cursor-pointer border border-[#cc2121]">
@@ -115,7 +115,6 @@
             </div>
 
             <p class="mt-4 text-gray-600">{{productDetails.description}}</p>
-
             <div class="pt-4">                 
                 <h3 class="text-xl text-gray-800 uppercase mb-1 font-medium">Sizes: </h3>
                 <select v-model="selectedSize" id="sizeDropdown" class="border rounded-md px-4 py-2 focus:outline-none focus:border-gray-500" style="width: 150px;">
@@ -124,7 +123,6 @@
                     </option>
                 </select>
             </div>
-
             <div class="pt-4">
                 <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Colors: </h3>
                 <select v-model="selectedColor" id="colorDropdown" class="border rounded-md px-4 py-2 focus:outline-none focus:border-gray-500" style="width: 150px;">
@@ -132,16 +130,14 @@
                       {{ color }}
                     </option>
                 </select>
-            </div>
-            
-
+            </div>            
             <div class="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5">
                 <button  v-if="productDetails.availability == 'InStock'" @click="addToCart(productDetails._id)"
-                class="bg-[#cc2121] border border-[#cc2121] text-white w-full sm:w-auto px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-[#cc2121] transition">
+                class="bg-[#cc2121] border border-[#cc2121] text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-[#cc2121] transition">
                 <i class="fa-solid fa-bag-shopping"></i><span>Add to Cart</span>
                  </button>
                 <button v-else
-                    class="bg-[#cc2121] border border-[#cc2121] text-white  w-full sm:w-auto px-8 py-2 font-medium rounded uppercase flex items-center gap-2 cursor-not-allowed hover:bg-transparent hover:text-[#cc2121] transition" disabled title="Out of Stock">
+                    class="bg-[#cc2121] border border-[#cc2121] text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 cursor-not-allowed hover:bg-transparent hover:text-[#cc2121] transition" disabled title="Out of Stock">
                     <i class="fa-solid fa-bag-shopping"></i><span>Add to Cart</span>
                 </button>
                 <!-- <a href="#"
@@ -171,7 +167,7 @@
      <!-- description -->
      <div class="container pb-16">
         <h3 class="border-b border-gray-200 font-semibold text-gray-800 pb-3  mt-6">Product details</h3>
-        <div class="w-3/5 pt-6">
+        <div class="w-full pt-6">
             <div class="text-gray-600">
                 <p>{{productDetails.description}}</p>
             </div>
@@ -179,7 +175,14 @@
             <h3 class=" font-medium text-gray-800 pb-3 mt-6">Colors: </h3>
             <div class="flex items-center">
                 <div v-for="(color, index) in productDetails.colors" :key="index" class="w-6 h-6 rounded-full mr-2" :style="{ backgroundColor: color }"></div>
-              </div>
+            </div>
+
+            <h3 class=" font-medium text-gray-800 pb-3 mt-6">Sizes: </h3>
+            <div class="flex items-center">
+                <div v-for="(size, index) in productDetails.sizes" :key="index" class="w-6 h-6 rounded-full mr-2">
+                    <p>{{size}},</p>
+                </div>
+            </div>
               
         </div>
     </div>
@@ -377,10 +380,7 @@ export default {
   data() {
     return {
         
-        productDetails: {
-             color: [],
-             size: [],
-        },
+        productDetails: [],
         selectedSize: '',
         selectedColor: '',
         relatedProducts: [],
@@ -453,6 +453,8 @@ export default {
                 productId,
                 quantity: 1,
                 price: product.price,
+                size: this.selectedSize, 
+                color: this.selectedColor,
                 }, config);
 
                 const updatedCartCount = currentCartCount + quantityAdded;
