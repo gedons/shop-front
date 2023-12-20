@@ -152,7 +152,7 @@
             <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available!!!</p>
         </div>  
         <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div v-for="category in categories" :key="category._id"  class="relative rounded-sm overflow-hidden  group md:h-64">
+            <div v-for="category in categories" :key="category._id"  class="w-72 relative rounded-sm overflow-hidden  group md:h-64">
                 <img v-if="category.imageUrl"  :src="category.imageUrl" alt="image" class="max-md:w-full md:h-64">
                 <img v-else :src="bgImage2" alt="image" class="max-md:w-full md:h-64">
                 <router-link :to="{name: 'ProductCategory', params: {categoryId: category._id} }"
@@ -230,7 +230,7 @@
                 <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available!!!</p>
             </div>           
             <div v-else class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div v-for="latestProduct in latestProducts" :key="latestProduct._id" class="bg-white shadow rounded overflow-hidden group">
+                <div v-for="latestProduct in latestProducts" :key="latestProduct._id" class="w-72 bg-white shadow rounded overflow-hidden group">
                     <div class="relative">
                         <router-link :to="{name: 'ProductDetails',  params: {id: latestProduct._id, productName: latestProduct.title} }">
                             <div v-for="imageUrl in latestProduct.images.slice(0, 1)" :key="imageUrl">
@@ -342,11 +342,11 @@
                 <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available!!!</p>
             </div>           
             <div v-else class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div v-for="recommendProduct in recommendProducts" :key="recommendProduct._id" class="bg-white shadow rounded overflow-hidden group">
+                <div v-for="recommendProduct in recommendProducts" :key="recommendProduct._id" class="w-72 bg-white shadow rounded overflow-hidden group">
                     <div class="relative">
                         <router-link :to="{name: 'ProductDetails',  params: {id: recommendProduct._id, productName: recommendProduct.title} }">
                             <div v-for="imageUrl in recommendProduct.images.slice(0, 1)" :key="imageUrl">
-                                <img :src="imageUrl" alt="product img" class="w-full h-56 cursor-pointer">
+                                <img :src="imageUrl" alt="product img" class="h-56 cursor-pointer">
                             </div>
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
                             justify-center gap-2 opacity-0 group-hover:opacity-100 transition">

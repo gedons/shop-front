@@ -80,10 +80,10 @@
      <!-- product-detail -->
      <div class="container grid grid-cols-2 gap-6">
         <div>
-            <img :src="productDetails.images.slice(0, 1)" alt="product" class="w-full h-96">
+            <img :src="productDetails.images.slice(0, 1)" alt="product" class="w-full h-36 md:h-96">
             <div class="flex flex-wrap gap-4 mt-4">
                 <div v-for="(imageUrl, index) in productDetails.images.slice(0, 4)" :key="index" class="w-1/4">
-                  <img :src="imageUrl" :alt="`Product Image ${index + 2}`" class="h-36 w-full cursor-pointer border border-[#cc2121]">
+                  <img :src="imageUrl" :alt="`Product Image ${index + 2}`" class="h-11 md:h-36 w-full cursor-pointer border border-[#cc2121]">
                 </div>
               </div>
         </div>
@@ -109,8 +109,8 @@
                     <span class="text-gray-600">BE45VGRT</span>
                 </p> -->
             </div>
-            <div class="flex items-baseline mb-1 space-x-2 font-roboto mt-4">
-                <p class="text-xl text-[#dc3545] font-semibold">$ {{productDetails.price}}</p>
+            <div class="flex items-baseline mb-1 space-x-2 mt-4">
+                <p class="text-2xl text-[#dc3545] font-semibold">$ {{productDetails.price}}</p>
                 <!-- <p class="text-base text-gray-400 line-through">$55.00</p> -->
             </div>
 
@@ -137,7 +137,7 @@
 
             <div class="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5">
                 <button  v-if="productDetails.availability == 'InStock'" @click="addToCart(productDetails._id)"
-                class="bg-[#cc2121] border border-[#cc2121] text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-[#cc2121] transition">
+                class="bg-[#cc2121] border border-[#cc2121] text-white  px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-[#cc2121] transition">
                 <i class="fa-solid fa-bag-shopping"></i> Add to cart
                  </button>
                 <button v-else
@@ -176,20 +176,11 @@
                 <p>{{productDetails.description}}</p>
             </div>
 
-            <table class="table-auto border-collapse w-full text-left text-gray-600 text-sm mt-6">
-                <tr>
-                    <th class="py-2 px-4 border border-gray-300 w-40 font-medium">Color</th>
-                    <th class="py-2 px-4 border border-gray-300 ">{{productDetails.colors}}</th>
-                </tr>
-                <!-- <tr>
-                    <th class="py-2 px-4 border border-gray-300 w-40 font-medium">Material</th>
-                    <th class="py-2 px-4 border border-gray-300 ">Latex</th>
-                </tr>
-                <tr>
-                    <th class="py-2 px-4 border border-gray-300 w-40 font-medium">Weight</th>
-                    <th class="py-2 px-4 border border-gray-300 ">55kg</th>
-                </tr> -->
-            </table>
+            <h3 class=" font-medium text-gray-800 pb-3 mt-6">Colors: </h3>
+            <div class="flex items-center">
+                <div v-for="(color, index) in productDetails.colors" :key="index" class="w-6 h-6 rounded-full mr-2" :style="{ backgroundColor: color }"></div>
+              </div>
+              
         </div>
     </div>
     <!-- ./description -->
@@ -313,7 +304,7 @@
                 <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available!!!</p>
             </div>   
             <div v-else class="grid grid-cols-4 gap-6">                
-                <div v-for="relatedProduct in relatedProducts" :key="relatedProduct._id" class="bg-white shadow rounded overflow-hidden group">
+                <div v-for="relatedProduct in relatedProducts" :key="relatedProduct._id" class="w-72 bg-white shadow rounded overflow-hidden group">
                     <div class="relative">
                         <a :href="`/product/${relatedProduct._id}/${relatedProduct.title}`">
                             <div v-for="imageUrl in relatedProduct.images.slice(0, 1)" :key="imageUrl">
@@ -335,7 +326,7 @@
                             <p class="text-xl text-[#dc3545] font-semibold">$ {{relatedProduct.price}}</p>
                             <!-- <p class="text-sm text-gray-400 line-through">$55.90</p> -->
                         </div>
-                        <div class="flex items-center">
+                        <!-- <div class="flex items-center">
                             <div class="flex gap-1 text-sm text-yellow-400">
                                 <span><i class="fa-solid fa-star"></i></span>
                                 <span><i class="fa-solid fa-star"></i></span>
@@ -344,7 +335,7 @@
                                 <span><i class="fa-solid fa-star"></i></span>
                             </div>
                             <div class="text-xs text-gray-500 ml-3">(150)</div>
-                        </div>
+                        </div> -->
                     </div>
                     <a href="#"
                         class="block w-full py-1 text-center text-white bg-[#dc3545] border border-[#dc3545] rounded-b hover:bg-transparent hover:text-[#dc3545] transition">Add
