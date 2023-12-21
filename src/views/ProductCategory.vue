@@ -143,7 +143,7 @@
                 <div v-if="filteredProducts.length === 0" class="p-2.5 xl:p-5">
                     <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available For This Category!!!</p>
                 </div>                 
-                <div  v-else v-for="product in filteredProducts" :key="product._id" class="w-72 bg-white shadow rounded overflow-hidden group">
+                <div  v-else v-for="product in filteredProducts" :key="product._id" class="md:w-72 w-full  bg-white shadow rounded overflow-hidden group">
                     <div class="relative">
                         <router-link :to="{name: 'ProductDetails',  params: {id: product._id, productName: product.title} }">
                             <div v-for="imageUrl in product.images.slice(0, 1)" :key="imageUrl">
