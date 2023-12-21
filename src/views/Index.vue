@@ -92,59 +92,35 @@
     <!-- categories -->
     <div class="container py-16 md:px-[13rem]">
         <div v-if="loading" class="flex justify-center items-center mt-3">
-            <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
-                <g fill="none" fill-rule="evenodd">
-                    <g transform="translate(2 1)" stroke="#000" stroke-width="1.5">
-                        <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="1;0;0;0;0;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;1;0;0;0;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;1;0;0;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;1;0;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;0;1;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;0;0;1;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;0;0;0;1;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;0;0;0;0;1" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                    </g>
-                </g>
+            <svg class="w-10 h-10" version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+            <circle fill="#000" stroke="none" cx="6" cy="50" r="6">
+              <animateTransform 
+                 attributeName="transform" 
+                 dur="1s" 
+                 type="translate" 
+                 values="0 15 ; 0 -15; 0 15" 
+                 repeatCount="indefinite" 
+                 begin="0.1"/>
+            </circle>
+            <circle fill="#000" stroke="none" cx="30" cy="50" r="6">
+              <animateTransform 
+                 attributeName="transform" 
+                 dur="1s" 
+                 type="translate" 
+                 values="0 10 ; 0 -10; 0 10" 
+                 repeatCount="indefinite" 
+                 begin="0.2"/>
+            </circle>
+            <circle fill="#000" stroke="none" cx="54" cy="50" r="6">
+              <animateTransform 
+                 attributeName="transform" 
+                 dur="1s" 
+                 type="translate" 
+                 values="0 5 ; 0 -5; 0 5" 
+                 repeatCount="indefinite" 
+                 begin="0.3"/>
+            </circle>
             </svg>
         </div> 
         <div v-else>
@@ -152,7 +128,7 @@
             <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available!!!</p>
         </div>  
         <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div v-for="category in categories" :key="category._id"  class="w-72 relative rounded-sm overflow-hidden  group md:h-64">
+            <div v-for="category in categories" :key="category._id"  class="md:w-72 sm:w-full relative rounded-sm overflow-hidden  group md:h-64">
                 <img v-if="category.imageUrl"  :src="category.imageUrl" alt="image" class="max-md:w-full md:h-64">
                 <img v-else :src="bgImage2" alt="image" class="max-md:w-full md:h-64">
                 <router-link :to="{name: 'ProductCategory', params: {categoryId: category._id} }"
@@ -169,59 +145,35 @@
         <h4 class="text-1xl  text-[#000] text-center font-normal  mb-6">View our latest products</h4>
 
         <div v-if="loading" class="flex justify-center items-center mt-3">
-            <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
-                <g fill="none" fill-rule="evenodd">
-                    <g transform="translate(2 1)" stroke="#000" stroke-width="1.5">
-                        <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="1;0;0;0;0;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;1;0;0;0;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;1;0;0;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;1;0;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;0;1;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;0;0;1;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;0;0;0;1;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;0;0;0;0;1" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                    </g>
-                </g>
+            <svg class="w-10 h-10" version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+            <circle fill="#000" stroke="none" cx="6" cy="50" r="6">
+              <animateTransform 
+                 attributeName="transform" 
+                 dur="1s" 
+                 type="translate" 
+                 values="0 15 ; 0 -15; 0 15" 
+                 repeatCount="indefinite" 
+                 begin="0.1"/>
+            </circle>
+            <circle fill="#000" stroke="none" cx="30" cy="50" r="6">
+              <animateTransform 
+                 attributeName="transform" 
+                 dur="1s" 
+                 type="translate" 
+                 values="0 10 ; 0 -10; 0 10" 
+                 repeatCount="indefinite" 
+                 begin="0.2"/>
+            </circle>
+            <circle fill="#000" stroke="none" cx="54" cy="50" r="6">
+              <animateTransform 
+                 attributeName="transform" 
+                 dur="1s" 
+                 type="translate" 
+                 values="0 5 ; 0 -5; 0 5" 
+                 repeatCount="indefinite" 
+                 begin="0.3"/>
+            </circle>
             </svg>
         </div> 
 
@@ -230,7 +182,7 @@
                 <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available!!!</p>
             </div>           
             <div v-else class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div v-for="latestProduct in latestProducts" :key="latestProduct._id" class="w-72 bg-white shadow rounded overflow-hidden group">
+                <div v-for="latestProduct in latestProducts" :key="latestProduct._id" class="md:w-72 sm:w-full bg-white shadow rounded overflow-hidden group">
                     <div class="relative">
                         <router-link :to="{name: 'ProductDetails',  params: {id: latestProduct._id, productName: latestProduct.title} }">
                             <div v-for="imageUrl in latestProduct.images.slice(0, 1)" :key="imageUrl">
@@ -281,59 +233,35 @@
     <div class="container pb-16">
         <h2 class="text-2xl font-bold text-[#000]  mb-6">Recommended For You</h2>
         <div v-if="loading" class="flex justify-center items-center mt-3">
-            <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
-                <g fill="none" fill-rule="evenodd">
-                    <g transform="translate(2 1)" stroke="#000" stroke-width="1.5">
-                        <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="1;0;0;0;0;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;1;0;0;0;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;1;0;0;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;1;0;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;0;1;0;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;0;0;1;0;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;0;0;0;1;0" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#000">
-                            <animate attributeName="fill-opacity"
-                                begin="0s" dur="1.3s"
-                                values="0;0;0;0;0;0;0;1" calcMode="linear"
-                                repeatCount="indefinite" />
-                        </circle>
-                    </g>
-                </g>
+            <svg class="w-10 h-10" version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+            <circle fill="#000" stroke="none" cx="6" cy="50" r="6">
+              <animateTransform 
+                 attributeName="transform" 
+                 dur="1s" 
+                 type="translate" 
+                 values="0 15 ; 0 -15; 0 15" 
+                 repeatCount="indefinite" 
+                 begin="0.1"/>
+            </circle>
+            <circle fill="#000" stroke="none" cx="30" cy="50" r="6">
+              <animateTransform 
+                 attributeName="transform" 
+                 dur="1s" 
+                 type="translate" 
+                 values="0 10 ; 0 -10; 0 10" 
+                 repeatCount="indefinite" 
+                 begin="0.2"/>
+            </circle>
+            <circle fill="#000" stroke="none" cx="54" cy="50" r="6">
+              <animateTransform 
+                 attributeName="transform" 
+                 dur="1s" 
+                 type="translate" 
+                 values="0 5 ; 0 -5; 0 5" 
+                 repeatCount="indefinite" 
+                 begin="0.3"/>
+            </circle>
             </svg>
         </div> 
 
@@ -342,7 +270,7 @@
                 <p class="font-semibold text-sm leading-5 text-gray-700">No Products Available!!!</p>
             </div>           
             <div v-else class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div v-for="recommendProduct in recommendProducts" :key="recommendProduct._id" class="w-72 bg-white shadow rounded overflow-hidden group">
+                <div v-for="recommendProduct in recommendProducts" :key="recommendProduct._id" class="md:w-72 sm:w-full bg-white shadow rounded overflow-hidden group">
                     <div class="relative">
                         <router-link :to="{name: 'ProductDetails',  params: {id: recommendProduct._id, productName: recommendProduct.title} }">
                             <div v-for="imageUrl in recommendProduct.images.slice(0, 1)" :key="imageUrl">

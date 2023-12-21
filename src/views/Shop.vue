@@ -107,60 +107,36 @@
          </div>
 
        <div v-if="loading" class="flex justify-center items-center mt-3">
-           <svg class="w-10 h-10" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
-               <g fill="none" fill-rule="evenodd">
-                   <g transform="translate(2 1)" stroke="#000" stroke-width="1.5">
-                       <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#000">
-                           <animate attributeName="fill-opacity"
-                               begin="0s" dur="1.3s"
-                               values="1;0;0;0;0;0;0;0" calcMode="linear"
-                               repeatCount="indefinite" />
-                       </circle>
-                       <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#000">
-                           <animate attributeName="fill-opacity"
-                               begin="0s" dur="1.3s"
-                               values="0;1;0;0;0;0;0;0" calcMode="linear"
-                               repeatCount="indefinite" />
-                       </circle>
-                       <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#000">
-                           <animate attributeName="fill-opacity"
-                               begin="0s" dur="1.3s"
-                               values="0;0;1;0;0;0;0;0" calcMode="linear"
-                               repeatCount="indefinite" />
-                       </circle>
-                       <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#000">
-                           <animate attributeName="fill-opacity"
-                               begin="0s" dur="1.3s"
-                               values="0;0;0;1;0;0;0;0" calcMode="linear"
-                               repeatCount="indefinite" />
-                       </circle>
-                       <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#000">
-                           <animate attributeName="fill-opacity"
-                               begin="0s" dur="1.3s"
-                               values="0;0;0;0;1;0;0;0" calcMode="linear"
-                               repeatCount="indefinite" />
-                       </circle>
-                       <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#000">
-                           <animate attributeName="fill-opacity"
-                               begin="0s" dur="1.3s"
-                               values="0;0;0;0;0;1;0;0" calcMode="linear"
-                               repeatCount="indefinite" />
-                       </circle>
-                       <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#000">
-                           <animate attributeName="fill-opacity"
-                               begin="0s" dur="1.3s"
-                               values="0;0;0;0;0;0;1;0" calcMode="linear"
-                               repeatCount="indefinite" />
-                       </circle>
-                       <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#000">
-                           <animate attributeName="fill-opacity"
-                               begin="0s" dur="1.3s"
-                               values="0;0;0;0;0;0;0;1" calcMode="linear"
-                               repeatCount="indefinite" />
-                       </circle>
-                   </g>
-               </g>
-           </svg>
+        <svg class="w-10 h-10" version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+        <circle fill="#000" stroke="none" cx="6" cy="50" r="6">
+          <animateTransform 
+             attributeName="transform" 
+             dur="1s" 
+             type="translate" 
+             values="0 15 ; 0 -15; 0 15" 
+             repeatCount="indefinite" 
+             begin="0.1"/>
+        </circle>
+        <circle fill="#000" stroke="none" cx="30" cy="50" r="6">
+          <animateTransform 
+             attributeName="transform" 
+             dur="1s" 
+             type="translate" 
+             values="0 10 ; 0 -10; 0 10" 
+             repeatCount="indefinite" 
+             begin="0.2"/>
+        </circle>
+        <circle fill="#000" stroke="none" cx="54" cy="50" r="6">
+          <animateTransform 
+             attributeName="transform" 
+             dur="1s" 
+             type="translate" 
+             values="0 5 ; 0 -5; 0 5" 
+             repeatCount="indefinite" 
+             begin="0.3"/>
+        </circle>
+        </svg>
        </div> 
 
        <div v-else class="grid md:grid-cols-3 grid-cols-2 gap-6">
